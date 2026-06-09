@@ -18,12 +18,12 @@ export function Navbar() {
   const { t, locale, setLocale } = useLanguage();
 
   const navItems = [
-    { name: t('navbar.home'), href: "/", color: "#00F3FF" }, // Neon Cyan
-    { name: t('navbar.install'), href: "/tutorial", color: "#BD00FF" }, // Neon Purple
+    { name: t('navbar.home'), href: "/", color: "#6F00FF" }, // Neon Indigo
+    { name: t('navbar.install'), href: "/tutorial", color: "#6F00FF" }, // Neon Indigo
     { 
       name: t('navbar.guide'), 
       href: "/guide",
-      color: "#00F3FF", // Neon Cyan
+      color: "#6F00FF", // Neon Indigo
       children: [
         { name: t('navbar.guideRulesTitle'), href: "/guide/rules", desc: t('navbar.guideRules'), icon: Book },
         { name: t('navbar.guideAgentsTitle'), href: "/guide/agents", desc: t('navbar.guideAgents'), icon: Users },
@@ -35,7 +35,7 @@ export function Navbar() {
     { 
       name: t('navbar.notes'), 
       href: "/notes", 
-      color: "#BD00FF", // Neon Purple
+      color: "#6F00FF", // Neon Indigo
       children: [
          { name: t('navbar.samples'), href: "/samples", desc: t('navbar.library'), icon: Rocket },
          { name: t('navbar.dictionaries'), href: "/dictionaries", desc: t('navbar.dictionaries'), icon: BookOpen },
@@ -57,8 +57,8 @@ export function Navbar() {
   };
 
   const activeIndex = getActiveIndex();
-  // Get active color or default to yellow if none
-  const activeColor = activeIndex !== -1 ? navItems[activeIndex].color : '#00F3FF';
+  // Get active color or default to neon indigo if none
+  const activeColor = activeIndex !== -1 ? navItems[activeIndex].color : '#6F00FF';
 
   const toggleLanguage = () => {
     setLocale(locale === 'vi' ? 'en' : 'vi');
@@ -72,12 +72,12 @@ export function Navbar() {
           "pointer-events-auto relative flex items-center h-16 rounded-full border transition-all duration-700 shadow-[0_20px_80px_rgba(0,0,0,0.6)] backdrop-blur-[40px] px-3",
           // FIXED WIDTH: Content-hug instead of fixed wide width
           "w-fit bg-white/[0.03] border-white/10",
-          scrolled && "bg-black/40 border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_20px_rgba(252,211,77,0.1)]"
+          scrolled && "bg-black/40 border-white/20 shadow-[0_20px_50px_rgba(0,0,0,0.8),0_0_20px_rgba(111,0,255,0.1)]"
         )}
       >
         <div className="flex w-full items-center justify-between relative px-2">
           <Link href="/" className="flex items-center gap-3 group">
-            <div className="w-11 h-11 relative group-hover:scale-110 transition-transform duration-300 aspect-square rounded-xl overflow-hidden shadow-lg shadow-[#BD00FF]/20 border border-white/10 bg-black/40">
+            <div className="w-11 h-11 relative group-hover:scale-110 transition-transform duration-300 aspect-square rounded-xl overflow-hidden shadow-lg shadow-[#6F00FF]/20 border border-white/10 bg-black/40">
               <img 
                 src="/antigravity-ide-logo.png" 
                 alt="AntiGravity IDE Logo" 
@@ -85,7 +85,7 @@ export function Navbar() {
               />
               <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl" />
             </div>
-            <span className="hidden lg:inline-block font-black text-[#00F3FF] text-sm">
+            <span className="hidden lg:inline-block font-black text-[#6F00FF] text-sm">
               Agent Skills Setup
             </span>
           </Link>
@@ -173,7 +173,7 @@ export function Navbar() {
                onClick={toggleLanguage}
                className="p-2.5 bg-white/5 hover:bg-white/10 rounded-full border border-white/10 transition-colors flex items-center gap-2 group"
             >
-               <Globe className="h-4 w-4 text-white/80 group-hover:text-[#00F3FF] transition-colors" />
+               <Globe className="h-4 w-4 text-white/80 group-hover:text-[#6F00FF] transition-colors" />
                <span className="text-[10px] font-black uppercase text-white/60 group-hover:text-white transition-colors">{locale === 'vi' ? 'VN' : 'EN'}</span>
             </button>
 
@@ -183,9 +183,9 @@ export function Navbar() {
               </div>
             </Link>
             
-            <div className="hidden md:flex items-center gap-2 bg-[#00F3FF]/10 px-3 py-1.5 rounded-full border border-[#00F3FF]/30">
-              <div className="w-1.5 h-1.5 bg-[#00F3FF] rounded-full animate-pulse" />
-              <span className="text-[9px] font-black text-[#00F3FF] uppercase tracking-widest">{t('common.version')}</span>
+            <div className="hidden md:flex items-center gap-2 bg-[#6F00FF]/10 px-3 py-1.5 rounded-full border border-[#6F00FF]/30">
+              <div className="w-1.5 h-1.5 bg-[#6F00FF] rounded-full animate-pulse" />
+              <span className="text-[9px] font-black text-[#6F00FF] uppercase tracking-widest">{t('common.version')}</span>
             </div>
 
             <button
@@ -220,7 +220,7 @@ export function Navbar() {
                          href={item.href}
                          className={cn(
                            "flex-1 p-6 rounded-3xl text-xl font-black transition-all",
-                           isActive ? "bg-[#00F3FF] text-black" : "bg-white/5 text-white"
+                           isActive ? "bg-[#6F00FF] text-white" : "bg-white/5 text-white"
                          )}
                          onClick={() => !hasChildren && setIsOpen(false)}
                       >
@@ -252,7 +252,7 @@ export function Navbar() {
                                className="flex items-center gap-4 p-4 hover:bg-white/5 transition-colors border-b border-white/5 last:border-0"
                                onClick={() => setIsOpen(false)}
                              >
-                                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-[#00F3FF]">
+                                 <div className="w-10 h-10 rounded-xl bg-white/5 flex items-center justify-center text-[#6F00FF]">
                                     {child.icon && <child.icon className="h-5 w-5" />}
                                  </div>
                                  <div>

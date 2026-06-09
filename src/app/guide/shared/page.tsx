@@ -31,23 +31,23 @@ export default function SharedPage() {
   };
 
   const colorMap: Record<string, { color: string; bg: string; border: string }> = {
-    "ai-master": { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20" },
-    "api-standards": { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20" },
-    "compliance-master": { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20" },
-    "database-master": { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20" },
-    "design-philosophy": { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20" },
-    "design-system": { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20" },
-    "domain-blueprints": { color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/20" },
-    "dx-toolkit": { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
-    "i18n-master": { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20" },
-    "infra-blueprints": { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20" },
-    "metrics": { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
-    "resilience-patterns": { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20" },
-    "security-armor": { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20" },
-    "seo-master": { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20" },
-    "testing-master": { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
-    "ui-ux-pro-max": { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20" },
-    "vitals-templates": { color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/20" },
+    "ai-master": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "api-standards": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "compliance-master": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "database-master": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "design-philosophy": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "design-system": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "domain-blueprints": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "dx-toolkit": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "i18n-master": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "infra-blueprints": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "metrics": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "resilience-patterns": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "security-armor": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "seo-master": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "testing-master": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "ui-ux-pro-max": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
+    "vitals-templates": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20" },
   };
 
   return (
@@ -64,12 +64,12 @@ export default function SharedPage() {
       />
 
       <div className="max-w-6xl mx-auto space-y-12">
-        <div className="card-glass p-10 bg-gradient-to-br from-white/[0.03] to-transparent border-blue-500/20 rounded-[2rem] shadow-2xl relative overflow-hidden">
-          <div className="absolute top-0 left-0 w-64 h-64 bg-blue-500/5 blur-[80px] rounded-full" />
+        <div className="card-glass p-10 bg-gradient-to-br from-white/[0.03] to-transparent border-[#6F00FF]/20 rounded-[2rem] shadow-2xl relative overflow-hidden">
+          <div className="absolute top-0 left-0 w-64 h-64 bg-[#6F00FF]/5 blur-[80px] rounded-full" />
           <div className="flex flex-col md:flex-row items-center gap-10 relative z-10">
-             <div className="w-40 h-40 rounded-full border-4 border-blue-500/10 flex items-center justify-center animate-pulse relative shadow-[0_0_30px_rgba(59,130,246,0.1)]">
-                <div className="absolute inset-0 rounded-full border border-blue-500/40 animate-spin-slow" />
-                <Dna className="h-16 w-16 text-blue-400" />
+             <div className="w-40 h-40 rounded-full border-4 border-[#6F00FF]/10 flex items-center justify-center animate-pulse relative shadow-[0_0_30px_rgba(111,0,255,0.1)]">
+                <div className="absolute inset-0 rounded-full border border-[#6F00FF]/40 animate-spin-slow" />
+                <Dna className="h-16 w-16 text-[#6F00FF]" />
              </div>
              <div className="flex-1 space-y-6 text-center md:text-left">
                 <h3 className="text-3xl font-black text-white italic tracking-tight uppercase">Scientific Linkage</h3>

@@ -11,11 +11,11 @@ import { SearchBar, CategoryTabs } from "@/components/ui/premium";
 
 // PDCA category config
 const pdcaConfig = {
-  command: { color: "#4285F4", label: "Command", desc: "Điều phối & Quyết định" },
-  plan: { color: "#EA4335", label: "Plan", desc: "Lập kế hoạch" },
-  do: { color: "#FBBC04", label: "Do", desc: "Thực thi" },
-  check: { color: "#34A853", label: "Check", desc: "Kiểm tra" },
-  act: { color: "#4285F4", label: "Act", desc: "Cải tiến" }
+  command: { color: "#6F00FF", label: "Command", desc: "Điều phối & Quyết định" },
+  plan: { color: "#6F00FF", label: "Plan", desc: "Lập kế hoạch" },
+  do: { color: "#6F00FF", label: "Do", desc: "Thực thi" },
+  check: { color: "#6F00FF", label: "Check", desc: "Kiểm tra" },
+  act: { color: "#6F00FF", label: "Act", desc: "Cải tiến" }
 };
 
 // Map agents to PDCA categories
@@ -200,7 +200,7 @@ export default function AgentsPage() {
                   {agent.icon}
                 </motion.div>
 
-                <h3 className="font-bold text-white mb-1 group-hover:text-[#4285F4] transition-colors relative z-10">
+                <h3 className="font-bold text-white mb-1 group-hover:text-[#6F00FF] transition-colors relative z-10">
                   {agent.name}
                 </h3>
 
@@ -234,7 +234,7 @@ export default function AgentsPage() {
           </p>
           <button
             onClick={() => { setSearchQuery(""); setActiveCategory("all"); }}
-            className="mt-4 text-[#4285F4] hover:underline"
+            className="mt-4 text-[#6F00FF] hover:underline"
           >
             Xóa bộ lọc
           </button>
@@ -258,19 +258,19 @@ export default function AgentsPage() {
             <div className="h-8 w-0.5 md:h-0.5 md:w-16 bg-white/20 relative">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0a0a0a] px-2 text-[10px] text-white/40">CHAT</div>
             </div>
-            <div className="p-6 bg-blue-500/10 rounded-2xl border border-blue-500/20 w-48">
-              <BrainCircuit className="h-8 w-8 mx-auto mb-2 text-blue-400" />
-              <div className="font-bold text-blue-400">Orchestrator</div>
+            <div className="p-6 bg-[#6F00FF]/10 rounded-2xl border border-[#6F00FF]/20 w-48">
+              <BrainCircuit className="h-8 w-8 mx-auto mb-2 text-[#6F00FF]" />
+              <div className="font-bold text-[#6F00FF]">Orchestrator</div>
             </div>
             <div className="h-8 w-0.5 md:h-0.5 md:w-16 bg-white/20 relative">
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0a0a0a] px-2 text-[10px] text-white/40">PDCA</div>
             </div>
-            <div className="p-6 bg-gradient-to-br from-[#EA4335]/10 via-[#FBBC04]/10 to-[#34A853]/10 rounded-2xl border border-white/20 w-48">
+            <div className="p-6 bg-[#6F00FF]/10 rounded-2xl border border-[#6F00FF]/20 w-48">
               <div className="flex justify-center gap-1 mb-2">
-                <div className="w-3 h-3 rounded-full bg-[#EA4335]" />
-                <div className="w-3 h-3 rounded-full bg-[#FBBC04]" />
-                <div className="w-3 h-3 rounded-full bg-[#34A853]" />
-                <div className="w-3 h-3 rounded-full bg-[#4285F4]" />
+                <div className="w-3 h-3 rounded-full bg-[#6F00FF]" />
+                <div className="w-3 h-3 rounded-full bg-[#6F00FF]/80" />
+                <div className="w-3 h-3 rounded-full bg-[#6F00FF]/60" />
+                <div className="w-3 h-3 rounded-full bg-[#6F00FF]/40" />
               </div>
               <div className="font-bold text-white">Specialists</div>
             </div>

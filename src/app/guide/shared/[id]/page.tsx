@@ -39,33 +39,33 @@ export default function SharedModuleDetailPage() {
   };
 
   const colorMap: Record<string, { color: string; bg: string; border: string; glow: string; bullet: string }> = {
-    "ai-master": { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", glow: "border-red-500", bullet: "bg-red-500" },
-    "api-standards": { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "border-blue-500", bullet: "bg-blue-500" },
-    "compliance-master": { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", glow: "border-red-500", bullet: "bg-red-500" },
-    "database-master": { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "border-blue-500", bullet: "bg-blue-500" },
-    "design-philosophy": { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", glow: "border-yellow-500", bullet: "bg-yellow-500" },
-    "design-system": { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", glow: "border-yellow-500", bullet: "bg-yellow-500" },
-    "domain-blueprints": { color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/20", glow: "border-cyan-500", bullet: "bg-cyan-500" },
-    "dx-toolkit": { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20", glow: "border-emerald-500", bullet: "bg-emerald-500" },
-    "i18n-master": { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "border-blue-500", bullet: "bg-blue-500" },
-    "infra-blueprints": { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "border-blue-500", bullet: "bg-blue-500" },
-    "metrics": { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20", glow: "border-emerald-500", bullet: "bg-emerald-500" },
-    "resilience-patterns": { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", glow: "border-red-500", bullet: "bg-red-500" },
-    "security-armor": { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", glow: "border-red-500", bullet: "bg-red-500" },
-    "seo-master": { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", glow: "border-yellow-500", bullet: "bg-yellow-500" },
-    "testing-master": { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20", glow: "border-emerald-500", bullet: "bg-emerald-500" },
-    "ui-ux-pro-max": { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", glow: "border-yellow-500", bullet: "bg-yellow-500" },
-    "vitals-templates": { color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/20", glow: "border-cyan-500", bullet: "bg-cyan-500" },
+    "ai-master": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "api-standards": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "compliance-master": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "database-master": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "design-philosophy": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "design-system": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "domain-blueprints": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "dx-toolkit": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "i18n-master": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "infra-blueprints": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "metrics": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "resilience-patterns": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "security-armor": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "seo-master": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "testing-master": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "ui-ux-pro-max": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "vitals-templates": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
   };
 
   const theme = colorMap[id] || { color: "text-white/60", bg: "bg-white/5", border: "border-white/10", glow: "border-white/20", bullet: "bg-white/20" };
   const Icon = iconMap[guide.icon] || Dna;
 
   const googleColors = [
-    { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", bullet: "bg-red-500" },
-    { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", bullet: "bg-yellow-500" },
-    { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20", bullet: "bg-emerald-500" },
-    { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", bullet: "bg-blue-500" },
+    { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", bullet: "bg-[#6F00FF]" },
+    { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", bullet: "bg-[#6F00FF]" },
+    { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", bullet: "bg-[#6F00FF]" },
+    { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", bullet: "bg-[#6F00FF]" },
   ];
 
   return (

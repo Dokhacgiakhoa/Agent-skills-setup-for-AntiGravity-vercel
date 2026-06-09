@@ -45,15 +45,15 @@ export function LinkageSection({ data }: LinkageProps) {
 
 function LinkageCard({ title, items, color }: { title: string, items: string[], color: string }) {
    const colorMap: Record<string, string> = {
-    blue: "border-[#00F3FF]/30 shadow-[0_0_30px_rgba(0,243,255,0.1)]",
-    red: "border-[#BD00FF]/30 shadow-[0_0_30px_rgba(189,0,255,0.1)]",
-    green: "border-[#00F3FF]/30 shadow-[0_0_30px_rgba(0,243,255,0.1)]",
+    blue: "border-[#6F00FF]/30 shadow-[0_0_30px_rgba(111,0,255,0.1)]",
+    red: "border-[#6F00FF]/30 shadow-[0_0_30px_rgba(111,0,255,0.1)]",
+    green: "border-[#6F00FF]/30 shadow-[0_0_30px_rgba(111,0,255,0.1)]",
   };
 
   const titleColorMap: Record<string, string> = {
-    blue: "text-[#00F3FF]",
-    red: "text-[#BD00FF]",
-    green: "text-[#00F3FF]",
+    blue: "text-[#6F00FF]",
+    red: "text-[#6F00FF]",
+    green: "text-[#6F00FF]",
   };
 
   return (

@@ -50,17 +50,17 @@ export function FeatureGrid({ data }: FeatureGridProps) {
 
 function FeatureCard({ feature, index }: { feature: any, index: number }) {
   const colorMap: Record<string, string> = {
-    blue: "hover:border-[#00F3FF]/50 hover:shadow-[0_0_30px_rgba(0,243,255,0.15)]",
-    red: "hover:border-[#BD00FF]/50 hover:shadow-[0_0_30px_rgba(189,0,255,0.15)]",
-    yellow: "hover:border-[#BD00FF]/50 hover:shadow-[0_0_30px_rgba(189,0,255,0.15)]",
-    green: "hover:border-[#00F3FF]/50 hover:shadow-[0_0_30px_rgba(0,243,255,0.15)]",
+    blue: "hover:border-[#6F00FF]/50 hover:shadow-[0_0_30px_rgba(111,0,255,0.15)]",
+    red: "hover:border-[#6F00FF]/50 hover:shadow-[0_0_30px_rgba(111,0,255,0.15)]",
+    yellow: "hover:border-[#6F00FF]/50 hover:shadow-[0_0_30px_rgba(111,0,255,0.15)]",
+    green: "hover:border-[#6F00FF]/50 hover:shadow-[0_0_30px_rgba(111,0,255,0.15)]",
   };
 
   const iconColorMap: Record<string, string> = {
-    blue: "text-[#00F3FF]",
-    red: "text-[#BD00FF]",
-    yellow: "text-[#BD00FF]",
-    green: "text-[#00F3FF]",
+    blue: "text-[#6F00FF]",
+    red: "text-[#6F00FF]",
+    yellow: "text-[#6F00FF]",
+    green: "text-[#6F00FF]",
   };
 
   return (
@@ -85,9 +85,7 @@ function FeatureCard({ feature, index }: { feature: any, index: number }) {
       {/* Background Glow */}
       <div className={cn(
         "absolute -bottom-20 -right-20 w-64 h-64 rounded-full blur-[100px] opacity-0 group-hover:opacity-20 transition-opacity duration-700", 
-        feature.color === 'blue' ? "bg-[#00F3FF]" :
-        feature.color === 'red' ? "bg-[#BD00FF]" :
-        feature.color === 'yellow' ? "bg-[#BD00FF]" : "bg-[#00F3FF]"
+        "bg-[#6F00FF]"
       )} />
     </motion.div>
   );

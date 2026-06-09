@@ -35,28 +35,28 @@ export default function RuleDetailPage() {
   };
 
   const colorMap: Record<string, { color: string; bg: string; border: string; glow: string; bullet: string }> = {
-    "GEMINI": { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "border-blue-500", bullet: "bg-blue-500" },
-    "security": { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", glow: "border-red-500", bullet: "bg-red-500" },
-    "malware-protection": { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", glow: "border-red-500", bullet: "bg-red-500" },
-    "error-logging": { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", glow: "border-yellow-500", bullet: "bg-yellow-500" },
-    "docs-update": { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20", glow: "border-emerald-500", bullet: "bg-emerald-500" },
-    "debug": { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", glow: "border-yellow-500", bullet: "bg-yellow-500" },
-    "frontend": { color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/20", glow: "border-cyan-500", bullet: "bg-cyan-500" },
-    "backend": { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "border-blue-500", bullet: "bg-blue-500" },
-    "business": { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20", glow: "border-emerald-500", bullet: "bg-emerald-500" },
-    "compliance": { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", glow: "border-red-500", bullet: "bg-red-500" },
-    "architecture-review": { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "border-blue-500", bullet: "bg-blue-500" },
-    "system-update": { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", glow: "border-yellow-500", bullet: "bg-yellow-500" },
+    "GEMINI": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "security": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "malware-protection": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "error-logging": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "docs-update": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "debug": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "frontend": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "backend": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "business": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "compliance": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "architecture-review": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    "system-update": { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
   };
 
   const theme = colorMap[id] || { color: "text-white/60", bg: "bg-white/5", border: "border-white/10", glow: "border-white/20", bullet: "bg-white/20" };
   const Icon = iconMap[guide.icon] || FileText;
 
   const googleColors = [
-    { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", bullet: "bg-red-500" },
-    { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", bullet: "bg-yellow-500" },
-    { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20", bullet: "bg-emerald-500" },
-    { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", bullet: "bg-blue-500" },
+    { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", bullet: "bg-[#6F00FF]" },
+    { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", bullet: "bg-[#6F00FF]" },
+    { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", bullet: "bg-[#6F00FF]" },
+    { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", bullet: "bg-[#6F00FF]" },
   ];
 
   return (
@@ -154,7 +154,7 @@ export default function RuleDetailPage() {
 
            {/* Exceptions */}
            {localize(guide, 'exceptions', locale) && (
-              <section className="card-glass p-6 bg-yellow-500/5 border-yellow-500/10 space-y-4">
+              <section className="card-glass p-6 bg-[#6F00FF]/5 border-[#6F00FF]/20 space-y-4">
                  <div className={`flex items-center gap-2 ${theme.color} font-black uppercase text-sm`}>
                     <AlertTriangle className="h-4 w-4" />
                     {t('guide.rule.exceptions')}
@@ -172,14 +172,14 @@ export default function RuleDetailPage() {
 
            {/* Prohibited Actions */}
            {localize(guide, 'prohibited', locale) && (
-              <section className={`card-glass p-6 bg-black border-red-900/50 space-y-4 shadow-[0_0_20px_rgba(255,0,0,0.05)]`}>
-                 <div className="flex items-center gap-2 text-red-600 font-black uppercase text-sm">
+              <section className={`card-glass p-6 bg-black border-[#6F00FF]/30 space-y-4 shadow-[0_0_20px_rgba(111,0,255,0.05)]`}>
+                 <div className="flex items-center gap-2 text-[#6F00FF] font-black uppercase text-sm">
                     <ShieldAlert className="h-4 w-4" />
                     {t('guide.rule.prohibited')}
                  </div>
                   <ul className="space-y-3">
                      {(guide.prohibited || []).map((item: string, idx: number) => (
-                        <li key={idx} className="text-[11px] text-red-500/70 font-bold uppercase tracking-wide flex gap-2">
+                        <li key={idx} className="text-[11px] text-[#6F00FF]/70 font-bold uppercase tracking-wide flex gap-2">
                            <span>✖</span>
                            {item}
                         </li>

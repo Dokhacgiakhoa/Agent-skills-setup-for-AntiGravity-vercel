@@ -30,26 +30,26 @@ export default function WorkflowDetailPage() {
   }
 
   const themeMap: Record<string, { color: string; bg: string; border: string; glow: string; bullet: string }> = {
-    planning: { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", glow: "border-red-500", bullet: "bg-red-500" },
-    management: { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", glow: "border-red-500", bullet: "bg-red-500" },
-    development: { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", glow: "border-yellow-500", bullet: "bg-yellow-500" },
-    design: { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", glow: "border-yellow-500", bullet: "bg-yellow-500" },
-    system: { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", glow: "border-yellow-500", bullet: "bg-yellow-500" },
-    quality: { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20", glow: "border-emerald-500", bullet: "bg-emerald-500" },
-    devops: { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "border-blue-500", bullet: "bg-blue-500" },
-    maintenance: { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "border-blue-500", bullet: "bg-blue-500" },
-    advanced: { color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/20", glow: "border-cyan-500", bullet: "bg-cyan-500" },
-    documentation: { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "border-blue-500", bullet: "bg-blue-500" },
+    planning: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    management: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    development: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    design: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    system: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    quality: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    devops: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    maintenance: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    advanced: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
+    documentation: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "border-[#6F00FF]/40", bullet: "bg-[#6F00FF]" },
   };
 
   const currentWf = (guide as any).category ? guide : { category: 'advanced' }; // fallback
   const theme = themeMap[(currentWf as any).category] || themeMap.advanced;
 
   const googleColors = [
-    { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", bullet: "bg-red-500" },
-    { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", bullet: "bg-yellow-500" },
-    { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20", bullet: "bg-emerald-500" },
-    { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", bullet: "bg-blue-500" },
+    { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", bullet: "bg-[#6F00FF]" },
+    { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", bullet: "bg-[#6F00FF]" },
+    { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", bullet: "bg-[#6F00FF]" },
+    { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", bullet: "bg-[#6F00FF]" },
   ];
 
   return (
@@ -154,22 +154,22 @@ export default function WorkflowDetailPage() {
         <div className="space-y-12">
           {/* Rules */}
           <section className="space-y-4">
-              <h2 className={`text-lg font-black text-red-400 flex items-center gap-2 uppercase tracking-wide`}>
+              <h2 className={`text-lg font-black text-[#6F00FF] flex items-center gap-2 uppercase tracking-wide`}>
                 <AlertTriangle className="h-5 w-5" />
                 {t('guide.workflow.rules')}
               </h2>
-              <div className="card-glass p-6 bg-red-500/5 border-red-500/20">
+              <div className="card-glass p-6 bg-[#6F00FF]/5 border-[#6F00FF]/20">
                 <ul className="space-y-4">
                   {(localize(guide, 'criticalRules', locale) || []).map((rule: string, idx: number) => (
                     <li key={idx} className="flex gap-3 text-sm text-white/70">
-                      <span className="text-red-400">•</span>
+                      <span className="text-[#6F00FF]">•</span>
                       {rule}
                     </li>
                   ))}
                 </ul>
               </div>
           </section>
-
+ 
            {/* Examples */}
            {guide.examples && guide.examples.length > 0 && (
              <section className={`card-glass p-6 ${theme.bg} border ${theme.border} space-y-4`}>
@@ -187,27 +187,27 @@ export default function WorkflowDetailPage() {
                  </div>
              </section>
            )}
-
+ 
            {/* Output */}
            {localize(guide, 'output', locale) && (
             <section className="space-y-4">
-               <h2 className={`text-lg font-black text-blue-400 flex items-center gap-2 uppercase tracking-wide`}>
+               <h2 className={`text-lg font-black text-[#6F00FF] flex items-center gap-2 uppercase tracking-wide`}>
                  <StepForward className="h-5 w-5" />
                  {t('guide.workflow.output')}
                </h2>
-               <div className="card-glass p-6 bg-blue-500/5 border-blue-500/20 space-y-4">
+               <div className="card-glass p-6 bg-[#6F00FF]/5 border-[#6F00FF]/20 space-y-4">
                  <div>
-                   <div className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">{t('guide.workflow.location')}</div>
+                   <div className="text-xs font-bold text-[#6F00FF] uppercase tracking-wider mb-2">{t('guide.workflow.location')}</div>
                    <code className="block bg-black/40 p-3 rounded text-sm font-mono text-white/80 border border-white/5">
                      {localize(guide, 'output', locale)?.location}
                    </code>
                  </div>
                  <div>
-                   <div className="text-xs font-bold text-blue-400 uppercase tracking-wider mb-2">{t('guide.workflow.content')}</div>
+                   <div className="text-xs font-bold text-[#6F00FF] uppercase tracking-wider mb-2">{t('guide.workflow.content')}</div>
                    <ul className="space-y-2">
                      {(localize(guide, 'output', locale)?.content || []).map((item: string, idx: number) => (
                        <li key={idx} className="flex gap-2 text-sm text-white/60">
-                         <CheckCircle2 className="h-4 w-4 text-blue-400 flex-shrink-0" />
+                         <CheckCircle2 className="h-4 w-4 text-[#6F00FF] flex-shrink-0" />
                          {item}
                        </li>
                      ))}

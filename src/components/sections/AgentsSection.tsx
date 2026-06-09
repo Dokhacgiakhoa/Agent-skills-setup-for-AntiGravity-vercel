@@ -25,8 +25,8 @@ export function AgentsSection({ data }: AgentsProps) {
     <section className="w-full py-24 px-4 border-t border-white/5 bg-black/40 backdrop-blur-sm">
       <div className="w-[90%] max-w-7xl mx-auto grid lg:grid-cols-3 gap-16 items-center">
         {/* Left: Visual - Compact Orbit Design (1/3 width on LG) */}
-        <div className="lg:col-span-1 relative h-[350px] w-full max-w-[400px] mx-auto border border-white/10 rounded-2xl overflow-hidden shadow-2xl shadow-[#00F3FF]/5">
-            <div className="absolute inset-0 bg-gradient-to-br from-[#00F3FF]/10 to-[#BD00FF]/10" />
+        <div className="lg:col-span-1 relative h-[350px] w-full max-w-[400px] mx-auto border border-white/10 rounded-2xl overflow-hidden shadow-2xl shadow-[#6F00FF]/5">
+            <div className="absolute inset-0 bg-gradient-to-br from-[#6F00FF]/10 to-[#4F00B8]/10" />
             
             {/* Subtle orbit rings */}
             <div className="absolute inset-0 flex items-center justify-center">
@@ -36,7 +36,7 @@ export function AgentsSection({ data }: AgentsProps) {
             
             {/* Central Orchestrator */}
             <div className="absolute inset-0 flex items-center justify-center z-20">
-                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#00F3FF] to-[#BD00FF] flex items-center justify-center shadow-xl ring-4 ring-black/40">
+                <div className="w-16 h-16 rounded-full bg-gradient-to-br from-[#6F00FF] to-[#4F00B8] flex items-center justify-center shadow-xl ring-4 ring-black/40">
                     <span className="text-white font-black text-xl">AI</span>
                 </div>
             </div>
@@ -75,7 +75,7 @@ export function AgentsSection({ data }: AgentsProps) {
 
           <div className="flex flex-wrap gap-4">
             {data.list.map((agent, i) => {
-               const colors = ["#00F3FF", "#BD00FF", "#00F3FF", "#BD00FF"];
+               const colors = ["#6F00FF", "#6F00FF", "#6F00FF", "#6F00FF"];
                const currentColor = colors[i % 4];
                
                return (
@@ -98,10 +98,10 @@ export function AgentsSection({ data }: AgentsProps) {
 
 function AgentAvatar({ icon: Icon, color }: { icon: any, color: string }) {
     const colorClasses = {
-        blue: "text-[#00F3FF] bg-[#00F3FF]/10 border-[#00F3FF]/30",
-        red: "text-[#BD00FF] bg-[#BD00FF]/10 border-[#BD00FF]/30",
-        yellow: "text-[#BD00FF] bg-[#BD00FF]/10 border-[#BD00FF]/30",
-        green: "text-[#00F3FF] bg-[#00F3FF]/10 border-[#00F3FF]/30",
+        blue: "text-[#6F00FF] bg-[#6F00FF]/10 border-[#6F00FF]/30",
+        red: "text-[#6F00FF] bg-[#6F00FF]/10 border-[#6F00FF]/30",
+        yellow: "text-[#6F00FF] bg-[#6F00FF]/10 border-[#6F00FF]/30",
+        green: "text-[#6F00FF] bg-[#6F00FF]/10 border-[#6F00FF]/30",
     }[color];
 
     return (

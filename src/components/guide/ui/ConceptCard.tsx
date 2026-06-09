@@ -11,32 +11,32 @@ interface ConceptCardProps {
 export function ConceptCard({ icon, title, desc, features, color = "emerald" }: ConceptCardProps) {
   const colors: Record<string, { border: string; bg: string; iconBg: string; text: string; dot: string }> = {
     sky: { 
-      border: "border-sky-500/20 hover:border-sky-400/50", 
-      bg: "bg-sky-500/5", 
-      iconBg: "bg-sky-500/10",
-      text: "text-sky-400",
-      dot: "bg-sky-400"
+      border: "border-[#6F00FF]/20 hover:border-[#6F00FF]/50", 
+      bg: "bg-[#6F00FF]/5", 
+      iconBg: "bg-[#6F00FF]/10",
+      text: "text-[#6F00FF]",
+      dot: "bg-[#6F00FF]"
     },
     amber: { 
-      border: "border-amber-500/20 hover:border-amber-400/50", 
-      bg: "bg-amber-500/5", 
-      iconBg: "bg-amber-500/10",
-      text: "text-amber-400", 
-      dot: "bg-amber-400"
+      border: "border-[#6F00FF]/20 hover:border-[#6F00FF]/50", 
+      bg: "bg-[#6F00FF]/5", 
+      iconBg: "bg-[#6F00FF]/10",
+      text: "text-[#6F00FF]", 
+      dot: "bg-[#6F00FF]"
     },
     rose: { 
-      border: "border-rose-500/20 hover:border-rose-400/50", 
-      bg: "bg-rose-500/5", 
-      iconBg: "bg-rose-500/10",
-      text: "text-rose-400", 
-      dot: "bg-rose-400"
+      border: "border-[#6F00FF]/20 hover:border-[#6F00FF]/50", 
+      bg: "bg-[#6F00FF]/5", 
+      iconBg: "bg-[#6F00FF]/10",
+      text: "text-[#6F00FF]", 
+      dot: "bg-[#6F00FF]"
     },
     emerald: { 
-      border: "border-emerald-500/20 hover:border-emerald-400/50", 
-      bg: "bg-emerald-500/5", 
-      iconBg: "bg-emerald-500/10",
-      text: "text-emerald-400", 
-      dot: "bg-emerald-400"
+      border: "border-[#6F00FF]/20 hover:border-[#6F00FF]/50", 
+      bg: "bg-[#6F00FF]/5", 
+      iconBg: "bg-[#6F00FF]/10",
+      text: "text-[#6F00FF]", 
+      dot: "bg-[#6F00FF]"
     },
   };
 

@@ -9,10 +9,10 @@ interface CommandCardProps {
 
 export function CommandCard({ cmd, desc, color }: CommandCardProps) {
   const colors: Record<string, { bg: string; border: string; text: string; glow: string }> = {
-    red: { bg: 'bg-red-500/10', border: 'border-red-500/20', text: 'text-red-400', glow: 'shadow-red-500/10' },
-    yellow: { bg: 'bg-yellow-500/10', border: 'border-yellow-500/20', text: 'text-yellow-400', glow: 'shadow-yellow-500/10' },
-    green: { bg: 'bg-emerald-500/10', border: 'border-emerald-500/20', text: 'text-emerald-400', glow: 'shadow-emerald-500/10' },
-    blue: { bg: 'bg-blue-500/10', border: 'border-blue-500/20', text: 'text-blue-400', glow: 'shadow-blue-500/10' },
+    red: { bg: 'bg-[#6F00FF]/10', border: 'border-[#6F00FF]/20', text: 'text-[#6F00FF]', glow: 'shadow-[#6F00FF]/10' },
+    yellow: { bg: 'bg-[#6F00FF]/10', border: 'border-[#6F00FF]/20', text: 'text-[#6F00FF]', glow: 'shadow-[#6F00FF]/10' },
+    green: { bg: 'bg-[#6F00FF]/10', border: 'border-[#6F00FF]/20', text: 'text-[#6F00FF]', glow: 'shadow-[#6F00FF]/10' },
+    blue: { bg: 'bg-[#6F00FF]/10', border: 'border-[#6F00FF]/20', text: 'text-[#6F00FF]', glow: 'shadow-[#6F00FF]/10' },
   };
   
   const c = colors[color] || colors.blue;

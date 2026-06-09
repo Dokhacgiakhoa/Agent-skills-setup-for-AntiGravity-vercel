@@ -12,8 +12,8 @@ export function Footer() {
           © 2026 Agent skills setup for AntiGravity. {t('footer.developedBy')}
         </p>
         <div className="flex gap-6">
-          <a href="https://github.com/Dokhacgiakhoa/Agent-skills-setup-for-AntiGravity" target="_blank" className="text-white/40 hover:text-[#00F3FF] transition-colors">{t('footer.system')}</a>
-          <a href="#" className="text-white/40 hover:text-[#00F3FF] transition-colors">{t('footer.community')}</a>
+          <a href="https://github.com/Dokhacgiakhoa/Agent-skills-setup-for-AntiGravity" target="_blank" className="text-white/40 hover:text-[#6F00FF] transition-colors">{t('footer.system')}</a>
+          <a href="#" className="text-white/40 hover:text-[#6F00FF] transition-colors">{t('footer.community')}</a>
         </div>
       </div>
     </footer>

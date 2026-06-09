@@ -15,11 +15,11 @@ interface PageHeaderProps {
 export function PageHeader({ badgeIcon: Icon, badgeLabel, title, description, color = "blue" }: PageHeaderProps) {
   
   const colors = {
-    blue: "text-blue-400 bg-blue-400/10 border-blue-400/20",
-    yellow: "text-yellow-400 bg-yellow-500/10 border-yellow-500/20 shadow-[0_0_20px_rgba(234,179,8,0.1)]",
-    emerald: "text-emerald-400 bg-emerald-500/10 border-emerald-500/20",
-    rose: "text-red-400 bg-red-500/10 border-red-500/20",
-    cyan: "text-cyan-400 bg-cyan-500/10 border-cyan-500/20",
+    blue: "text-[#6F00FF] bg-[#6F00FF]/10 border-[#6F00FF]/20",
+    yellow: "text-[#6F00FF] bg-[#6F00FF]/10 border-[#6F00FF]/20",
+    emerald: "text-[#6F00FF] bg-[#6F00FF]/10 border-[#6F00FF]/20",
+    rose: "text-[#6F00FF] bg-[#6F00FF]/10 border-[#6F00FF]/20",
+    cyan: "text-[#6F00FF] bg-[#6F00FF]/10 border-[#6F00FF]/20",
   };
 
   const badgeStyle = colors[color] || colors.blue;

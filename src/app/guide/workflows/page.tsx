@@ -10,24 +10,24 @@ import { PageHeader } from "@/components/guide/ui/PageHeader";
 export default function WorkflowsPage() {
   const { t, locale } = useLanguage();
   const categoryColorMap: Record<string, { color: string; bg: string; border: string; glow: string }> = {
-    planning: { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", glow: "group-hover:border-red-500/40" },
-    development: { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", glow: "group-hover:border-yellow-500/40" },
-    design: { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", glow: "group-hover:border-yellow-500/40" },
-    quality: { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20", glow: "group-hover:border-emerald-500/40" },
-    devops: { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "group-hover:border-blue-500/40" },
-    maintenance: { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "group-hover:border-blue-500/40" },
-    advanced: { color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/20", glow: "group-hover:border-cyan-500/40" },
-    documentation: { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "group-hover:border-blue-500/40" },
-    management: { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", glow: "group-hover:border-red-500/40" },
-    system: { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", glow: "group-hover:border-yellow-500/40" },
+    planning: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "group-hover:border-[#6F00FF]/40" },
+    management: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "group-hover:border-[#6F00FF]/40" },
+    development: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "group-hover:border-[#6F00FF]/40" },
+    design: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "group-hover:border-[#6F00FF]/40" },
+    system: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "group-hover:border-[#6F00FF]/40" },
+    quality: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "group-hover:border-[#6F00FF]/40" },
+    devops: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "group-hover:border-[#6F00FF]/40" },
+    maintenance: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "group-hover:border-[#6F00FF]/40" },
+    advanced: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "group-hover:border-[#6F00FF]/40" },
+    documentation: { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "group-hover:border-[#6F00FF]/40" },
   };
 
   const pdcaStyles: Record<string, { color: string; border: string }> = {
-    red: { color: "text-red-400", border: "border-red-500/40" },
-    yellow: { color: "text-yellow-400", border: "border-yellow-500/40" },
-    green: { color: "text-emerald-400", border: "border-emerald-500/40" },
-    cyan: { color: "text-blue-400", border: "border-blue-500/40" },
-    blue: { color: "text-blue-400", border: "border-blue-500/40" },
+    red: { color: "text-[#6F00FF]", border: "border-[#6F00FF]/40" },
+    yellow: { color: "text-[#6F00FF]", border: "border-[#6F00FF]/40" },
+    green: { color: "text-[#6F00FF]", border: "border-[#6F00FF]/40" },
+    cyan: { color: "text-[#6F00FF]", border: "border-[#6F00FF]/40" },
+    blue: { color: "text-[#6F00FF]", border: "border-[#6F00FF]/40" },
   };
 
   return (
@@ -64,10 +64,10 @@ export default function WorkflowsPage() {
       <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {workflowsList.map((wf, idx) => {
           const googleColors = [
-            { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20", glow: "group-hover:border-red-500/40" },
-            { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20", glow: "group-hover:border-yellow-500/40" },
-            { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20", glow: "group-hover:border-emerald-500/40" },
-            { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20", glow: "group-hover:border-blue-500/40" },
+            { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "group-hover:border-[#6F00FF]/40" },
+            { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "group-hover:border-[#6F00FF]/40" },
+            { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "group-hover:border-[#6F00FF]/40" },
+            { color: "text-[#6F00FF]", bg: "bg-[#6F00FF]/10", border: "border-[#6F00FF]/20", glow: "group-hover:border-[#6F00FF]/40" },
           ];
           const theme = googleColors[idx % googleColors.length];
           

@@ -15,8 +15,8 @@
     --popover: 0 0% 5%;
     --popover-foreground: 0 0% 100%;
  
-    /* Google Blue Primary */
-    --primary: 217 89% 61%;
+    /* Antigravity Neon Blue-Purple Primary */
+    --primary: 266 100% 50%;
     --primary-foreground: 0 0% 100%;
  
     /* Dark Secondary */
@@ -26,16 +26,16 @@
     --muted: 0 0% 15%;
     --muted-foreground: 0 0% 75%;
  
-    /* Google Colors as Accents */
-    --accent: 217 89% 61%;
+    /* Accent as Neon Blue-Purple */
+    --accent: 266 100% 50%;
     --accent-foreground: 0 0% 100%;
  
-    --destructive: 4 90% 58%;
+    --destructive: 266 100% 50%;
     --destructive-foreground: 0 0% 100%;
  
     --border: 0 0% 15%;
     --input: 0 0% 10%;
-    --ring: 217 89% 61%;
+    --ring: 266 100% 50%;
   }
 
   * {
@@ -56,26 +56,25 @@
   h1, h2, h3 {
     @apply font-black tracking-tight;
     color: #FFFFFF;
-    text-shadow: 0 0 40px rgba(189, 0, 255, 0.3);
+    text-shadow: 0 0 40px rgba(111, 0, 255, 0.4);
   }
 }
 
 /* =============================================
-   GOOGLE GEMINI THEME - Official Google Colors
-   Blue #4285F4 | Red #EA4335 | Yellow #FBBC04 | Green #34A853
+   ANTIGRAVITY THEME - Neon Blue-Purple (#6F00FF)
    ============================================= */
 
 .card-glass {
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(189, 0, 255, 0.15);
-  border-top: 1px solid rgba(189, 0, 255, 0.25);
-  border-left: 1px solid rgba(189, 0, 255, 0.25);
+  border: 1px solid rgba(111, 0, 255, 0.15);
+  border-top: 1px solid rgba(111, 0, 255, 0.25);
+  border-left: 1px solid rgba(111, 0, 255, 0.25);
   border-radius: 2rem;
   padding: 1.5rem;
   transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7), 0 0 20px rgba(189, 0, 255, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7), 0 0 20px rgba(111, 0, 255, 0.1);
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -83,18 +82,18 @@
 
 .card-glass:hover {
   background: rgba(0, 0, 0, 0.8);
-  border-color: rgba(189, 0, 255, 0.5);
+  border-color: rgba(111, 0, 255, 0.5);
   transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 40px rgba(189, 0, 255, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 40px rgba(111, 0, 255, 0.3);
 }
 
-/* Google Color Buttons */
+/* Unified Neon Blue-Purple Buttons */
 .btn-blue {
   border-radius: 9999px;
-  background: linear-gradient(135deg, #00F3FF 0%, #BD00FF 100%);
+  background: linear-gradient(135deg, #6F00FF 0%, #4F00B8 100%);
   color: #FFF !important;
   font-weight: 700;
-  box-shadow: 0 10px 20px -5px rgba(189, 0, 255, 0.5);
+  box-shadow: 0 10px 20px -5px rgba(111, 0, 255, 0.5);
   padding: 1rem 2rem;
   display: inline-flex;
   align-items: center;
@@ -104,33 +103,19 @@
 
 .btn-blue:hover {
   transform: scale(1.05);
-  box-shadow: 0 15px 30px -5px rgba(189, 0, 255, 0.7);
+  box-shadow: 0 15px 30px -5px rgba(111, 0, 255, 0.7);
 }
 
 .btn-red {
-  border-radius: 9999px;
-  background: linear-gradient(135deg, #EA4335 0%, #C5221F 100%);
-  color: #FFF !important;
-  font-weight: 700;
-  box-shadow: 0 10px 20px -5px rgba(234, 67, 53, 0.5);
-  padding: 1rem 2rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 300ms ease;
-}
-
-.btn-red:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px -5px rgba(234, 67, 53, 0.7);
+  @extend .btn-blue;
 }
 
 .btn-yellow {
   border-radius: 9999px;
-  background: linear-gradient(135deg, #FBBC04 0%, #F9AB00 100%);
-  color: #000 !important;
+  background: #6F00FF;
+  color: #FFF !important;
   font-weight: 700;
-  box-shadow: 0 10px 20px -5px rgba(251, 188, 4, 0.5);
+  box-shadow: 0 10px 20px -5px rgba(111, 0, 255, 0.5);
   padding: 1rem 2rem;
   display: inline-flex;
   align-items: center;
@@ -140,32 +125,18 @@
 
 .btn-yellow:hover {
   transform: scale(1.05);
-  box-shadow: 0 15px 30px -5px rgba(251, 188, 4, 0.7);
+  box-shadow: 0 15px 30px -5px rgba(111, 0, 255, 0.7);
 }
 
 .btn-green {
-  border-radius: 9999px;
-  background: linear-gradient(135deg, #34A853 0%, #0F9D58 100%);
-  color: #FFF !important;
-  font-weight: 700;
-  box-shadow: 0 10px 20px -5px rgba(52, 168, 83, 0.5);
-  padding: 1rem 2rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 300ms ease;
-}
-
-.btn-green:hover {
-  transform: scale(1.05);
-  box-shadow: 0 15px 30px -5px rgba(52, 168, 83, 0.7);
+  @extend .btn-blue;
 }
 
 .btn-outline {
   border-radius: 9999px;
   background: rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(0, 243, 255, 0.4);
-  color: #00F3FF !important;
+  border: 2px solid rgba(111, 0, 255, 0.4);
+  color: #6F00FF !important;
   font-weight: 700;
   backdrop-filter: blur(10px);
   padding: 1rem 2rem;
@@ -176,101 +147,53 @@
 }
 
 .btn-outline:hover {
-  background-color: rgba(0, 243, 255, 0.1);
-  border-color: rgba(0, 243, 255, 0.6);
+  background-color: rgba(111, 0, 255, 0.1);
+  border-color: rgba(111, 0, 255, 0.6);
   transform: scale(1.05);
 }
 
-/* Legacy button classes for backward compatibility */
-.btn-gold { 
-  border-radius: 9999px;
-  background: linear-gradient(135deg, #FBBC04 0%, #F9AB00 100%);
-  color: #000 !important;
-  font-weight: 700;
-  box-shadow: 0 10px 20px -5px rgba(251, 188, 4, 0.5);
-  padding: 1rem 2rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 300ms ease;
-}
+/* Legacy button classes */
+.btn-gold { @extend .btn-yellow; }
+.btn-navy { @extend .btn-outline; }
+.btn-emerald { @extend .btn-blue; }
+.btn-cyan { @extend .btn-blue; }
 
-.btn-navy {
-  border-radius: 9999px;
-  background: rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(189, 0, 255, 0.4);
-  color: #BD00FF !important;
-  font-weight: 700;
-  backdrop-filter: blur(10px);
-  padding: 1rem 2rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 300ms ease;
-}
-
-.btn-emerald {
-  border-radius: 9999px;
-  background: linear-gradient(135deg, #BD00FF 0%, #7A00B8 100%);
-  color: #FFF !important;
-  font-weight: 700;
-  box-shadow: 0 10px 20px -5px rgba(189, 0, 255, 0.5);
-  padding: 1rem 2rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 300ms ease;
-}
-
-.btn-cyan {
-  border-radius: 9999px;
-  background: linear-gradient(135deg, #00F3FF 0%, #0088CC 100%);
-  color: #FFF !important;
-  font-weight: 700;
-  box-shadow: 0 10px 20px -5px rgba(0, 243, 255, 0.5);
-  padding: 1rem 2rem;
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  transition: all 300ms ease;
-}
-
-/* Google Color Glow Orbs */
+/* Unified Neon Blue-Purple Glow Orbs */
 .glow-orb {
   position: fixed;
   border-radius: 50%;
   filter: blur(150px);
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.25;
   pointer-events: none;
   animation: float 25s ease-in-out infinite;
 }
 
 @keyframes float {
-  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.2; }
-  50% { transform: translate(40px, 40px) scale(1.15); opacity: 0.3; }
+  0%, 100% { transform: translate(0, 0) scale(1); opacity: 0.25; }
+  50% { transform: translate(40px, 40px) scale(1.15); opacity: 0.35; }
 }
 
 .glow-blue {
-  background: radial-gradient(circle, #00F3FF 0%, #0099FF 40%, transparent 70%);
+  background: radial-gradient(circle, #6F00FF 0%, #4F00B8 40%, transparent 70%);
   width: 800px;
   height: 800px;
 }
 
 .glow-red {
-  background: radial-gradient(circle, #BD00FF 0%, #7A00B8 40%, transparent 70%);
+  background: radial-gradient(circle, #6F00FF 0%, #4F00B8 40%, transparent 70%);
   width: 700px;
   height: 700px;
 }
 
 .glow-yellow {
-  background: radial-gradient(circle, #BD00FF 0%, #00F3FF 40%, transparent 70%);
+  background: radial-gradient(circle, #6F00FF 0%, #4F00B8 40%, transparent 70%);
   width: 600px;
   height: 600px;
 }
 
 .glow-green {
-  background: radial-gradient(circle, #BD00FF 0%, #7A00B8 40%, transparent 70%);
+  background: radial-gradient(circle, #6F00FF 0%, #4F00B8 40%, transparent 70%);
   width: 650px;
   height: 650px;
 }
@@ -284,13 +207,13 @@
   position: relative;
   overflow: hidden;
   border-radius: 3rem;
-  border: 3px solid rgba(66, 133, 244, 0.3);
+  border: 3px solid rgba(111, 0, 255, 0.3);
 }
 
 .badge-blue {
-  background-color: rgba(66, 133, 244, 0.1);
-  color: #4285F4;
-  border: 1px solid rgba(66, 133, 244, 0.3);
+  background-color: rgba(111, 0, 255, 0.1);
+  color: #6F00FF;
+  border: 1px solid rgba(111, 0, 255, 0.3);
   padding: 0.25rem 0.75rem;
   border-radius: 9999px;
   font-size: 0.75rem;
@@ -298,33 +221,15 @@
 }
 
 .badge-red {
-  background-color: rgba(234, 67, 53, 0.1);
-  color: #EA4335;
-  border: 1px solid rgba(234, 67, 53, 0.3);
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 700;
+  @extend .badge-blue;
 }
 
 .badge-yellow {
-  background-color: rgba(251, 188, 4, 0.1);
-  color: #FBBC04;
-  border: 1px solid rgba(251, 188, 4, 0.3);
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 700;
+  @extend .badge-blue;
 }
 
 .badge-green {
-  background-color: rgba(52, 168, 83, 0.1);
-  color: #34A853;
-  border: 1px solid rgba(52, 168, 83, 0.3);
-  padding: 0.25rem 0.75rem;
-  border-radius: 9999px;
-  font-size: 0.75rem;
-  font-weight: 700;
+  @extend .badge-blue;
 }
 
 /* Legacy badge */
@@ -333,11 +238,11 @@
 .code-box {
   background-color: rgba(0, 0, 0, 0.8);
   backdrop-filter: blur(24px);
-  border: 1px solid rgba(66, 133, 244, 0.3);
+  border: 1px solid rgba(111, 0, 255, 0.3);
   padding: 1.5rem;
   border-radius: 1.5rem;
   font-family: monospace;
-  color: #4285F4;
+  color: #6F00FF;
 }
 
 /* Page Container */
@@ -357,7 +262,7 @@
   }
 }
 
-/* Custom Scrollbar - Google Blue */
+/* Custom Scrollbar - Neon Blue-Purple */
 .custom-scrollbar::-webkit-scrollbar {
   width: 8px;
 }
@@ -368,18 +273,18 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #BD00FF 0%, #7A00B8 100%);
+  background: linear-gradient(180deg, #6F00FF 0%, #4F00B8 100%);
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #00F3FF 0%, #BD00FF 100%);
-  box-shadow: 0 0 10px rgba(189, 0, 255, 0.6);
+  background: #6F00FF;
+  box-shadow: 0 0 10px rgba(111, 0, 255, 0.6);
 }
 
 /* Firefox scrollbar */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #BD00FF rgba(0, 0, 0, 0.8);
+  scrollbar-color: #6F00FF rgba(0, 0, 0, 0.8);
 }

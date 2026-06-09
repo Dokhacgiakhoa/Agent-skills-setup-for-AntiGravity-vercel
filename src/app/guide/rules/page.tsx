@@ -31,9 +31,9 @@ export default function RulesPage() {
   // Google colors for rules
   const getTheme = (idx: number, type: string) => {
     if (type === "always-on") {
-      return { color: "#EA4335", gradient: "from-[#EA4335]/20 to-transparent" };
+      return { color: "#6F00FF", gradient: "from-[#6F00FF]/20 to-transparent" };
     }
-    const colors = ["#4285F4", "#FBBC04", "#34A853", "#EA4335"];
+    const colors = ["#6F00FF", "#6F00FF", "#6F00FF", "#6F00FF"];
     return { color: colors[idx % colors.length], gradient: `from-[${colors[idx % colors.length]}]/20 to-transparent` };
   };
 
@@ -68,7 +68,7 @@ export default function RulesPage() {
         badgeLabel="Rules & Constraints"
         title={t('guide.rules.title')}
         description={t('guide.rules.subtitle').replace('{count}', rulesList.length.toString())}
-        color="rose"
+        color="blue"
       />
 
       {/* Search & Filter Bar */}
@@ -85,7 +85,7 @@ export default function RulesPage() {
             value={searchQuery}
             onChange={(e) => setSearchQuery(e.target.value)}
             placeholder="Tìm kiếm rules..."
-            className="w-full pl-12 pr-12 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-white/30 focus:outline-none focus:border-[#EA4335]/50 transition-colors"
+            className="w-full pl-12 pr-12 py-4 bg-white/5 border border-white/10 rounded-2xl text-white placeholder-white/30 focus:outline-none focus:border-[#6F00FF]/50 transition-colors"
           />
           {searchQuery && (
             <button
@@ -110,7 +110,7 @@ export default function RulesPage() {
               className={`
                 px-4 py-2 rounded-xl text-sm font-bold transition-all
                 ${activeFilter === filter.id
-                  ? "bg-[#EA4335] text-white"
+                  ? "bg-[#6F00FF] text-white"
                   : "bg-white/5 text-white/50 hover:bg-white/10 hover:text-white"
                 }
               `}
@@ -126,7 +126,7 @@ export default function RulesPage() {
       {(activeFilter === "all" || activeFilter === "always-on") && alwaysOnRules.length > 0 && (
         <section className="max-w-7xl mx-auto space-y-6">
           <div className="flex items-center gap-3">
-            <div className="w-3 h-3 rounded-full bg-[#EA4335] animate-pulse" />
+            <div className="w-3 h-3 rounded-full bg-[#6F00FF] animate-pulse" />
             <h2 className="text-xl font-black text-white uppercase tracking-wider">
               {locale === 'en' ? 'Always Active' : 'Luôn Kích Hoạt'}
             </h2>
@@ -162,7 +162,7 @@ export default function RulesPage() {
 
                       {/* Status Indicator */}
                       <div className="absolute top-4 right-4 flex items-center gap-2">
-                        <span className="w-2 h-2 rounded-full bg-[#EA4335] animate-pulse" />
+                        <span className="w-2 h-2 rounded-full bg-[#6F00FF] animate-pulse" />
                         <span 
                           className="text-[10px] font-black uppercase tracking-wider px-2 py-0.5 rounded-full"
                           style={{ 
@@ -189,7 +189,7 @@ export default function RulesPage() {
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#EA4335] transition-colors">
+                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#6F00FF] transition-colors">
                           {rule.name}
                         </h3>
 
@@ -227,7 +227,7 @@ export default function RulesPage() {
       {(activeFilter === "all" || activeFilter === "on-demand") && onDemandRules.length > 0 && (
         <section className="max-w-7xl mx-auto space-y-6">
           <div className="flex items-center gap-3">
-            <div className="w-3 h-3 rounded-full bg-[#FBBC04]" />
+            <div className="w-3 h-3 rounded-full bg-[#6F00FF]" />
             <h2 className="text-xl font-black text-white uppercase tracking-wider">
               {locale === 'en' ? 'On-Demand' : 'Theo Yêu Cầu'}
             </h2>
@@ -237,7 +237,7 @@ export default function RulesPage() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {onDemandRules.map((rule, idx) => {
               const Icon = iconMap[rule.icon] || FileText;
-              const colors = ["#4285F4", "#FBBC04", "#34A853"];
+              const colors = ["#6F00FF", "#6F00FF", "#6F00FF"];
               const color = colors[idx % colors.length];
 
               return (
@@ -290,7 +290,7 @@ export default function RulesPage() {
                         </div>
 
                         {/* Title */}
-                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#4285F4] transition-colors">
+                        <h3 className="text-lg font-bold text-white mb-2 group-hover:text-[#6F00FF] transition-colors">
                           {rule.name}
                         </h3>
 
@@ -336,7 +336,7 @@ export default function RulesPage() {
           </p>
           <button
             onClick={() => { setSearchQuery(""); setActiveFilter("all"); }}
-            className="mt-4 text-[#EA4335] hover:underline"
+            className="mt-4 text-[#6F00FF] hover:underline"
           >
             Xóa bộ lọc
           </button>
@@ -350,15 +350,15 @@ export default function RulesPage() {
         viewport={{ once: true }}
         className="max-w-4xl mx-auto"
       >
-        <div className="card-glass p-8 bg-gradient-to-br from-[#EA4335]/10 to-transparent border-[#EA4335]/20">
+        <div className="card-glass p-8 bg-gradient-to-br from-[#6F00FF]/10 to-transparent border-[#6F00FF]/20">
           <h3 className="text-xl font-black text-white mb-6 flex items-center gap-3">
-            <CheckCircle2 className="text-[#EA4335] w-6 h-6" />
+            <CheckCircle2 className="text-[#6F00FF] w-6 h-6" />
             {t('guide.rules.safetyTitle')}
           </h3>
           <div className="grid md:grid-cols-3 gap-4">
             {[0, 1, 2].map((i) => (
               <div key={i} className="flex gap-3 items-start">
-                <span className="text-2xl font-black text-[#EA4335]">0{i + 1}</span>
+                <span className="text-2xl font-black text-[#6F00FF]">0{i + 1}</span>
                 <p className="text-white/60 text-sm leading-relaxed">{t(`guide.rules.safety.${i}`)}</p>
               </div>
             ))}

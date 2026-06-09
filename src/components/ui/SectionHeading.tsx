@@ -27,17 +27,17 @@ export function SectionHeading({
   const alignClass = align === "left" ? "items-start text-left" : align === "right" ? "items-end text-right" : "items-center text-center";
   
   const colorMap = {
-    blue: "text-[#00F3FF] border-[#00F3FF]/20 bg-[#00F3FF]/10",
-    red: "text-[#BD00FF] border-[#BD00FF]/20 bg-[#BD00FF]/10",
-    yellow: "text-[#BD00FF] border-[#BD00FF]/20 bg-[#BD00FF]/10",
-    green: "text-[#00F3FF] border-[#00F3FF]/20 bg-[#00F3FF]/10",
+    blue: "text-[#6F00FF] border-[#6F00FF]/20 bg-[#6F00FF]/10",
+    red: "text-[#6F00FF] border-[#6F00FF]/20 bg-[#6F00FF]/10",
+    yellow: "text-[#6F00FF] border-[#6F00FF]/20 bg-[#6F00FF]/10",
+    green: "text-[#6F00FF] border-[#6F00FF]/20 bg-[#6F00FF]/10",
   };
 
   const highlightTextColors = {
-    blue: "text-[#00F3FF]",
-    red: "text-[#BD00FF]",
-    yellow: "text-[#BD00FF]",
-    green: "text-[#00F3FF]",
+    blue: "text-[#6F00FF]",
+    red: "text-[#6F00FF]",
+    yellow: "text-[#6F00FF]",
+    green: "text-[#6F00FF]",
   };
 
   return (

@@ -9,10 +9,10 @@ interface StatCardProps {
 
 export function StatCard({ number, label, sublabel, color = "amber" }: StatCardProps) {
   const colors: Record<string, string> = {
-    blue: "text-blue-400",
-    emerald: "text-emerald-400",
-    amber: "text-[#FCD34D]",
-    rose: "text-red-400"
+    blue: "text-[#6F00FF]",
+    emerald: "text-[#6F00FF]",
+    amber: "text-[#6F00FF]",
+    rose: "text-[#6F00FF]"
   };
   
   const textColor = colors[color] || colors.amber;

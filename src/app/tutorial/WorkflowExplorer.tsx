@@ -4,7 +4,7 @@ import { useState } from "react";
 import { Zap, Cpu, ShieldCheck, Sparkles, Settings, ArrowRight, Terminal } from "lucide-react";
 import { cn } from "@/lib/utils";
 
-export default function WorkflowExplorer() {
+export function WorkflowExplorer() {
   const [activeCategory, setActiveCategory] = useState("Core");
 
   const categories = [
@@ -47,7 +47,7 @@ export default function WorkflowExplorer() {
   return (
     <section className="space-y-12 max-w-6xl mx-auto py-12 border-t border-white/5">
        <div className="text-center space-y-4">
-          <div className="inline-block px-4 py-1 rounded-full bg-indigo-500/10 text-indigo-400 text-xs font-black uppercase tracking-widest border border-indigo-500/20">Phase 5</div>
+          <div className="inline-block px-4 py-1 rounded-full bg-[#6F00FF]/10 text-[#6F00FF] text-xs font-black uppercase tracking-widest border border-[#6F00FF]/20">Phase 5</div>
           <h2 className="text-3xl md:text-5xl font-black text-white">Làm chủ Workflow</h2>
           <p className="text-white/40 text-lg max-w-2xl mx-auto">Hệ thống 17 quy trình chuẩn hóa giúp bạn code nhanh gấp 10 lần.</p>
        </div>
@@ -61,7 +61,7 @@ export default function WorkflowExplorer() {
                className={cn(
                  "px-6 py-3 rounded-full text-sm font-bold flex items-center gap-2 transition-all",
                  activeCategory === cat.id 
-                   ? "bg-indigo-500 text-white shadow-[0_0_20px_rgba(99,102,241,0.4)] scale-105" 
+                   ? "bg-[#6F00FF] text-white shadow-[0_0_20px_rgba(111,0,255,0.4)] scale-105" 
                    : "bg-white/5 text-white/40 hover:bg-white/10 hover:text-white"
                )}
              >
@@ -73,13 +73,13 @@ export default function WorkflowExplorer() {
        {/* Grid */}
        <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
           {workflows[activeCategory]?.map((wf: any, idx: number) => (
-             <div key={idx} className="card-glass p-8 group hover:bg-white/5 transition-all duration-300 border-white/5 hover:border-indigo-500/30">
+             <div key={idx} className="card-glass p-8 group hover:bg-white/5 transition-all duration-300 border-white/5 hover:border-[#6F00FF]/30">
                 <div className="flex items-start justify-between mb-4">
-                   <code className="px-3 py-1 bg-black/40 rounded-lg text-indigo-400 font-mono font-bold text-lg border border-white/10 group-hover:border-indigo-500/50 transition-colors">
+                   <code className="px-3 py-1 bg-black/40 rounded-lg text-[#6F00FF] font-mono font-bold text-lg border border-white/10 group-hover:border-[#6F00FF]/50 transition-colors">
                      {wf.cmd}
                    </code>
-                   <div className="p-2 rounded-full bg-white/5 group-hover:bg-indigo-500/20 transition-colors">
-                      <ArrowRight className="w-4 h-4 text-white/20 group-hover:text-indigo-400" />
+                   <div className="p-2 rounded-full bg-white/5 group-hover:bg-[#6F00FF]/20 transition-colors">
+                      <ArrowRight className="w-4 h-4 text-white/20 group-hover:text-[#6F00FF]" />
                    </div>
                 </div>
                 <h3 className="text-xl font-bold text-white mb-2">{wf.name}</h3>

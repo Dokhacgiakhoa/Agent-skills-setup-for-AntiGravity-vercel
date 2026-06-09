@@ -28,18 +28,18 @@ export default function GuidePage() {
       {/* Installation Link */}
       <section className="max-w-4xl mx-auto">
         <Link href="/tutorial">
-          <div className="card-glass p-8 bg-gradient-to-br from-emerald-500/10 to-transparent border-emerald-500/20 hover:border-emerald-500/40 transition-all group cursor-pointer">
+          <div className="card-glass p-8 bg-gradient-to-br from-[#6F00FF]/10 to-transparent border-[#6F00FF]/20 hover:border-[#6F00FF]/40 transition-all group cursor-pointer">
             <div className="flex items-center justify-between">
               <div className="flex items-center gap-4">
-                <div className="w-16 h-16 bg-emerald-500/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
-                  <Rocket className="h-8 w-8 text-emerald-400" />
+                <div className="w-16 h-16 bg-[#6F00FF]/10 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform">
+                  <Rocket className="h-8 w-8 text-[#6F00FF]" />
                 </div>
                 <div>
                   <h3 className="text-2xl font-black text-white mb-2">{t('guide.install.title')}</h3>
                   <p className="text-white/60">{t('guide.install.desc')}</p>
                 </div>
               </div>
-              <ArrowRight className="h-6 w-6 text-emerald-400 group-hover:translate-x-2 transition-transform" />
+              <ArrowRight className="h-6 w-6 text-[#6F00FF] group-hover:translate-x-2 transition-transform" />
             </div>
           </div>
         </Link>
@@ -48,38 +48,38 @@ export default function GuidePage() {
       {/* Quick Links - New Premium Pages */}
       <section className="max-w-6xl mx-auto">
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
-          <Link href="/guide/faq" className="card-glass p-6 bg-[#4285F4]/5 border-[#4285F4]/20 hover:border-[#4285F4]/50 transition-all group">
+          <Link href="/guide/faq" className="card-glass p-6 bg-[#6F00FF]/5 border-[#6F00FF]/20 hover:border-[#6F00FF]/50 transition-all group">
             <div className="flex items-center gap-4">
               <span className="text-3xl">❓</span>
               <div>
-                <h4 className="font-bold text-white group-hover:text-[#4285F4] transition-colors">FAQ</h4>
+                <h4 className="font-bold text-white group-hover:text-[#6F00FF] transition-colors">FAQ</h4>
                 <p className="text-xs text-white/50">Câu hỏi thường gặp</p>
               </div>
             </div>
           </Link>
-          <Link href="/guide/troubleshooting" className="card-glass p-6 bg-[#EA4335]/5 border-[#EA4335]/20 hover:border-[#EA4335]/50 transition-all group">
+          <Link href="/guide/troubleshooting" className="card-glass p-6 bg-[#6F00FF]/5 border-[#6F00FF]/20 hover:border-[#6F00FF]/50 transition-all group">
             <div className="flex items-center gap-4">
               <span className="text-3xl">🔧</span>
               <div>
-                <h4 className="font-bold text-white group-hover:text-[#EA4335] transition-colors">Troubleshooting</h4>
+                <h4 className="font-bold text-white group-hover:text-[#6F00FF] transition-colors">Troubleshooting</h4>
                 <p className="text-xs text-white/50">Khắc phục lỗi</p>
               </div>
             </div>
           </Link>
-          <Link href="/guide/case-studies" className="card-glass p-6 bg-[#FBBC04]/5 border-[#FBBC04]/20 hover:border-[#FBBC04]/50 transition-all group">
+          <Link href="/guide/case-studies" className="card-glass p-6 bg-[#6F00FF]/5 border-[#6F00FF]/20 hover:border-[#6F00FF]/50 transition-all group">
             <div className="flex items-center gap-4">
               <span className="text-3xl">💼</span>
               <div>
-                <h4 className="font-bold text-white group-hover:text-[#FBBC04] transition-colors">Case Studies</h4>
+                <h4 className="font-bold text-white group-hover:text-[#6F00FF] transition-colors">Case Studies</h4>
                 <p className="text-xs text-white/50">Ví dụ thực tế</p>
               </div>
             </div>
           </Link>
-          <Link href="/guide/changelog" className="card-glass p-6 bg-[#34A853]/5 border-[#34A853]/20 hover:border-[#34A853]/50 transition-all group">
+          <Link href="/guide/changelog" className="card-glass p-6 bg-[#6F00FF]/5 border-[#6F00FF]/20 hover:border-[#6F00FF]/50 transition-all group">
             <div className="flex items-center gap-4">
               <span className="text-3xl">📜</span>
               <div>
-                <h4 className="font-bold text-white group-hover:text-[#34A853] transition-colors">Changelog</h4>
+                <h4 className="font-bold text-white group-hover:text-[#6F00FF] transition-colors">Changelog</h4>
                 <p className="text-xs text-white/50">Lịch sử phiên bản</p>
               </div>
             </div>
@@ -90,20 +90,20 @@ export default function GuidePage() {
       {/* Deep Dive Section */}
       <section className="max-w-4xl mx-auto">
         <div className="grid sm:grid-cols-2 gap-4">
-          <Link href="/guide/how-it-thinks" className="card-glass p-8 bg-gradient-to-br from-[#4285F4]/10 to-[#34A853]/10 border-[#4285F4]/30 hover:border-[#4285F4]/50 transition-all group">
+          <Link href="/guide/how-it-thinks" className="card-glass p-8 bg-gradient-to-br from-[#6F00FF]/10 to-[#4F00B8]/10 border-[#6F00FF]/30 hover:border-[#6F00FF]/50 transition-all group">
             <div className="flex items-start gap-4">
               <span className="text-4xl">🧠</span>
               <div>
-                <h4 className="text-xl font-bold text-white group-hover:text-[#4285F4] transition-colors mb-2">AI Nghĩ Như Thế Nào?</h4>
+                <h4 className="text-xl font-bold text-white group-hover:text-[#6F00FF] transition-colors mb-2">AI Nghĩ Như Thế Nào?</h4>
                 <p className="text-sm text-white/50">Khám phá quy trình xử lý từ prompt đến kết quả</p>
               </div>
             </div>
           </Link>
-          <Link href="/guide/architecture" className="card-glass p-8 bg-gradient-to-br from-[#8B5CF6]/10 to-[#EA4335]/10 border-[#8B5CF6]/30 hover:border-[#8B5CF6]/50 transition-all group">
+          <Link href="/guide/architecture" className="card-glass p-8 bg-gradient-to-br from-[#6F00FF]/15 to-[#4F00B8]/5 border-[#6F00FF]/30 hover:border-[#6F00FF]/50 transition-all group">
             <div className="flex items-start gap-4">
               <span className="text-4xl">🏛️</span>
               <div>
-                <h4 className="text-xl font-bold text-white group-hover:text-[#8B5CF6] transition-colors mb-2">Kiến Trúc Hệ Thống</h4>
+                <h4 className="text-xl font-bold text-white group-hover:text-[#6F00FF] transition-colors mb-2">Kiến Trúc Hệ Thống</h4>
                 <p className="text-sm text-white/50">Tổng quan cấu trúc và các thành phần</p>
               </div>
             </div>
@@ -144,7 +144,7 @@ export default function GuidePage() {
               title={t(`guide.data.modes.${mode.id}.title`)}
               desc={t(`guide.data.modes.${mode.id}.desc`)}
               features={(t(`guide.data.modes.${mode.id}.features`) as any) || mode.features} 
-              color={mode.color}
+              color="emerald"
             />
           ))}
         </div>
@@ -153,8 +153,8 @@ export default function GuidePage() {
       {/* Slash Commands Grid */}
       <section className="max-w-6xl mx-auto space-y-12">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-cyan-500/10 rounded-2xl flex items-center justify-center border border-cyan-500/20">
-            <Command className="h-6 w-6 text-cyan-400" />
+          <div className="w-12 h-12 bg-[#6F00FF]/10 rounded-2xl flex items-center justify-center border border-[#6F00FF]/20">
+            <Command className="h-6 w-6 text-[#6F00FF]" />
           </div>
           <div>
             <h2 className="text-3xl font-black">{t('guide.commands.title')}</h2>
@@ -164,7 +164,7 @@ export default function GuidePage() {
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
           {workflowsList.slice(0, 12).map((wf, index) => {
-            const googleColors = ['red', 'yellow', 'green', 'blue'];
+            const googleColors = ['indigo', 'indigo', 'indigo', 'indigo'];
             const color = googleColors[index % googleColors.length];
             return (
               <Link key={wf.id} href={`/guide/workflows/${wf.id}`}>
@@ -191,8 +191,8 @@ export default function GuidePage() {
       {/* Project Structure */}
       <section className="max-w-4xl mx-auto space-y-8">
         <div className="flex items-center gap-3">
-          <div className="w-12 h-12 bg-[#FCD34D]/10 rounded-2xl flex items-center justify-center border border-[#FCD34D]/20">
-            <FolderTree className="h-6 w-6 text-[#FCD34D]" />
+          <div className="w-12 h-12 bg-[#6F00FF]/10 rounded-2xl flex items-center justify-center border border-[#6F00FF]/20">
+            <FolderTree className="h-6 w-6 text-[#6F00FF]" />
           </div>
           <div>
             <h2 className="text-3xl font-black">{t('guide.structure.title')}</h2>
@@ -203,14 +203,14 @@ export default function GuidePage() {
         <div className="grid md:grid-cols-2 gap-4">
           <div className="card-glass p-8 bg-black/40 border-white/10 font-mono text-sm shadow-2xl h-full">
 
-            <div className="text-emerald-400 font-black mb-4 flex items-center gap-2">
+            <div className="text-[#6F00FF] font-black mb-4 flex items-center gap-2">
               <span className="text-xl">📂</span> {directoryStructure.root}
             </div>
             <pre className="text-white/80 leading-relaxed overflow-x-auto">
 {directoryStructure.directories.map(dir => (
   <div key={dir.path} className="mb-3 hover:text-white transition-colors group">
     <div className="flex items-start gap-2">
-      <span className="text-amber-400 group-hover:scale-110 transition-transform">├──</span>
+      <span className="text-[#6F00FF]/60 group-hover:scale-110 transition-transform">├──</span>
       <div>
         <div className="font-bold text-white">{dir.path.split('/').filter(Boolean).pop()}/</div>
         <div className="text-[10px] text-white/40 leading-tight mt-0.5">{locale === 'en' ? dir.descriptionEn || dir.description : dir.description}</div>
@@ -221,9 +221,9 @@ export default function GuidePage() {
 {directoryStructure.coreFiles.map((file, idx) => (
   <div key={file.file} className="hover:text-white transition-colors group">
     <div className="flex items-start gap-2 h-7 group">
-      <span className="text-amber-400">{idx === directoryStructure.coreFiles.length - 1 ? "└──" : "├──"}</span>
+      <span className="text-[#6F00FF]/60">{idx === directoryStructure.coreFiles.length - 1 ? "└──" : "├──"}</span>
       <div className="flex items-center gap-2">
-        <span className="text-sky-400">{file.file}</span>
+        <span className="text-[#6F00FF]">{file.file}</span>
         <span className="text-[10px] text-white/20 italic"># {locale === 'en' ? file.descEn || file.desc : file.desc}</span>
       </div>
     </div>
@@ -234,7 +234,7 @@ export default function GuidePage() {
 
           <div className="card-glass p-8 bg-black/40 border-white/10 space-y-6">
              <h3 className="text-white font-black uppercase tracking-widest text-xs flex items-center gap-2">
-               <span className="w-2 h-2 rounded-full bg-amber-500 animate-pulse" />
+               <span className="w-2 h-2 rounded-full bg-[#6F00FF] animate-pulse" />
                {t('guide.structure.detailsTitle')}
              </h3>
              <div className="space-y-4">
@@ -256,9 +256,9 @@ export default function GuidePage() {
       <section className="max-w-6xl mx-auto">
         <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
           <StatCard number={systemStats.skills.toString()} label={t('guide.stats.skills')} sublabel={t('guide.stats.skillsSub')} color="blue" />
-          <StatCard number={systemStats.agents.toString()} label={t('guide.stats.agents')} sublabel={t('guide.stats.agentsSub')} color="emerald" />
-          <StatCard number={systemStats.workflows.toString()} label={t('guide.stats.workflows')} sublabel={t('guide.stats.workflowsSub')} color="amber" />
-          <StatCard number={systemStats.rules.toString()} label={t('guide.stats.rules')} sublabel={t('guide.stats.rulesSub')} color="rose" />
+          <StatCard number={systemStats.agents.toString()} label={t('guide.stats.agents')} sublabel={t('guide.stats.agentsSub')} color="blue" />
+          <StatCard number={systemStats.workflows.toString()} label={t('guide.stats.workflows')} sublabel={t('guide.stats.workflowsSub')} color="blue" />
+          <StatCard number={systemStats.rules.toString()} label={t('guide.stats.rules')} sublabel={t('guide.stats.rulesSub')} color="blue" />
         </div>
       </section>
 
@@ -268,7 +268,7 @@ export default function GuidePage() {
 
         <div className="grid md:grid-cols-2 gap-6">
           <div className="card-glass p-6 space-y-4 bg-gradient-to-br from-white/[0.03] to-transparent">
-            <div className="flex items-center gap-2 text-emerald-400">
+            <div className="flex items-center gap-2 text-[#6F00FF]">
               <CheckCircle2 className="h-5 w-5" />
               <h3 className="font-black">{t('guide.advanced.update')}</h3>
             </div>
@@ -279,7 +279,7 @@ export default function GuidePage() {
           </div>
 
           <div className="card-glass p-6 space-y-4 bg-gradient-to-br from-white/[0.03] to-transparent">
-            <div className="flex items-center gap-2 text-cyan-400">
+            <div className="flex items-center gap-2 text-[#6F00FF]">
               <Settings className="h-5 w-5" />
               <h3 className="font-black">{t('guide.advanced.identity')}</h3>
             </div>
@@ -299,16 +299,16 @@ export default function GuidePage() {
         <div className="space-y-6">
           {gettingStarted.steps.map((step) => (
             <div key={step.step} className="card-glass p-6 md:p-8 flex gap-6 items-start bg-black/40 border-white/10 hover:border-white/20 transition-all group">
-              <div className="w-12 h-12 rounded-2xl bg-[#FCD34D]/10 border border-[#FCD34D]/20 flex items-center justify-center shrink-0 text-[#FCD34D] font-black text-xl group-hover:scale-110 transition-transform">
+              <div className="w-12 h-12 rounded-2xl bg-[#6F00FF]/10 border border-[#6F00FF]/20 flex items-center justify-center shrink-0 text-[#6F00FF] font-black text-xl group-hover:scale-110 transition-transform">
                 {step.step}
               </div>
               <div className="space-y-3">
                 <h3 className="text-xl font-bold text-white uppercase italic tracking-tight">{t(`guide.data.gettingTimestamp.step${step.step}.title`)}</h3>
                 <p className="text-white/60 leading-relaxed font-medium">{t(`guide.data.gettingTimestamp.step${step.step}.desc`)}</p>
                 {step.action && (
-                  <div className="bg-emerald-500/5 border border-emerald-500/10 p-4 rounded-xl font-mono text-sm text-emerald-400 flex items-center justify-between group/code">
+                  <div className="bg-[#6F00FF]/5 border border-[#6F00FF]/10 p-4 rounded-xl font-mono text-sm text-[#6F00FF] flex items-center justify-between group/code">
                     <span>{locale === 'en' ? step.actionEn || step.action : step.action}</span>
-                    <button className="text-[10px] uppercase font-black tracking-widest bg-emerald-500/20 px-2 py-1 rounded opacity-0 group-hover/code:opacity-100 transition-opacity">{t('tutorial.copy')}</button>
+                    <button className="text-[10px] uppercase font-black tracking-widest bg-[#6F00FF]/20 px-2 py-1 rounded opacity-0 group-hover/code:opacity-100 transition-opacity">{t('tutorial.copy')}</button>
                   </div>
                 )}
               </div>
@@ -316,9 +316,9 @@ export default function GuidePage() {
           ))}
         </div>
 
-        <div className="card-glass p-8 border-rose-500/20 bg-rose-500/5 space-y-6">
-           <h3 className="text-rose-400 font-black uppercase tracking-widest text-xs flex items-center gap-2">
-             <span className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
+        <div className="card-glass p-8 border-[#6F00FF]/20 bg-[#6F00FF]/5 space-y-6">
+           <h3 className="text-[#6F00FF] font-black uppercase tracking-widest text-xs flex items-center gap-2">
+             <span className="w-2 h-2 rounded-full bg-[#6F00FF] animate-pulse" />
              {t('guide.gettingStarted.verifyTitle')}
            </h3>
            <div className="grid md:grid-cols-3 gap-4">
@@ -340,7 +340,7 @@ export default function GuidePage() {
         </p>
         <div className="flex flex-wrap items-center justify-center gap-4">
           <Link href="/dictionaries">
-            <button className="btn-cyan px-8 py-4 rounded-full group/btn flex items-center gap-2">
+            <button className="btn-blue px-8 py-4 rounded-full group/btn flex items-center gap-2">
               {t('guide.cta.dictionaryBtn')}
               <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
             </button>

@@ -44,16 +44,16 @@ function StatCard({ iconName, number, label, desc, color }: { iconName: string, 
   const Icon = iconMap[iconName] || Brain;
   
   const colorMap: Record<string, string> = {
-    blue: "border-[#00F3FF]/20 hover:border-[#00F3FF]/50 text-[#00F3FF] bg-[#00F3FF]/5",
-    red: "border-[#BD00FF]/20 hover:border-[#BD00FF]/50 text-[#BD00FF] bg-[#BD00FF]/5",
-    yellow: "border-[#BD00FF]/20 hover:border-[#BD00FF]/50 text-[#BD00FF] bg-[#BD00FF]/5",
-    green: "border-[#00F3FF]/20 hover:border-[#00F3FF]/50 text-[#00F3FF] bg-[#00F3FF]/5",
+    blue: "border-[#6F00FF]/20 hover:border-[#6F00FF]/50 text-[#6F00FF] bg-[#6F00FF]/5",
+    red: "border-[#6F00FF]/20 hover:border-[#6F00FF]/50 text-[#6F00FF] bg-[#6F00FF]/5",
+    yellow: "border-[#6F00FF]/20 hover:border-[#6F00FF]/50 text-[#6F00FF] bg-[#6F00FF]/5",
+    green: "border-[#6F00FF]/20 hover:border-[#6F00FF]/50 text-[#6F00FF] bg-[#6F00FF]/5",
   };
 
   return (
     <motion.div whileHover={{ y: -8 }} className={cn("p-10 rounded-[2.5rem] border backdrop-blur-xl transition-all duration-500", colorMap[color])}>
       <div className="w-14 h-14 rounded-2xl bg-white/5 flex items-center justify-center mb-8 border border-white/10 scale-125 origin-left">
-        <Icon className={cn("w-7 h-7", `text-[${color === 'blue' ? '#00F3FF' : color === 'red' ? '#BD00FF' : color === 'green' ? '#00F3FF' : '#BD00FF'}]`)} />
+        <Icon className={cn("w-7 h-7", "text-[#6F00FF]")} />
       </div>
       <div className="space-y-2">
         <h3 className="text-5xl font-black tracking-tight">{number}</h3>

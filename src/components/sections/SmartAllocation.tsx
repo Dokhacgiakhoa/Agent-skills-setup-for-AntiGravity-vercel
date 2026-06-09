@@ -26,8 +26,8 @@ export function SmartAllocation() {
         <section className="w-full py-24 px-4 bg-black/60 backdrop-blur-md relative overflow-hidden">
              {/* Background Gradients */}
             <div className="absolute top-0 left-0 w-full h-full opacity-20 pointer-events-none">
-                <div className="absolute top-[20%] left-[20%] w-96 h-96 bg-[#00F3FF] rounded-full blur-[150px]" />
-                <div className="absolute bottom-[20%] right-[20%] w-96 h-96 bg-[#BD00FF] rounded-full blur-[150px]" />
+                <div className="absolute top-[20%] left-[20%] w-96 h-96 bg-[#6F00FF] rounded-full blur-[150px]" />
+                <div className="absolute bottom-[20%] right-[20%] w-96 h-96 bg-[#4F00B8] rounded-full blur-[150px]" />
             </div>
 
             <div className="w-[90%] max-w-7xl mx-auto space-y-10 relative z-10">
@@ -57,17 +57,17 @@ export function SmartAllocation() {
 
 function ProductCard({ product, index, activatedLabel }: { product: any, index: number, activatedLabel: string }) {
     const colorMap: Record<string, string> = {
-        blue: "border-[#00F3FF]/30 hover:shadow-[0_0_40px_rgba(0,243,255,0.2)]",
-        red: "border-[#BD00FF]/30 hover:shadow-[0_0_40px_rgba(189,0,255,0.2)]",
-        yellow: "border-[#BD00FF]/30 hover:shadow-[0_0_40px_rgba(189,0,255,0.2)]",
-        green: "border-[#00F3FF]/30 hover:shadow-[0_0_40px_rgba(0,243,255,0.2)]",
+        blue: "border-[#6F00FF]/30 hover:shadow-[0_0_40px_rgba(111,0,255,0.2)]",
+        red: "border-[#6F00FF]/30 hover:shadow-[0_0_40px_rgba(111,0,255,0.2)]",
+        yellow: "border-[#6F00FF]/30 hover:shadow-[0_0_40px_rgba(111,0,255,0.2)]",
+        green: "border-[#6F00FF]/30 hover:shadow-[0_0_40px_rgba(111,0,255,0.2)]",
     };
     
     const iconColorMap: Record<string, string> = {
-        blue: "text-[#00F3FF]",
-        red: "text-[#BD00FF]",
-        yellow: "text-[#BD00FF]",
-        green: "text-[#00F3FF]",
+        blue: "text-[#6F00FF]",
+        red: "text-[#6F00FF]",
+        yellow: "text-[#6F00FF]",
+        green: "text-[#6F00FF]",
     };
 
     return (
