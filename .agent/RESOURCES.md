@@ -4,7 +4,7 @@
 Lưu trữ danh sách các repo nguồn để tiện cho việc cập nhật hệ thống sau này.
 
 ### Core System
-- **Google Antigravity Lab**: `https://github.com/Dokhacgiakhoa/Agent-skills-setup-for-AntiGravity-npm` (Repo hiện tại)
+- **Google Antigravity Lab**: `https://github.com/Dokhacgiakhoa/Agent-skills-setup-for-AntiGravity-vercel` (Repo hiện tại)
 - **Google Antigravity Core**: `https://github.com/Dokhacgiakhoa/Agent-skills-setup-for-AntiGravity` (Core CLI & Skills)
 
 ### Official Documentation (The Source of Truth)
@@ -45,4 +45,4 @@ Lưu trữ danh sách các repo nguồn để tiện cho việc cập nhật h�
 ## 🔄 Hướng dẫn Cập nhật (Manual Update)
 Khi cần cập nhật từ các nguồn trên, sử dụng lệnh:
 1. `git pull <repo_url>`
-2. Hoặc dùng CLI: `npx antigravity-ide update`
+2. Hoặc dùng CLI: `npx agent-skills-setup-for-antigravity update`
