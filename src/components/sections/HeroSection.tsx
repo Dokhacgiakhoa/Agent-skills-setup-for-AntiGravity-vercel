@@ -80,7 +80,7 @@ export function HeroSection({ data }: HeroSectionProps) {
                 animate={{ opacity: 1, x: 0 }}
                 className="flex items-center gap-3 bg-white/10 backdrop-blur-2xl px-4 py-1.5 rounded-full border border-white/20 w-fit"
               >
-                <div className="w-2 h-2 bg-[#00FF66] rounded-full animate-pulse" />
+                <div className="w-2 h-2 bg-[#00F3FF] rounded-full animate-pulse" />
                 <span className="text-[10px] font-black text-white tracking-[0.2em] uppercase">{data.badge}</span>
               </motion.div>
               
@@ -97,7 +97,7 @@ export function HeroSection({ data }: HeroSectionProps) {
                     {data.title.words ? (
                       <div className="flex gap-4">
                         <span className="text-[#00F3FF] drop-shadow-[0_0_20px_rgba(0,243,255,0.8)]">{data.title.words[0].text}</span> {/* VIBE (Neon Cyan) */}
-                        <span className="text-[#00FF66] drop-shadow-[0_0_20px_rgba(0,255,102,0.8)]">{data.title.words[1].text}</span>   {/* CODING (Neon Green) */}
+                        <span className="text-[#BD00FF] drop-shadow-[0_0_20px_rgba(189,0,255,0.8)]">{data.title.words[1].text}</span>   {/* CODING (Neon Purple) */}
                       </div>
                     ) : (
                       <span className="text-[#00F3FF] drop-shadow-[0_0_30px_rgba(0,243,255,0.5)]">{data.title.highlight1}</span>
@@ -108,11 +108,11 @@ export function HeroSection({ data }: HeroSectionProps) {
                     <span className="drop-shadow-[0_10px_20px_rgba(0,0,0,0.8)]">{data.title.line2}</span>
                     {data.title.words ? (
                       <div className="flex gap-4">
-                        <span className="text-[#00FF66] drop-shadow-[0_0_20px_rgba(0,255,102,0.8)]">{data.title.words[2].text}</span> {/* ANTIGRAVITY (Neon Green) */}
+                        <span className="text-[#BD00FF] drop-shadow-[0_0_20px_rgba(189,0,255,0.8)]">{data.title.words[2].text}</span> {/* ANTIGRAVITY (Neon Purple) */}
                         <span className="text-[#00F3FF] drop-shadow-[0_0_20px_rgba(0,243,255,0.8)]">{data.title.words[3].text}</span>   {/* IDE (Neon Cyan) */}
                       </div>
                     ) : (
-                       <span className="text-[#00FF66]">{data.title.highlight2}</span>
+                       <span className="text-[#BD00FF]">{data.title.highlight2}</span>
                     )}
                   </div>
                 </div>
@@ -125,13 +125,13 @@ export function HeroSection({ data }: HeroSectionProps) {
                 className="flex flex-wrap gap-4 pt-4"
               >
                 <Link href="/tutorial">
-                  <Button size="lg" className="h-16 px-10 bg-gradient-to-r from-[#00F3FF] to-[#00FF66] hover:from-[#00FF66] hover:to-[#00F3FF] text-black font-black rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(0,255,102,0.6)] border border-white/20">
+                  <Button size="lg" className="h-16 px-10 bg-gradient-to-r from-[#00F3FF] to-[#BD00FF] hover:from-[#BD00FF] hover:to-[#00F3FF] text-white font-black rounded-full transition-all hover:scale-105 active:scale-95 shadow-[0_0_30px_rgba(189,0,255,0.6)] border border-white/20">
                     {data.cta.primary}
-                    <ArrowRight className="ml-2 h-5 w-5 text-black" />
+                    <ArrowRight className="ml-2 h-5 w-5 text-white" />
                   </Button>
                 </Link>
-                <div className="flex items-center gap-4 bg-white/5 backdrop-blur-md px-6 py-4 rounded-full border border-white/10 group hover:border-[#00FF66]/30 transition-all cursor-copy">
-                  <Terminal className="h-5 w-5 text-[#00FF66]" />
+                <div className="flex items-center gap-4 bg-white/5 backdrop-blur-md px-6 py-4 rounded-full border border-white/10 group hover:border-[#00F3FF]/30 transition-all cursor-copy">
+                  <Terminal className="h-5 w-5 text-[#00F3FF]" />
                   <code className="text-sm font-mono text-white/70">{t('common.copyCommand')}</code>
                 </div>
               </motion.div>
@@ -142,7 +142,7 @@ export function HeroSection({ data }: HeroSectionProps) {
                   <button 
                     key={idx}
                     onClick={() => setCurrentSlide(idx)}
-                    className={`h-1.5 rounded-full transition-all duration-500 ${idx === currentSlide ? 'w-8 bg-[#00FF66]' : 'w-2 bg-white/30'}`}
+                    className={`h-1.5 rounded-full transition-all duration-500 ${idx === currentSlide ? 'w-8 bg-[#00F3FF]' : 'w-2 bg-white/30'}`}
                   />
                 ))}
               </div>

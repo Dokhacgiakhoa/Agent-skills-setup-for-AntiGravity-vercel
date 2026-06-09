@@ -56,7 +56,7 @@
   h1, h2, h3 {
     @apply font-black tracking-tight;
     color: #FFFFFF;
-    text-shadow: 0 0 40px rgba(0, 255, 102, 0.3);
+    text-shadow: 0 0 40px rgba(189, 0, 255, 0.3);
   }
 }
 
@@ -69,13 +69,13 @@
   background: rgba(0, 0, 0, 0.6);
   backdrop-filter: blur(20px);
   -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(0, 255, 102, 0.15);
-  border-top: 1px solid rgba(0, 255, 102, 0.25);
-  border-left: 1px solid rgba(0, 255, 102, 0.25);
+  border: 1px solid rgba(189, 0, 255, 0.15);
+  border-top: 1px solid rgba(189, 0, 255, 0.25);
+  border-left: 1px solid rgba(189, 0, 255, 0.25);
   border-radius: 2rem;
   padding: 1.5rem;
   transition: all 400ms cubic-bezier(0.23, 1, 0.32, 1);
-  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7), 0 0 20px rgba(0, 255, 102, 0.1);
+  box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.7), 0 0 20px rgba(189, 0, 255, 0.1);
   display: flex;
   flex-direction: column;
   cursor: pointer;
@@ -83,18 +83,18 @@
 
 .card-glass:hover {
   background: rgba(0, 0, 0, 0.8);
-  border-color: rgba(0, 255, 102, 0.5);
+  border-color: rgba(189, 0, 255, 0.5);
   transform: translateY(-4px) scale(1.01);
-  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 40px rgba(0, 255, 102, 0.3);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.9), 0 0 40px rgba(189, 0, 255, 0.3);
 }
 
 /* Google Color Buttons */
 .btn-blue {
   border-radius: 9999px;
-  background: linear-gradient(135deg, #00F3FF 0%, #00FF66 100%);
-  color: #000 !important;
+  background: linear-gradient(135deg, #00F3FF 0%, #BD00FF 100%);
+  color: #FFF !important;
   font-weight: 700;
-  box-shadow: 0 10px 20px -5px rgba(0, 255, 102, 0.5);
+  box-shadow: 0 10px 20px -5px rgba(189, 0, 255, 0.5);
   padding: 1rem 2rem;
   display: inline-flex;
   align-items: center;
@@ -104,7 +104,7 @@
 
 .btn-blue:hover {
   transform: scale(1.05);
-  box-shadow: 0 15px 30px -5px rgba(0, 255, 102, 0.7);
+  box-shadow: 0 15px 30px -5px rgba(189, 0, 255, 0.7);
 }
 
 .btn-red {
@@ -164,8 +164,8 @@
 .btn-outline {
   border-radius: 9999px;
   background: rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(0, 255, 102, 0.4);
-  color: #00FF66 !important;
+  border: 2px solid rgba(0, 243, 255, 0.4);
+  color: #00F3FF !important;
   font-weight: 700;
   backdrop-filter: blur(10px);
   padding: 1rem 2rem;
@@ -176,8 +176,8 @@
 }
 
 .btn-outline:hover {
-  background-color: rgba(0, 255, 102, 0.1);
-  border-color: rgba(0, 255, 102, 0.6);
+  background-color: rgba(0, 243, 255, 0.1);
+  border-color: rgba(0, 243, 255, 0.6);
   transform: scale(1.05);
 }
 
@@ -198,8 +198,8 @@
 .btn-navy {
   border-radius: 9999px;
   background: rgba(0, 0, 0, 0.5);
-  border: 2px solid rgba(0, 255, 102, 0.4);
-  color: #00FF66 !important;
+  border: 2px solid rgba(189, 0, 255, 0.4);
+  color: #BD00FF !important;
   font-weight: 700;
   backdrop-filter: blur(10px);
   padding: 1rem 2rem;
@@ -211,10 +211,10 @@
 
 .btn-emerald {
   border-radius: 9999px;
-  background: linear-gradient(135deg, #00FF66 0%, #00993E 100%);
-  color: #000 !important;
+  background: linear-gradient(135deg, #BD00FF 0%, #7A00B8 100%);
+  color: #FFF !important;
   font-weight: 700;
-  box-shadow: 0 10px 20px -5px rgba(0, 255, 102, 0.5);
+  box-shadow: 0 10px 20px -5px rgba(189, 0, 255, 0.5);
   padding: 1rem 2rem;
   display: inline-flex;
   align-items: center;
@@ -224,8 +224,8 @@
 
 .btn-cyan {
   border-radius: 9999px;
-  background: linear-gradient(135deg, #00F3FF 0%, #00A3FF 100%);
-  color: #000 !important;
+  background: linear-gradient(135deg, #00F3FF 0%, #0088CC 100%);
+  color: #FFF !important;
   font-weight: 700;
   box-shadow: 0 10px 20px -5px rgba(0, 243, 255, 0.5);
   padding: 1rem 2rem;
@@ -258,19 +258,19 @@
 }
 
 .glow-red {
-  background: radial-gradient(circle, #00FF66 0%, #00CC44 40%, transparent 70%);
+  background: radial-gradient(circle, #BD00FF 0%, #7A00B8 40%, transparent 70%);
   width: 700px;
   height: 700px;
 }
 
 .glow-yellow {
-  background: radial-gradient(circle, #00FF66 0%, #00F3FF 40%, transparent 70%);
+  background: radial-gradient(circle, #BD00FF 0%, #00F3FF 40%, transparent 70%);
   width: 600px;
   height: 600px;
 }
 
 .glow-green {
-  background: radial-gradient(circle, #00FF66 0%, #00CC44 40%, transparent 70%);
+  background: radial-gradient(circle, #BD00FF 0%, #7A00B8 40%, transparent 70%);
   width: 650px;
   height: 650px;
 }
@@ -368,18 +368,18 @@
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: linear-gradient(180deg, #00FF66 0%, #00B33C 100%);
+  background: linear-gradient(180deg, #BD00FF 0%, #7A00B8 100%);
   border-radius: 10px;
   transition: all 0.3s ease;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: linear-gradient(180deg, #00F3FF 0%, #00FF66 100%);
-  box-shadow: 0 0 10px rgba(0, 255, 102, 0.6);
+  background: linear-gradient(180deg, #00F3FF 0%, #BD00FF 100%);
+  box-shadow: 0 0 10px rgba(189, 0, 255, 0.6);
 }
 
 /* Firefox scrollbar */
 .custom-scrollbar {
   scrollbar-width: thin;
-  scrollbar-color: #00FF66 rgba(0, 0, 0, 0.8);
+  scrollbar-color: #BD00FF rgba(0, 0, 0, 0.8);
 }
