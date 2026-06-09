@@ -30,7 +30,7 @@ export function FeatureGrid({ data }: FeatureGridProps) {
           badge={data.badge}
           title={data.title.main}
           highlight={data.title.highlight}
-          highlightColor="yellow"
+          highlightColor="red"
           align="center"
         />
 
@@ -50,17 +50,17 @@ export function FeatureGrid({ data }: FeatureGridProps) {
 
 function FeatureCard({ feature, index }: { feature: any, index: number }) {
   const colorMap: Record<string, string> = {
-    blue: "hover:border-[#4285F4]/50 hover:shadow-[0_0_30px_rgba(66,133,244,0.15)]",
-    red: "hover:border-[#EA4335]/50 hover:shadow-[0_0_30px_rgba(234,67,53,0.15)]",
-    yellow: "hover:border-[#FBBC04]/50 hover:shadow-[0_0_30px_rgba(251,188,4,0.15)]",
-    green: "hover:border-[#34A853]/50 hover:shadow-[0_0_30px_rgba(52,168,83,0.15)]",
+    blue: "hover:border-[#00F3FF]/50 hover:shadow-[0_0_30px_rgba(0,243,255,0.15)]",
+    red: "hover:border-[#BD00FF]/50 hover:shadow-[0_0_30px_rgba(189,0,255,0.15)]",
+    yellow: "hover:border-[#BD00FF]/50 hover:shadow-[0_0_30px_rgba(189,0,255,0.15)]",
+    green: "hover:border-[#00F3FF]/50 hover:shadow-[0_0_30px_rgba(0,243,255,0.15)]",
   };
 
   const iconColorMap: Record<string, string> = {
-    blue: "text-[#4285F4]",
-    red: "text-[#EA4335]",
-    yellow: "text-[#FBBC04]",
-    green: "text-[#34A853]",
+    blue: "text-[#00F3FF]",
+    red: "text-[#BD00FF]",
+    yellow: "text-[#BD00FF]",
+    green: "text-[#00F3FF]",
   };
 
   return (
@@ -85,9 +85,9 @@ function FeatureCard({ feature, index }: { feature: any, index: number }) {
       {/* Background Glow */}
       <div className={cn(
         "absolute -bottom-20 -right-20 w-64 h-64 rounded-full blur-[100px] opacity-0 group-hover:opacity-20 transition-opacity duration-700", 
-        feature.color === 'blue' ? "bg-[#4285F4]" :
-        feature.color === 'red' ? "bg-[#EA4335]" :
-        feature.color === 'yellow' ? "bg-[#FBBC04]" : "bg-[#34A853]"
+        feature.color === 'blue' ? "bg-[#00F3FF]" :
+        feature.color === 'red' ? "bg-[#BD00FF]" :
+        feature.color === 'yellow' ? "bg-[#BD00FF]" : "bg-[#00F3FF]"
       )} />
     </motion.div>
   );

@@ -28,7 +28,7 @@ export function LinkageSection({ data }: LinkageProps) {
           badge={data.badge}
           title={data.title.main}
           highlight={data.title.highlight}
-          highlightColor="green"
+          highlightColor="blue"
           desc={data.desc}
           align="center"
         />
@@ -45,15 +45,15 @@ export function LinkageSection({ data }: LinkageProps) {
 
 function LinkageCard({ title, items, color }: { title: string, items: string[], color: string }) {
    const colorMap: Record<string, string> = {
-    blue: "border-[#4285F4]/30 shadow-[0_0_30px_rgba(66,133,244,0.1)]",
-    red: "border-[#EA4335]/30 shadow-[0_0_30px_rgba(234,67,53,0.1)]",
-    green: "border-[#34A853]/30 shadow-[0_0_30px_rgba(52,168,83,0.1)]",
+    blue: "border-[#00F3FF]/30 shadow-[0_0_30px_rgba(0,243,255,0.1)]",
+    red: "border-[#BD00FF]/30 shadow-[0_0_30px_rgba(189,0,255,0.1)]",
+    green: "border-[#00F3FF]/30 shadow-[0_0_30px_rgba(0,243,255,0.1)]",
   };
 
   const titleColorMap: Record<string, string> = {
-    blue: "text-[#4285F4]",
-    red: "text-[#EA4335]",
-    green: "text-[#34A853]",
+    blue: "text-[#00F3FF]",
+    red: "text-[#BD00FF]",
+    green: "text-[#00F3FF]",
   };
 
   return (
