@@ -37,7 +37,7 @@ translations = {
 
 paths = [
     os.path.expanduser("~/.antigravity/workflows/"),
-    "d:/Github/google-antigravity/.agent/workflows/"
+    "d:/Github/antigravity-ide/.agent/workflows/"
 ]
 
 for base_path in paths:

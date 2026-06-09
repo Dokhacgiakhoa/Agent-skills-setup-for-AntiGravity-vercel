@@ -5,7 +5,7 @@ from pathlib import Path
 
 def sync_to_global():
     # 1. Setup paths
-    workspace_agent_dir = Path("d:/Github/google-antigravity/.agent")
+    workspace_agent_dir = Path("d:/Github/antigravity-ide/.agent")
     global_dir = Path(os.path.expanduser("~/.antigravity"))
     
     if not workspace_agent_dir.exists():
