@@ -21,7 +21,7 @@ export const landingPage = {
     },
     cta: {
       primary: "Kích hoạt ngay",
-      secondary: "npx antigravity-ide@latest"
+      secondary: "npx agent-skills-setup-for-antigravity@latest"
     },
     // Updated to support multiple slides with realistic space theme
     slides: [
@@ -43,9 +43,9 @@ export const landingPage = {
     ]
   },
   stats: [
-    { number: "51", label: "Master Skills", desc: "Bộ kỹ năng chuyên sâu cho mọi lĩnh vực lập trình.", iconName: "Brain", color: "blue" },
-    { number: "23", label: "Specialist Agents", desc: "Đội ngũ Agent AI chuyên biệt, phối hợp nhịp nhàng.", iconName: "Layers", color: "red" },
-    { number: "21", label: "Workflows", desc: "Quy trình PDCA chuẩn hóa, cam kết chất lượng đầu ra.", iconName: "Workflow", color: "green" }
+    { number: "72", label: "Master Skills", desc: "Bộ kỹ năng chuyên sâu cho mọi lĩnh vực lập trình.", iconName: "Brain", color: "blue" },
+    { number: "22", label: "Specialist Agents", desc: "Đội ngũ Agent AI chuyên biệt, phối hợp nhịp nhàng.", iconName: "Layers", color: "red" },
+    { number: "30", label: "Workflows", desc: "Quy trình PDCA chuẩn hóa, cam kết chất lượng đầu ra.", iconName: "Workflow", color: "green" }
   ],
   architecture: {
     badge: "Scale-Adaptive Architecture",
@@ -57,20 +57,20 @@ export const landingPage = {
     desc: "Lần đầu tiên trên thế giới, hệ thống AI có khả năng tự thay đổi giao thức vận hành để phù hợp với độ phức tạp của bài toán.",
     options: [
       { 
-        title: "CÁ NHÂN (Linh hoạt)", 
-        desc: "Tối ưu tốc độ. Agent đa nhiệm 'Hybrid' với khả năng xử lý đa domain.", 
+        title: "INSTANT (MVP)", 
+        desc: "Tối ưu tốc độ. Một Agent xử lý đa nhiệm (Fullstack).", 
         iconName: "User",
         color: "blue"
       },
       { 
-        title: "TEAM (Tiêu chuẩn)", 
-        desc: "Quy trình phối hợp có xác thực kế hoạch. Các Agent chuyên biệt hóa.", 
+        title: "CREATIVE (AI Toàn diện)", 
+        desc: "Phân vai rõ ràng, ưu tiên tính sáng tạo và đột phá.", 
         iconName: "Users",
         color: "red" 
       },
       { 
-        title: "DOANH NGHIỆP (Bảo mật)", 
-        desc: "Chuẩn hóa cấp độ Enterprise. Bắt buộc Audit bảo mật và kiểm soát chất lượng.", 
+        title: "SME (Doanh nghiệp)", 
+        desc: "Chuẩn hóa cấp độ Enterprise. Bắt buộc Audit và kiểm soát chất lượng.", 
         iconName: "Building",
         color: "yellow"
       }
@@ -95,7 +95,7 @@ export const landingPage = {
       main: "ĐỘI NGŨ",
       highlight: "AGENT"
     },
-    desc: "23 Agent AI chuyên biệt, mỗi Agent một vai trò, phối hợp nhịp nhàng để xử lý mọi tác vụ lập trình.",
+    desc: "22 Agent AI chuyên biệt, mỗi Agent một vai trò, phối hợp nhịp nhàng để xử lý mọi tác vụ lập trình.",
     list: [
       { name: "Orchestrator", role: "Điều phối tổng" },
       { name: "Frontend", role: "Giao diện" },

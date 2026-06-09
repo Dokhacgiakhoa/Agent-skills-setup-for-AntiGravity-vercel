@@ -24,7 +24,8 @@ Mỗi khi thêm tính năng mới, Agent PHẢI kiểm tra và cập nhật các
 - [ ] `README.md` - Tương tự như README.vi.md
 
 ### C. Khi thêm RULE mới
-- [ ] `docs/RULES_GUIDE.vi.md` - Thêm vào bảng phân loại (Auto-Active hoặc On-Demand)
+- [ ] `docs/RULES_GUIDE.vi.md` - Thêm vào bảng phân loại thích hợp (Auto/On-Demand).
+- [ ] **Lưu ý**: Phải tuân thủ "Hybrid Language Protocol" (Tên Anh - Mô tả Việt).
 - [ ] `README.vi.md` - Nếu là tính năng nổi bật → Thêm vào phần features
 
 ### D. Khi thêm AGENT mới

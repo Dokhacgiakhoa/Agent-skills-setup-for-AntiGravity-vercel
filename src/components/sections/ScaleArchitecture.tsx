@@ -2,7 +2,7 @@
 
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence, useAnimate } from "framer-motion";
-import { User, Users, Building, LucideIcon, Bot, Code2, ShieldCheck, Zap, Server, Database, Workflow } from "lucide-react";
+import { User, Users, Building, LucideIcon, Bot, Code2, ShieldCheck, Zap, Server, Database, Workflow, Lightbulb, Sparkles, Crown, CheckCircle2, Brain, Rocket } from "lucide-react";
 import { cn } from "@/lib/utils";
 import { SectionHeading } from "@/components/ui/SectionHeading";
 import { useLanguage } from "@/contexts/LanguageContext";
@@ -154,48 +154,128 @@ function ScaleOption({
 
 // --- VISUALIZERS ---
 
+// INSTANT Mode Visualizer (LITE - 4 orbs)
 function SoloNinjaVisualizer() {
   const { t } = useLanguage();
   return (
     <motion.div 
-      initial={{ opacity: 0, scale: 0.9 }}
-      animate={{ opacity: 1, scale: 1 }}
-      exit={{ opacity: 0, scale: 0.9 }}
-      transition={{ duration: 0.4 }}
-      className="relative w-full h-full flex items-center justify-center p-8 overflow-hidden"
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      exit={{ opacity: 0 }}
+      className="w-full h-full relative flex items-center justify-center overflow-hidden"
     >
-       {/* Central Node - HYBRID AGENT */}
-       <div className="absolute z-20 flex flex-col items-center gap-3">
-          <div className="w-28 h-28 rounded-full bg-gradient-to-br from-[#4285F4] to-[#8AB4F8] shadow-[0_0_60px_#4285F4] flex items-center justify-center border-4 border-white/20 relative z-10">
-             <Bot className="w-14 h-14 text-white animate-pulse" />
-             {/* Hybrid Badge */}
-             <div className="absolute -top-3 -right-3 px-3 py-1 rounded-full bg-white text-[#4285F4] font-black text-[10px] border-2 border-[#4285F4] shadow-lg uppercase tracking-wider">
-               {t('home.architecture.visualizer.solo.hybrid')}
-             </div>
-          </div>
-          <div className="text-white font-black tracking-[0.2em] text-sm uppercase bg-black/40 backdrop-blur-md px-4 py-1.5 rounded-full border border-white/10 shadow-xl">
-            SOLO AGENT
-          </div>
+       {/* Star Particles */}
+       <div className="absolute inset-0 overflow-hidden">
+         {[...Array(15)].map((_, i) => (
+           <motion.div
+             key={i}
+             className="absolute w-1 h-1 bg-white rounded-full"
+             style={{ left: `${Math.random() * 100}%`, top: `${Math.random() * 100}%` }}
+             animate={{ opacity: [0.2, 0.8, 0.2], scale: [0.5, 1, 0.5] }}
+             transition={{ duration: 2 + Math.random() * 2, repeat: Infinity, delay: Math.random() * 2 }}
+           />
+         ))}
        </div>
 
-       {/* Orbiting Skills - Ferris Wheel Animation */}
-       <div className="absolute inset-0">
-          <OrbitingNode startAngle={0} icon={Code2} label={t('home.architecture.visualizer.solo.skills.0')} color="bg-cyan-500" />
-          <OrbitingNode startAngle={72} icon={Database} label={t('home.architecture.visualizer.solo.skills.1')} color="bg-emerald-500" />
-          <OrbitingNode startAngle={144} icon={Server} label={t('home.architecture.visualizer.solo.skills.2')} color="bg-purple-500" />
-          <OrbitingNode startAngle={216} icon={ShieldCheck} label={t('home.architecture.visualizer.solo.skills.3')} color="bg-red-500" />
-          <OrbitingNode startAngle={288} icon={Zap} label={t('home.architecture.visualizer.solo.skills.4')} color="bg-yellow-500" />
-       </div>
-
-       {/* Orbital Rings */}
-       <svg className="absolute inset-0 w-full h-full pointer-events-none opacity-20">
-          <circle cx="50%" cy="50%" r="140" fill="none" stroke="#4285F4" strokeWidth="1" strokeDasharray="4 4" />
-          <circle cx="50%" cy="50%" r="100" fill="none" stroke="#4285F4" strokeWidth="0.5" />
+       {/* Conveyor Belt Ring */}
+       <svg className="absolute inset-0 w-full h-full pointer-events-none z-5">
+         <defs>
+           <filter id="glowBlue">
+             <feGaussianBlur stdDeviation="4" result="coloredBlur"/>
+             <feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge>
+           </filter>
+         </defs>
+         <motion.circle cx="50%" cy="45%" r="110" fill="none" stroke="#4285F4" strokeWidth="2" strokeDasharray="10 8" opacity="0.5"
+           animate={{ strokeDashoffset: [0, -80] }} transition={{ duration: 3, repeat: Infinity, ease: "linear" }} filter="url(#glowBlue)" />
        </svg>
+
+       {/* Speed Counter - Top Right */}
+       <motion.div className="absolute top-4 right-4 z-30 bg-black/60 backdrop-blur-md border border-blue-400/30 rounded-lg px-4 py-2"
+         initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.5 }}>
+         <div className="text-[10px] text-blue-400/60 font-mono uppercase tracking-wider">Speed</div>
+         <div className="flex items-center gap-2">
+           <motion.span className="text-xl font-black text-blue-400" animate={{ opacity: [1, 0.7, 1] }} transition={{ duration: 1, repeat: Infinity }}>4x</motion.span>
+           <span className="text-xs text-green-400 font-bold">⚡ FAST</span>
+         </div>
+       </motion.div>
+
+       {/* Central Rocket Orb */}
+       <motion.div className="relative z-20 flex flex-col items-center gap-3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", delay: 0.2 }}>
+         <motion.div className="w-28 h-28 rounded-full bg-gradient-to-br from-blue-400 via-blue-500 to-cyan-500 flex items-center justify-center border-4 border-blue-300/50 relative"
+           animate={{ boxShadow: ["0 0 30px #4285F4, 0 0 60px #4285F440", "0 0 50px #4285F4, 0 0 100px #4285F460", "0 0 30px #4285F4, 0 0 60px #4285F440"] }} transition={{ duration: 2, repeat: Infinity }}>
+           <Rocket className="w-14 h-14 text-white drop-shadow-lg rotate-[-45deg]" />
+           <motion.div className="absolute -top-1 -right-1 px-2 py-1 rounded-full bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-black text-[10px] border border-white/50 shadow-lg uppercase tracking-wider"
+             animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 1.5, repeat: Infinity }}>MVP</motion.div>
+         </motion.div>
+         <div className="text-center">
+           <div className="text-blue-400 font-black text-sm uppercase tracking-widest">INSTANT AGENT</div>
+           <div className="text-[10px] text-blue-400/60 font-mono">Fullstack Solo</div>
+         </div>
+       </motion.div>
+
+       {/* 4 Skill Orbs - Compass Positions (LITE) */}
+       <motion.div className="absolute top-[12%] left-1/2 -translate-x-1/2 z-20" initial={{ y: -30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }}>
+         <SkillOrb color="from-cyan-500 to-blue-500" glowColor="#06b6d4" icon={Code2} label="FRONTEND" />
+       </motion.div>
+       <motion.div className="absolute top-[42%] right-[8%] z-20" initial={{ x: 30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.6 }}>
+         <SkillOrb color="from-purple-500 to-violet-500" glowColor="#8b5cf6" icon={Server} label="BACKEND" />
+       </motion.div>
+       <motion.div className="absolute bottom-[12%] left-1/2 -translate-x-1/2 z-20" initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.8 }}>
+         <SkillOrb color="from-emerald-500 to-green-500" glowColor="#10b981" icon={Database} label="DATABASE" />
+       </motion.div>
+       <motion.div className="absolute top-[42%] left-[8%] z-20" initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 1.0 }}>
+         <SkillOrb color="from-orange-500 to-red-500" glowColor="#f97316" icon={Zap} label="DEPLOY" />
+       </motion.div>
+
+       {/* Connection Lines */}
+       <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
+         <defs>
+           <linearGradient id="gradInstTop" x1="50%" y1="50%" x2="50%" y2="0%"><stop offset="0%" stopColor="#4285F4" stopOpacity="0.6" /><stop offset="100%" stopColor="#06b6d4" stopOpacity="0.6" /></linearGradient>
+           <linearGradient id="gradInstRight" x1="50%" y1="50%" x2="100%" y2="50%"><stop offset="0%" stopColor="#4285F4" stopOpacity="0.6" /><stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.6" /></linearGradient>
+           <linearGradient id="gradInstBottom" x1="50%" y1="50%" x2="50%" y2="100%"><stop offset="0%" stopColor="#4285F4" stopOpacity="0.6" /><stop offset="100%" stopColor="#10b981" stopOpacity="0.6" /></linearGradient>
+           <linearGradient id="gradInstLeft" x1="50%" y1="50%" x2="0%" y2="50%"><stop offset="0%" stopColor="#4285F4" stopOpacity="0.6" /><stop offset="100%" stopColor="#f97316" stopOpacity="0.6" /></linearGradient>
+         </defs>
+         <motion.line x1="50%" y1="38%" x2="50%" y2="22%" stroke="url(#gradInstTop)" strokeWidth="2" filter="url(#glowBlue)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.4, duration: 0.5 }} />
+         <motion.line x1="58%" y1="45%" x2="78%" y2="45%" stroke="url(#gradInstRight)" strokeWidth="2" filter="url(#glowBlue)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.6, duration: 0.5 }} />
+         <motion.line x1="50%" y1="55%" x2="50%" y2="75%" stroke="url(#gradInstBottom)" strokeWidth="2" filter="url(#glowBlue)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.8, duration: 0.5 }} />
+         <motion.line x1="42%" y1="45%" x2="22%" y2="45%" stroke="url(#gradInstLeft)" strokeWidth="2" filter="url(#glowBlue)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 1.0, duration: 0.5 }} />
+       </svg>
+
+       {/* Flow Packets */}
+       <div className="absolute inset-0 pointer-events-none z-15">
+         <FlowPacket startX="50%" startY="40%" endX="50%" endY="20%" color="#06b6d4" delay={0} />
+         <FlowPacket startX="55%" startY="45%" endX="80%" endY="45%" color="#8b5cf6" delay={0.5} />
+         <FlowPacket startX="50%" startY="52%" endX="50%" endY="78%" color="#10b981" delay={1} />
+         <FlowPacket startX="45%" startY="45%" endX="20%" endY="45%" color="#f97316" delay={1.5} />
+       </div>
     </motion.div>
   );
 }
 
+// Skill Orb Component (for INSTANT mode)
+function SkillOrb({ color, glowColor, icon: Icon, label }: { color: string, glowColor: string, icon: any, label: string }) {
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <motion.div className={`w-14 h-14 rounded-full bg-gradient-to-br ${color} flex items-center justify-center border-2 border-white/30 shadow-xl`}
+        animate={{ boxShadow: [`0 0 15px ${glowColor}40`, `0 0 25px ${glowColor}60`, `0 0 15px ${glowColor}40`] }} transition={{ duration: 2, repeat: Infinity }} whileHover={{ scale: 1.1 }}>
+        <Icon className="w-7 h-7 text-white drop-shadow-lg" />
+      </motion.div>
+      <div className="text-[10px] text-white/60 font-mono uppercase tracking-wider">{label}</div>
+    </div>
+  );
+}
+
+// Flow Packet Component 
+function FlowPacket({ startX, startY, endX, endY, color, delay }: { startX: string, startY: string, endX: string, endY: string, color: string, delay: number }) {
+  return (
+    <motion.div className="absolute w-2 h-2 rounded-full" style={{ backgroundColor: color, boxShadow: `0 0 8px ${color}` }}
+      initial={{ left: startX, top: startY, opacity: 0 }}
+      animate={{ left: [startX, endX], top: [startY, endY], opacity: [0, 1, 1, 0] }}
+      transition={{ duration: 2, repeat: Infinity, delay, ease: "easeInOut" }} />
+  );
+}
+
+// CREATIVE Mode Visualizer (FULL PREMIUM - 8 orbs)
 function AgileSquadVisualizer() {
     const { t } = useLanguage();
     return (
@@ -203,51 +283,137 @@ function AgileSquadVisualizer() {
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
         exit={{ opacity: 0 }}
-        className="w-full h-full relative flex items-center justify-center p-8"
+        className="w-full h-full relative flex items-center justify-center overflow-hidden"
       >
-         {/* Triangle Connection Texture - Background */}
-         <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
-            <defs>
-               <marker id="arrowhead" markerWidth="10" markerHeight="7" refX="28" refY="3.5" orient="auto">
-                 <polygon points="0 0, 10 3.5, 0 7" fill="#ffffff" opacity="0.3" />
-               </marker>
-            </defs>
-            
-            {/* Connection Lines */}
-            <line x1="50%" y1="30%" x2="20%" y2="70%" stroke="white" strokeWidth="2" strokeDasharray="6 6" opacity="0.3" />
-            <line x1="20%" y1="70%" x2="80%" y2="70%" stroke="white" strokeWidth="2" strokeDasharray="6 6" opacity="0.3" />
-            <line x1="80%" y1="70%" x2="50%" y2="30%" stroke="white" strokeWidth="2" strokeDasharray="6 6" opacity="0.3" />
+         {/* Spark Particles */}
+         <div className="absolute inset-0 flex items-center justify-center pointer-events-none z-30">
+           {[...Array(10)].map((_, i) => (
+             <motion.div key={i} className="absolute w-1.5 h-1.5 rounded-full"
+               style={{ background: i % 3 === 0 ? '#EA4335' : i % 3 === 1 ? '#4285F4' : '#34A853' }}
+               animate={{ x: [0, (Math.random() - 0.5) * 80], y: [0, (Math.random() - 0.5) * 80], opacity: [0, 1, 0], scale: [0, 1.5, 0] }}
+               transition={{ duration: 2, repeat: Infinity, delay: i * 0.3 }} />
+           ))}
+         </div>
+
+         {/* Conveyor Belt Ring */}
+         <svg className="absolute inset-0 w-full h-full pointer-events-none z-5">
+           <defs>
+             <filter id="glowPurple"><feGaussianBlur stdDeviation="4" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+           </defs>
+           <motion.circle cx="50%" cy="45%" r="130" fill="none" stroke="#a855f7" strokeWidth="3" strokeDasharray="15 10" opacity="0.6"
+             animate={{ strokeDashoffset: [0, -100] }} transition={{ duration: 4, repeat: Infinity, ease: "linear" }} filter="url(#glowPurple)" />
+           <motion.circle cx="50%" cy="45%" r="90" fill="none" stroke="#a855f7" strokeWidth="1" strokeDasharray="5 5" opacity="0.3"
+             animate={{ strokeDashoffset: [0, 50] }} transition={{ duration: 3, repeat: Infinity, ease: "linear" }} />
          </svg>
 
-         {/* Animated Packets - Outside SVG because they are Divs */}
-         <div className="absolute inset-0 pointer-events-none z-10">
-             <PacketPath path="M 50 30 L 20 70" color="#EA4335" delay={0} />
-             <PacketPath path="M 20 70 L 80 70" color="#4285F4" delay={2} />
-             <PacketPath path="M 80 70 L 50 30" color="#34A853" delay={4} />
-         </div>
+         {/* Synergy Counter - Top Right */}
+         <motion.div className="absolute top-4 right-4 z-30 bg-black/60 backdrop-blur-md border border-purple-400/30 rounded-lg px-4 py-2"
+           initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.5 }}>
+           <div className="text-[10px] text-purple-400/60 font-mono uppercase tracking-wider">Synergy</div>
+           <div className="flex items-center gap-2">
+             <motion.span className="text-xl font-black text-purple-400" animate={{ opacity: [1, 0.7, 1] }} transition={{ duration: 1, repeat: Infinity }}>8x</motion.span>
+             <span className="text-xs text-green-400 font-bold">🧠 FULL</span>
+           </div>
+         </motion.div>
 
-         {/* Nodes Fixed Positions */}
-         {/* Top: 30% Y - Centered on Icon (80px height -> -mt-10) */}
-         <div className="absolute top-[30%] left-1/2 -translate-x-1/2 -mt-10 z-20">
-            <SquadNode color="bg-[#EA4335]" icon={Workflow} role={t('home.architecture.visualizer.squad.planner.role')} task={t('home.architecture.visualizer.squad.planner.task')} />
-         </div>
+         {/* Central Brain Orb */}
+         <motion.div className="relative z-20 flex flex-col items-center gap-3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", delay: 0.2 }}>
+           <motion.div className="w-24 h-24 rounded-full bg-gradient-to-br from-purple-400 via-purple-500 to-pink-500 flex items-center justify-center border-4 border-purple-300/50 relative"
+             animate={{ boxShadow: ["0 0 30px #a855f7, 0 0 60px #a855f740", "0 0 50px #a855f7, 0 0 100px #a855f760", "0 0 30px #a855f7, 0 0 60px #a855f740"] }} transition={{ duration: 2, repeat: Infinity }}>
+             <Brain className="w-12 h-12 text-white drop-shadow-lg" />
+             <motion.div className="absolute -top-1 -right-1 px-2 py-1 rounded-full bg-black text-purple-400 font-black text-[10px] border border-purple-400/50 shadow-lg uppercase tracking-wider"
+               animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 1.5, repeat: Infinity }}>AI</motion.div>
+           </motion.div>
+           <div className="text-center">
+             <div className="text-purple-400 font-black text-sm uppercase tracking-widest">CREATIVE BRAIN</div>
+             <div className="text-[10px] text-purple-400/60 font-mono">Full Multi-Agent</div>
+           </div>
+         </motion.div>
 
-         {/* Left: 20% X, 70% Y - Centered on Icon */}
-         <div className="absolute top-[70%] left-[20%] -translate-x-1/2 -mt-10 z-20">
-            <SquadNode color="bg-[#4285F4]" icon={Code2} role={t('home.architecture.visualizer.squad.specialist.role')} task={t('home.architecture.visualizer.squad.specialist.task')} />
-         </div>
+         {/* 8 Role Orbs - FULL PREMIUM */}
+         {/* Cardinal: PLAN */}
+         <motion.div className="absolute top-[8%] left-1/2 -translate-x-1/2 z-20" initial={{ y: -30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.3 }}>
+           <CreativeOrb color="from-red-500 to-orange-500" glowColor="#EA4335" icon={Lightbulb} label="PLAN" />
+         </motion.div>
+         {/* Cardinal: CODE */}
+         <motion.div className="absolute top-[42%] right-[5%] z-20" initial={{ x: 30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.4 }}>
+           <CreativeOrb color="from-blue-500 to-cyan-500" glowColor="#4285F4" icon={Code2} label="CODE" />
+         </motion.div>
+         {/* Cardinal: REVIEW */}
+         <motion.div className="absolute bottom-[8%] left-1/2 -translate-x-1/2 z-20" initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.5 }}>
+           <CreativeOrb color="from-green-500 to-emerald-500" glowColor="#34A853" icon={CheckCircle2} label="REVIEW" />
+         </motion.div>
+         {/* Cardinal: OPTIMIZE */}
+         <motion.div className="absolute top-[42%] left-[5%] z-20" initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.6 }}>
+           <CreativeOrb color="from-yellow-500 to-amber-500" glowColor="#FBBC04" icon={Sparkles} label="OPTIMIZE" />
+         </motion.div>
+         {/* Diagonal: DESIGN */}
+         <motion.div className="absolute top-[18%] right-[12%] z-20" initial={{ x: 20, y: -20, opacity: 0 }} animate={{ x: 0, y: 0, opacity: 1 }} transition={{ delay: 0.7 }}>
+           <CreativeOrb color="from-pink-500 to-rose-500" glowColor="#ec4899" icon={Workflow} label="DESIGN" />
+         </motion.div>
+         {/* Diagonal: TEST */}
+         <motion.div className="absolute bottom-[18%] right-[12%] z-20" initial={{ x: 20, y: 20, opacity: 0 }} animate={{ x: 0, y: 0, opacity: 1 }} transition={{ delay: 0.8 }}>
+           <CreativeOrb color="from-teal-500 to-cyan-500" glowColor="#14b8a6" icon={ShieldCheck} label="TEST" />
+         </motion.div>
+         {/* Diagonal: DEPLOY */}
+         <motion.div className="absolute bottom-[18%] left-[12%] z-20" initial={{ x: -20, y: 20, opacity: 0 }} animate={{ x: 0, y: 0, opacity: 1 }} transition={{ delay: 0.9 }}>
+           <CreativeOrb color="from-orange-500 to-red-500" glowColor="#f97316" icon={Zap} label="DEPLOY" />
+         </motion.div>
+         {/* Diagonal: DATA */}
+         <motion.div className="absolute top-[18%] left-[12%] z-20" initial={{ x: -20, y: -20, opacity: 0 }} animate={{ x: 0, y: 0, opacity: 1 }} transition={{ delay: 1.0 }}>
+           <CreativeOrb color="from-indigo-500 to-violet-500" glowColor="#6366f1" icon={Database} label="DATA" />
+         </motion.div>
 
-         {/* Right: 80% X, 70% Y - Centered on Icon */}
-         <div className="absolute top-[70%] left-[80%] -translate-x-1/2 -mt-10 z-20">
-            <SquadNode color="bg-[#34A853]" icon={ShieldCheck} role={t('home.architecture.visualizer.squad.inspector.role')} task={t('home.architecture.visualizer.squad.inspector.task')} />
-         </div>
+         {/* Connection Lines */}
+         <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
+           <defs>
+             <linearGradient id="gradCTop" x1="50%" y1="50%" x2="50%" y2="0%"><stop offset="0%" stopColor="#a855f7" stopOpacity="0.6" /><stop offset="100%" stopColor="#EA4335" stopOpacity="0.6" /></linearGradient>
+             <linearGradient id="gradCRight" x1="50%" y1="50%" x2="100%" y2="50%"><stop offset="0%" stopColor="#a855f7" stopOpacity="0.6" /><stop offset="100%" stopColor="#4285F4" stopOpacity="0.6" /></linearGradient>
+             <linearGradient id="gradCBottom" x1="50%" y1="50%" x2="50%" y2="100%"><stop offset="0%" stopColor="#a855f7" stopOpacity="0.6" /><stop offset="100%" stopColor="#34A853" stopOpacity="0.6" /></linearGradient>
+             <linearGradient id="gradCLeft" x1="50%" y1="50%" x2="0%" y2="50%"><stop offset="0%" stopColor="#a855f7" stopOpacity="0.6" /><stop offset="100%" stopColor="#FBBC04" stopOpacity="0.6" /></linearGradient>
+             <linearGradient id="gradCTR" x1="50%" y1="50%" x2="85%" y2="15%"><stop offset="0%" stopColor="#a855f7" stopOpacity="0.4" /><stop offset="100%" stopColor="#ec4899" stopOpacity="0.4" /></linearGradient>
+             <linearGradient id="gradCBR" x1="50%" y1="50%" x2="85%" y2="85%"><stop offset="0%" stopColor="#a855f7" stopOpacity="0.4" /><stop offset="100%" stopColor="#14b8a6" stopOpacity="0.4" /></linearGradient>
+             <linearGradient id="gradCBL" x1="50%" y1="50%" x2="15%" y2="85%"><stop offset="0%" stopColor="#a855f7" stopOpacity="0.4" /><stop offset="100%" stopColor="#f97316" stopOpacity="0.4" /></linearGradient>
+             <linearGradient id="gradCTL" x1="50%" y1="50%" x2="15%" y2="15%"><stop offset="0%" stopColor="#a855f7" stopOpacity="0.4" /><stop offset="100%" stopColor="#6366f1" stopOpacity="0.4" /></linearGradient>
+           </defs>
+           {/* Cardinal */}
+           <motion.line x1="50%" y1="38%" x2="50%" y2="18%" stroke="url(#gradCTop)" strokeWidth="2" filter="url(#glowPurple)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.3, duration: 0.4 }} />
+           <motion.line x1="58%" y1="45%" x2="82%" y2="45%" stroke="url(#gradCRight)" strokeWidth="2" filter="url(#glowPurple)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.4, duration: 0.4 }} />
+           <motion.line x1="50%" y1="55%" x2="50%" y2="78%" stroke="url(#gradCBottom)" strokeWidth="2" filter="url(#glowPurple)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.5, duration: 0.4 }} />
+           <motion.line x1="42%" y1="45%" x2="18%" y2="45%" stroke="url(#gradCLeft)" strokeWidth="2" filter="url(#glowPurple)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.6, duration: 0.4 }} />
+           {/* Diagonal */}
+           <motion.line x1="55%" y1="40%" x2="72%" y2="25%" stroke="url(#gradCTR)" strokeWidth="1.5" filter="url(#glowPurple)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.7, duration: 0.4 }} />
+           <motion.line x1="55%" y1="52%" x2="72%" y2="68%" stroke="url(#gradCBR)" strokeWidth="1.5" filter="url(#glowPurple)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.8, duration: 0.4 }} />
+           <motion.line x1="45%" y1="52%" x2="28%" y2="68%" stroke="url(#gradCBL)" strokeWidth="1.5" filter="url(#glowPurple)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.9, duration: 0.4 }} />
+           <motion.line x1="45%" y1="40%" x2="28%" y2="25%" stroke="url(#gradCTL)" strokeWidth="1.5" filter="url(#glowPurple)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 1.0, duration: 0.4 }} />
+         </svg>
 
-         {/* Connection Labels */}
-         <div className="absolute top-[46%] left-[25%] text-[10px] text-white/50 rotate-[-50deg] tracking-widest font-mono bg-[#0A0A0A] px-2 z-10"> {t('home.architecture.visualizer.squad.tasks.0')} </div>
-         <div className="absolute top-[46%] right-[25%] text-[10px] text-white/50 rotate-[50deg] tracking-widest font-mono bg-[#0A0A0A] px-2 z-10"> {t('home.architecture.visualizer.squad.tasks.1')} </div>
-         <div className="absolute bottom-[25%] left-1/2 -translate-x-1/2 text-[10px] text-white/50 tracking-widest font-mono bg-[#0A0A0A] px-2 z-10"> {t('home.architecture.visualizer.squad.tasks.2')} </div>
+         {/* Flow Packets - All 8 */}
+         <div className="absolute inset-0 pointer-events-none z-15">
+           <FlowPacket startX="50%" startY="40%" endX="50%" endY="16%" color="#EA4335" delay={0} />
+           <FlowPacket startX="55%" startY="45%" endX="84%" endY="45%" color="#4285F4" delay={0.4} />
+           <FlowPacket startX="50%" startY="52%" endX="50%" endY="80%" color="#34A853" delay={0.8} />
+           <FlowPacket startX="45%" startY="45%" endX="16%" endY="45%" color="#FBBC04" delay={1.2} />
+           <FlowPacket startX="54%" startY="41%" endX="74%" endY="23%" color="#ec4899" delay={1.6} />
+           <FlowPacket startX="54%" startY="51%" endX="74%" endY="70%" color="#14b8a6" delay={2.0} />
+           <FlowPacket startX="46%" startY="51%" endX="26%" endY="70%" color="#f97316" delay={2.4} />
+           <FlowPacket startX="46%" startY="41%" endX="26%" endY="23%" color="#6366f1" delay={2.8} />
+         </div>
       </motion.div>
     );
+}
+
+// Creative Orb Component (for CREATIVE mode)
+function CreativeOrb({ color, glowColor, icon: Icon, label }: { color: string, glowColor: string, icon: any, label: string }) {
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <motion.div className={`w-14 h-14 rounded-full bg-gradient-to-br ${color} flex items-center justify-center border-2 border-white/30 shadow-xl`}
+        animate={{ boxShadow: [`0 0 15px ${glowColor}40`, `0 0 25px ${glowColor}60`, `0 0 15px ${glowColor}40`] }} transition={{ duration: 2, repeat: Infinity }} whileHover={{ scale: 1.1 }}>
+        <Icon className="w-7 h-7 text-white drop-shadow-lg" />
+      </motion.div>
+      <div className="text-[10px] text-white/60 font-mono uppercase tracking-wider">{label}</div>
+    </div>
+  );
 }
 
 // Helper for animating packets along a path
@@ -298,123 +464,134 @@ function PacketPath({ path, color, delay }: { path: string, color: string, delay
    )
 }
 
+// SME Mode Visualizer (STANDARD - 6 orbs)
 function SoftwareFactoryVisualizer() {
     const { t } = useLanguage();
     return (
       <motion.div 
-        initial={{ opacity: 0, y: 20 }}
-        animate={{ opacity: 1, y: 0 }}
-        exit={{ opacity: 0, y: -20 }}
-        className="w-full h-full relative flex flex-col items-center pt-8"
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        exit={{ opacity: 0 }}
+        className="w-full h-full relative flex items-center justify-center overflow-hidden"
       >
-         {/* Org Chart Connectors */}
-         <svg className="absolute inset-0 w-full h-full pointer-events-none z-0">
-            {/* Root to Midpoint */}
-            <line x1="50%" y1="28%" x2="50%" y2="35%" stroke="white" strokeWidth="2" strokeOpacity="0.2" />
-            {/* Horizontal Bar */}
-            <line x1="15%" y1="35%" x2="85%" y2="35%" stroke="white" strokeWidth="2" strokeOpacity="0.2" />
-            {/* Branch Lines - 4 Columns Centers (15, 38, 62, 85) */}
-            <line x1="15%" y1="35%" x2="15%" y2="42%" stroke="white" strokeWidth="2" strokeOpacity="0.2" />
-            <line x1="38%" y1="35%" x2="38%" y2="42%" stroke="white" strokeWidth="2" strokeOpacity="0.2" />
-            <line x1="62%" y1="35%" x2="62%" y2="42%" stroke="white" strokeWidth="2" strokeOpacity="0.2" />
-            <line x1="85%" y1="35%" x2="85%" y2="42%" stroke="white" strokeWidth="2" strokeOpacity="0.2" />
+         {/* Hexagonal Grid Background */}
+         <div className="absolute inset-0 opacity-10">
+           <svg width="100%" height="100%" className="absolute inset-0">
+             <defs>
+               <pattern id="hexGrid" width="50" height="43.4" patternUnits="userSpaceOnUse" patternTransform="scale(1.5)">
+                 <polygon points="25,0 50,14.4 50,43.4 25,57.8 0,43.4 0,14.4" fill="none" stroke="#FBBC04" strokeWidth="0.5" />
+               </pattern>
+             </defs>
+             <rect width="100%" height="100%" fill="url(#hexGrid)" />
+           </svg>
+         </div>
+
+         {/* Conveyor Belt Ring */}
+         <svg className="absolute inset-0 w-full h-full pointer-events-none z-5">
+           <defs>
+             <filter id="glowGold"><feGaussianBlur stdDeviation="4" result="coloredBlur"/><feMerge><feMergeNode in="coloredBlur"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+           </defs>
+           <motion.circle cx="50%" cy="45%" r="125" fill="none" stroke="#FBBC04" strokeWidth="3" strokeDasharray="15 10" opacity="0.6"
+             animate={{ strokeDashoffset: [0, -100] }} transition={{ duration: 4, repeat: Infinity, ease: "linear" }} filter="url(#glowGold)" />
+           <motion.circle cx="50%" cy="45%" r="85" fill="none" stroke="#FBBC04" strokeWidth="1" strokeDasharray="5 5" opacity="0.3"
+             animate={{ strokeDashoffset: [0, 50] }} transition={{ duration: 3, repeat: Infinity, ease: "linear" }} />
          </svg>
 
-         {/* Animated Data Packets - PDCA Flow */}
-         <div className="absolute inset-0 pointer-events-none z-10">
-             {/* P - Plan (Đỏ/Red) */}
-             <FactoryPacket 
-                pathX={["50%", "50%", "15%", "15%"]} 
-                pathY={["28%", "35%", "35%", "42%"]} 
-                delay={0} 
-                color="#ef4444" 
-             />
-             {/* D - Do (Vàng/Yellow) */}
-             <FactoryPacket 
-                pathX={["50%", "50%", "38%", "38%"]} 
-                pathY={["28%", "35%", "35%", "42%"]} 
-                delay={0.5} 
-                color="#eab308" 
-             />
-             {/* C - Check (Lục/Green) */}
-             <FactoryPacket 
-                pathX={["50%", "50%", "62%", "62%"]} 
-                pathY={["28%", "35%", "35%", "42%"]} 
-                delay={1.2} 
-                color="#22c55e" 
-             />
-             {/* A - Act (Lam/Cyan) */}
-             <FactoryPacket 
-                pathX={["50%", "50%", "85%", "85%"]} 
-                pathY={["28%", "35%", "35%", "42%"]} 
-                delay={1.9} 
-                color="#06b6d4" 
-             />
-         </div>
+         {/* Production Counter - Top Right */}
+         <motion.div className="absolute top-4 right-4 z-30 bg-black/60 backdrop-blur-md border border-yellow-400/30 rounded-lg px-4 py-2"
+           initial={{ opacity: 0, y: -20 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 1.5 }}>
+           <div className="text-[10px] text-yellow-400/60 font-mono uppercase tracking-wider">Production</div>
+           <div className="flex items-center gap-2">
+             <motion.span className="text-xl font-black text-yellow-400" animate={{ opacity: [1, 0.7, 1] }} transition={{ duration: 1, repeat: Infinity }}>6x</motion.span>
+             <span className="text-xs text-green-400 font-bold">▲ ACTIVE</span>
+           </div>
+         </motion.div>
 
-         {/* Level 1: Core Command */}
-         <div className="z-20 relative mb-14">
-            <OrgNode 
-              icon={Bot} 
-              title={t('home.architecture.visualizer.factory.orchestrator')} 
-              subtitle="Orchestrator"
-              color="bg-yellow-500" 
-              isRoot 
-            />
-            <div className="absolute -right-32 top-4 text-[10px] font-mono text-yellow-500 bg-yellow-500/10 px-2 py-1 rounded border border-yellow-500/20">
-               ◀ {t('home.architecture.visualizer.factory.strategy')}
-            </div>
-         </div>
+         {/* Central Crown Orb */}
+         <motion.div className="relative z-20 flex flex-col items-center gap-3" initial={{ scale: 0 }} animate={{ scale: 1 }} transition={{ type: "spring", delay: 0.2 }}>
+           <motion.div className="w-26 h-26 rounded-full bg-gradient-to-br from-yellow-400 via-amber-500 to-orange-500 flex items-center justify-center border-4 border-yellow-300/50 relative"
+             style={{ width: '6.5rem', height: '6.5rem' }}
+             animate={{ boxShadow: ["0 0 30px #FBBC04, 0 0 60px #FBBC0440", "0 0 50px #FBBC04, 0 0 100px #FBBC0460", "0 0 30px #FBBC04, 0 0 60px #FBBC0440"] }} transition={{ duration: 2, repeat: Infinity }}>
+             <Crown className="w-12 h-12 text-white drop-shadow-lg" />
+             <motion.div className="absolute -top-1 -right-1 px-2 py-1 rounded-full bg-black text-yellow-400 font-black text-[10px] border border-yellow-400/50 shadow-lg uppercase tracking-wider"
+               animate={{ scale: [1, 1.05, 1] }} transition={{ duration: 1.5, repeat: Infinity }}>SME</motion.div>
+           </motion.div>
+           <div className="text-center">
+             <div className="text-yellow-400 font-black text-sm uppercase tracking-widest">{t('home.architecture.visualizer.factory.orchestrator')}</div>
+             <div className="text-[10px] text-yellow-400/60 font-mono">{t('home.architecture.visualizer.factory.strategy')}</div>
+           </div>
+         </motion.div>
 
-         {/* Level 2: PDCA Departments */}
-         <div className="grid grid-cols-4 w-full px-2 gap-2 z-20">
-            {/* PLAN */}
-            <div className="flex flex-col items-center gap-3">
-                <OrgNode icon={Workflow} title="PLAN" subtitle="Planning" color="bg-red-500" vertical />
-                <div className="flex flex-col gap-1.5 w-full items-center">
-                   <AgentMiniCard role="Product Manager" />
-                   <AgentMiniCard role="Product Owner" />
-                   <AgentMiniCard role="Project Planner" />
-                   <AgentMiniCard role="SEO Specialist" />
-                   <AgentMiniCard role="Doc Writer" />
-                </div>
-            </div>
+         {/* 6 PDCA+ Orbs - STANDARD */}
+         {/* Cardinal: PLAN */}
+         <motion.div className="absolute top-[10%] left-1/2 -translate-x-1/2 z-20" initial={{ y: -30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.4 }}>
+           <PDCAOrb color="from-red-500 to-rose-600" glowColor="#ef4444" letter="P" label="PLAN" />
+         </motion.div>
+         {/* Cardinal: DO */}
+         <motion.div className="absolute top-[42%] right-[6%] z-20" initial={{ x: 30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.5 }}>
+           <PDCAOrb color="from-yellow-500 to-amber-600" glowColor="#eab308" letter="D" label="DO" />
+         </motion.div>
+         {/* Cardinal: CHECK */}
+         <motion.div className="absolute bottom-[10%] left-1/2 -translate-x-1/2 z-20" initial={{ y: 30, opacity: 0 }} animate={{ y: 0, opacity: 1 }} transition={{ delay: 0.6 }}>
+           <PDCAOrb color="from-green-500 to-emerald-600" glowColor="#22c55e" letter="C" label="CHECK" />
+         </motion.div>
+         {/* Cardinal: ACT */}
+         <motion.div className="absolute top-[42%] left-[6%] z-20" initial={{ x: -30, opacity: 0 }} animate={{ x: 0, opacity: 1 }} transition={{ delay: 0.7 }}>
+           <PDCAOrb color="from-cyan-500 to-blue-600" glowColor="#06b6d4" letter="A" label="ACT" />
+         </motion.div>
+         {/* Diagonal: SECURE */}
+         <motion.div className="absolute top-[20%] right-[12%] z-20" initial={{ x: 20, y: -20, opacity: 0 }} animate={{ x: 0, y: 0, opacity: 1 }} transition={{ delay: 0.8 }}>
+           <PDCAOrb color="from-purple-500 to-violet-600" glowColor="#8b5cf6" letter="S" label="SECURE" />
+         </motion.div>
+         {/* Diagonal: MONITOR */}
+         <motion.div className="absolute bottom-[20%] right-[12%] z-20" initial={{ x: 20, y: 20, opacity: 0 }} animate={{ x: 0, y: 0, opacity: 1 }} transition={{ delay: 0.9 }}>
+           <PDCAOrb color="from-pink-500 to-rose-600" glowColor="#ec4899" letter="M" label="MONITOR" />
+         </motion.div>
 
-            {/* DO */}
-            <div className="flex flex-col items-center gap-3">
-                <OrgNode icon={Code2} title="DO" subtitle="Execution" color="bg-yellow-500" vertical />
-                 <div className="flex flex-col gap-1.5 w-full items-center">
-                   <AgentMiniCard role="Frontend Specialist" />
-                   <AgentMiniCard role="Backend Specialist" />
-                   <AgentMiniCard role="Database Architect" />
-                   <AgentMiniCard role="Cloud Architect" />
-                   <AgentMiniCard role="Mobile Developer" />
-                </div>
-            </div>
+         {/* Connection Lines */}
+         <svg className="absolute inset-0 w-full h-full pointer-events-none z-10">
+           <defs>
+             <linearGradient id="gradSTop" x1="50%" y1="50%" x2="50%" y2="0%"><stop offset="0%" stopColor="#FBBC04" stopOpacity="0.6" /><stop offset="100%" stopColor="#ef4444" stopOpacity="0.6" /></linearGradient>
+             <linearGradient id="gradSRight" x1="50%" y1="50%" x2="100%" y2="50%"><stop offset="0%" stopColor="#FBBC04" stopOpacity="0.6" /><stop offset="100%" stopColor="#eab308" stopOpacity="0.6" /></linearGradient>
+             <linearGradient id="gradSBottom" x1="50%" y1="50%" x2="50%" y2="100%"><stop offset="0%" stopColor="#FBBC04" stopOpacity="0.6" /><stop offset="100%" stopColor="#22c55e" stopOpacity="0.6" /></linearGradient>
+             <linearGradient id="gradSLeft" x1="50%" y1="50%" x2="0%" y2="50%"><stop offset="0%" stopColor="#FBBC04" stopOpacity="0.6" /><stop offset="100%" stopColor="#06b6d4" stopOpacity="0.6" /></linearGradient>
+             <linearGradient id="gradSTR" x1="50%" y1="50%" x2="85%" y2="20%"><stop offset="0%" stopColor="#FBBC04" stopOpacity="0.4" /><stop offset="100%" stopColor="#8b5cf6" stopOpacity="0.4" /></linearGradient>
+             <linearGradient id="gradSBR" x1="50%" y1="50%" x2="85%" y2="80%"><stop offset="0%" stopColor="#FBBC04" stopOpacity="0.4" /><stop offset="100%" stopColor="#ec4899" stopOpacity="0.4" /></linearGradient>
+           </defs>
+           {/* Cardinal */}
+           <motion.line x1="50%" y1="36%" x2="50%" y2="20%" stroke="url(#gradSTop)" strokeWidth="2" filter="url(#glowGold)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.4, duration: 0.4 }} />
+           <motion.line x1="58%" y1="45%" x2="80%" y2="45%" stroke="url(#gradSRight)" strokeWidth="2" filter="url(#glowGold)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.5, duration: 0.4 }} />
+           <motion.line x1="50%" y1="56%" x2="50%" y2="76%" stroke="url(#gradSBottom)" strokeWidth="2" filter="url(#glowGold)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.6, duration: 0.4 }} />
+           <motion.line x1="42%" y1="45%" x2="20%" y2="45%" stroke="url(#gradSLeft)" strokeWidth="2" filter="url(#glowGold)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.7, duration: 0.4 }} />
+           {/* Diagonal */}
+           <motion.line x1="55%" y1="40%" x2="72%" y2="27%" stroke="url(#gradSTR)" strokeWidth="1.5" filter="url(#glowGold)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.8, duration: 0.4 }} />
+           <motion.line x1="55%" y1="52%" x2="72%" y2="68%" stroke="url(#gradSBR)" strokeWidth="1.5" filter="url(#glowGold)" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ delay: 0.9, duration: 0.4 }} />
+         </svg>
 
-            {/* CHECK */}
-            <div className="flex flex-col items-center gap-3">
-                <OrgNode icon={ShieldCheck} title="CHECK" subtitle="Verification" color="bg-green-500" vertical />
-                 <div className="flex flex-col gap-1.5 w-full items-center">
-                   <AgentMiniCard role="Security Auditor" />
-                   <AgentMiniCard role="Penetration Tester" />
-                   <AgentMiniCard role="Test Engineer" />
-                   <AgentMiniCard role="QA Automation" />
-                </div>
-            </div>
-
-            {/* ACT */}
-            <div className="flex flex-col items-center gap-3">
-                <OrgNode icon={Zap} title="ACT" subtitle="Optimization" color="bg-cyan-500" vertical />
-                 <div className="flex flex-col gap-1.5 w-full items-center">
-                   <AgentMiniCard role="DevOps Engineer" />
-                   <AgentMiniCard role="Performance Opt" />
-                   <AgentMiniCard role="Debugger" />
-                </div>
-            </div>
+         {/* Flow Packets - All 6 */}
+         <div className="absolute inset-0 pointer-events-none z-15">
+           <FlowPacket startX="50%" startY="38%" endX="50%" endY="18%" color="#ef4444" delay={0} />
+           <FlowPacket startX="55%" startY="45%" endX="82%" endY="45%" color="#eab308" delay={0.5} />
+           <FlowPacket startX="50%" startY="54%" endX="50%" endY="78%" color="#22c55e" delay={1} />
+           <FlowPacket startX="45%" startY="45%" endX="18%" endY="45%" color="#06b6d4" delay={1.5} />
+           <FlowPacket startX="54%" startY="41%" endX="74%" endY="25%" color="#8b5cf6" delay={2} />
+           <FlowPacket startX="54%" startY="51%" endX="74%" endY="70%" color="#ec4899" delay={2.5} />
          </div>
       </motion.div>
     );
+}
+
+// PDCA Orb Component (for SME mode)
+function PDCAOrb({ color, glowColor, letter, label }: { color: string, glowColor: string, letter: string, label: string }) {
+  return (
+    <div className="flex flex-col items-center gap-2">
+      <motion.div className={`w-14 h-14 rounded-full bg-gradient-to-br ${color} flex items-center justify-center border-2 border-white/30 shadow-xl relative`}
+        animate={{ boxShadow: [`0 0 15px ${glowColor}40`, `0 0 25px ${glowColor}60`, `0 0 15px ${glowColor}40`] }} transition={{ duration: 2, repeat: Infinity }} whileHover={{ scale: 1.1 }}>
+        <span className="text-xl font-black text-white drop-shadow-lg">{letter}</span>
+      </motion.div>
+      <div className="text-[10px] text-white/60 font-mono uppercase tracking-wider">{label}</div>
+    </div>
+  );
 }
 
 function OrgNode({ icon: Icon, title, subtitle, color, isRoot, vertical }: { icon: any, title: string, subtitle: string, color: string, isRoot?: boolean, vertical?: boolean }) {

@@ -45,6 +45,72 @@ export default function GuidePage() {
         </Link>
       </section>
 
+      {/* Quick Links - New Premium Pages */}
+      <section className="max-w-6xl mx-auto">
+        <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <Link href="/guide/faq" className="card-glass p-6 bg-[#4285F4]/5 border-[#4285F4]/20 hover:border-[#4285F4]/50 transition-all group">
+            <div className="flex items-center gap-4">
+              <span className="text-3xl">❓</span>
+              <div>
+                <h4 className="font-bold text-white group-hover:text-[#4285F4] transition-colors">FAQ</h4>
+                <p className="text-xs text-white/50">Câu hỏi thường gặp</p>
+              </div>
+            </div>
+          </Link>
+          <Link href="/guide/troubleshooting" className="card-glass p-6 bg-[#EA4335]/5 border-[#EA4335]/20 hover:border-[#EA4335]/50 transition-all group">
+            <div className="flex items-center gap-4">
+              <span className="text-3xl">🔧</span>
+              <div>
+                <h4 className="font-bold text-white group-hover:text-[#EA4335] transition-colors">Troubleshooting</h4>
+                <p className="text-xs text-white/50">Khắc phục lỗi</p>
+              </div>
+            </div>
+          </Link>
+          <Link href="/guide/case-studies" className="card-glass p-6 bg-[#FBBC04]/5 border-[#FBBC04]/20 hover:border-[#FBBC04]/50 transition-all group">
+            <div className="flex items-center gap-4">
+              <span className="text-3xl">💼</span>
+              <div>
+                <h4 className="font-bold text-white group-hover:text-[#FBBC04] transition-colors">Case Studies</h4>
+                <p className="text-xs text-white/50">Ví dụ thực tế</p>
+              </div>
+            </div>
+          </Link>
+          <Link href="/guide/changelog" className="card-glass p-6 bg-[#34A853]/5 border-[#34A853]/20 hover:border-[#34A853]/50 transition-all group">
+            <div className="flex items-center gap-4">
+              <span className="text-3xl">📜</span>
+              <div>
+                <h4 className="font-bold text-white group-hover:text-[#34A853] transition-colors">Changelog</h4>
+                <p className="text-xs text-white/50">Lịch sử phiên bản</p>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
+      {/* Deep Dive Section */}
+      <section className="max-w-4xl mx-auto">
+        <div className="grid sm:grid-cols-2 gap-4">
+          <Link href="/guide/how-it-thinks" className="card-glass p-8 bg-gradient-to-br from-[#4285F4]/10 to-[#34A853]/10 border-[#4285F4]/30 hover:border-[#4285F4]/50 transition-all group">
+            <div className="flex items-start gap-4">
+              <span className="text-4xl">🧠</span>
+              <div>
+                <h4 className="text-xl font-bold text-white group-hover:text-[#4285F4] transition-colors mb-2">AI Nghĩ Như Thế Nào?</h4>
+                <p className="text-sm text-white/50">Khám phá quy trình xử lý từ prompt đến kết quả</p>
+              </div>
+            </div>
+          </Link>
+          <Link href="/guide/architecture" className="card-glass p-8 bg-gradient-to-br from-[#8B5CF6]/10 to-[#EA4335]/10 border-[#8B5CF6]/30 hover:border-[#8B5CF6]/50 transition-all group">
+            <div className="flex items-start gap-4">
+              <span className="text-4xl">🏛️</span>
+              <div>
+                <h4 className="text-xl font-bold text-white group-hover:text-[#8B5CF6] transition-colors mb-2">Kiến Trúc Hệ Thống</h4>
+                <p className="text-sm text-white/50">Tổng quan cấu trúc và các thành phần</p>
+              </div>
+            </div>
+          </Link>
+        </div>
+      </section>
+
       {/* Core Concepts */}
       <section className="max-w-6xl mx-auto space-y-12">
         <SectionHeader title={t('guide.concepts.title')} subtitle={t('guide.concepts.subtitle')} />
@@ -208,7 +274,7 @@ export default function GuidePage() {
             </div>
             <p className="text-white/60 text-sm">{t('guide.advanced.updateDesc')}</p>
             <div className="bg-black/40 p-4 rounded-xl border border-white/5 font-mono text-xs text-white/80">
-              npx antigravity-ide update
+              npx agent-skills-setup-for-antigravity update
             </div>
           </div>
 
@@ -279,7 +345,7 @@ export default function GuidePage() {
               <ArrowRight className="h-4 w-4 group-hover/btn:translate-x-1 transition-transform" />
             </button>
           </Link>
-          <a href="https://github.com/Dokhacgiakhoa/google-antigravity" target="_blank" rel="noopener noreferrer">
+          <a href="https://github.com/Dokhacgiakhoa/Agent-skills-setup-for-AntiGravity" target="_blank" rel="noopener noreferrer">
             <button className="px-8 py-4 rounded-full bg-white/5 hover:bg-white/10 border border-white/10 text-white font-black text-sm transition-all">
               {t('guide.cta.repoBtn')}
             </button>

@@ -11,8 +11,13 @@ const nunito = Nunito_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Google Antigravity - Hệ điều hành Trí tuệ cho AI Engineers",
+  title: "Agent skills setup for AntiGravity - Hệ điều hành Trí tuệ cho AI Engineers",
   description: "Khung vận hành (Orchestration Framework) giúp biến AI thành Đội ngũ Chuyên gia chuyên nghiệp. Quy trình chuẩn PDCA.",
+  icons: {
+    icon: "/favicon-rounded.svg",
+    shortcut: "/antigravity-ide-logo.png",
+    apple: "/antigravity-ide-logo.png",
+  },
 };
 
 import { LanguageProvider } from "@/contexts/LanguageContext";

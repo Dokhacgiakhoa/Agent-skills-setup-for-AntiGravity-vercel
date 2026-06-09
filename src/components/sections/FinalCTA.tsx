@@ -51,7 +51,7 @@ export function FinalCTA() {
 
                 <div className="flex items-center gap-4 bg-white/5 backdrop-blur-md px-8 py-5 rounded-full border border-white/10 hover:border-[#4285F4]/50 transition-colors cursor-copy group">
                     <Terminal className="w-5 h-5 text-[#4285F4]" />
-                    <code className="text-white/80 font-mono text-lg">npx antigravity-ide@latest</code>
+                    <code className="text-white/80 font-mono text-lg">npx agent-skills-setup-for-antigravity@latest</code>
                 </div>
             </motion.div>
         </div>

@@ -1,103 +1,64 @@
 ---
-description: Gặp lỗi khó sửa? Để AI soi log và sửa giúp bạn.
+description: Gặp lỗi khó sửa? Để AI soi log và sửa giúp bạn theo quy trình chuyên nghiệp.
 ---
 
-# /debug - Systematic Problem Investigation
+# /debug - Systematic Debugging System
 
 $ARGUMENTS
 
 ---
 
-## Purpose
+## 🟢 PHASE 1: Forensic Discovery (The "Crime Scene")
+**Agent**: `explorer-agent` & `debugger`
+**Mission**: Isolate the exact point of failure.
+- **Action**: Read the Stack Trace or Terminal Logs.
+- **Action**: Locate the failing file:line.
+- **DNA Link**: Consult `rules/error-logging.md` to see if this is a known recurring issue.
 
-This command activates DEBUG mode for systematic investigation of issues, errors, or unexpected behavior.
+## 🟡 PHASE 2: Root Cause Analysis (RCA)
+**Agent**: `debugger`
+**Mission**: Formulate a hypothesis (Why is it broken?).
+- **Hypothesis Checklist**:
+  - Null/Undefined safety?
+  - Race condition / Sync error?
+  - Missing environment variable?
+  - Breaking dependency change?
+- **Artifact**: Propose the fix to the User with [Pros/Cons].
+
+## 🔵 PHASE 3: Surgical Repair
+**Agent**: `backend-specialist` or `frontend-specialist`
+**Mission**: Apply the targetted fix.
+- **Correction**: Wrap sensitive logic in `try...catch`.
+- **Defensive API**: Use Optional Chaining (`?.`) and Nullish Coalescing (`??`).
+
+## 🔴 PHASE 4: Verification & Post-Mortem
+**Agent**: `test-engineer` & `quality-inspector`
+**Mission**: Ensure the "Bleeding" has stopped.
+- **Action**: Run the failing test case to confirm FIX.
+- **Reporting**: Log the incident in `ERRORS.md`.
+- **Handoff**: Create a `walkthrough.md` explaining the fix.
 
 ---
 
-## Behavior
-
-When `/debug` is triggered:
-
-1. **Gather information**
-   - Error message
-   - Reproduction steps
-   - Expected vs actual behavior
-   - Recent changes
-
-2. **Form hypotheses**
-   - List possible causes
-   - Order by likelihood
-
-3. **Investigate systematically**
-   - Test each hypothesis
-   - Check logs, data flow
-   - Use elimination method
-
-4. **Fix and prevent**
-   - Apply fix
-   - Explain root cause
-   - Add prevention measures
-
----
-
-## Output Format
-
+## Output Format:
 ```markdown
-## 🔍 Debug: [Issue]
+## 🐞 Debug Report: [Bug Title]
 
-### 1. Symptom
-[What's happening]
+### Root Cause
+[One sentence explanation]
 
-### 2. Information Gathered
-- Error: `[error message]`
-- File: `[filepath]`
-- Line: [line number]
+### The Fix
+[Diff or explanation]
 
-### 3. Hypotheses
-1. ❓ [Most likely cause]
-2. ❓ [Second possibility]
-3. ❓ [Less likely cause]
-
-### 4. Investigation
-
-**Testing hypothesis 1:**
-[What I checked] → [Result]
-
-**Testing hypothesis 2:**
-[What I checked] → [Result]
-
-### 5. Root Cause
-🎯 **[Explanation of why this happened]**
-
-### 6. Fix
-```[language]
-// Before
-[broken code]
-
-// After
-[fixed code]
-```
-
-### 7. Prevention
-🛡️ [How to prevent this in the future]
+### Verification
+- [ ] Test case passed
+- [ ] No regression found
+- [ ] Error logged in ERRORS.md
 ```
 
 ---
 
-## Examples
-
-```
-/debug login not working
-/debug API returns 500
-/debug form doesn't submit
-/debug data not saving
-```
-
----
-
-## Key Principles
-
-- **Ask before assuming** - get full error context
-- **Test hypotheses** - don't guess randomly
-- **Explain why** - not just what to fix
-- **Prevent recurrence** - add tests, validation
+## Key Principles:
+- **Evidence-First**: Don't guess, use the logs.
+- **Regression-Aware**: Every fix must come with a test case to prevent it from returning.
+- **Clean Fix**: Don't use "band-aid" fixes unless it's a critical production outage.

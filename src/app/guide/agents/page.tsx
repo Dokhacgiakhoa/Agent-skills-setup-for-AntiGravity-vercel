@@ -1,47 +1,88 @@
 "use client";
 
+import { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Bot, User, BrainCircuit, MessageSquare, Shield, Laptop, Brain, Layers, GitBranch, Search, Terminal, Code, Cpu, Database, Cloud, Settings, Smartphone, Gamepad, Lock, Bug, SearchCode, FileCode, Compass, ArrowRight, PlayCircle, Zap } from "lucide-react";
+import { Bot, User, BrainCircuit, ArrowRight, Zap } from "lucide-react";
 import Link from "next/link";
 import { agentsList } from "@/data/documentation";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { PageHeader } from "@/components/guide/ui/PageHeader";
+import { SearchBar, CategoryTabs } from "@/components/ui/premium";
+
+// PDCA category config
+const pdcaConfig = {
+  command: { color: "#4285F4", label: "Command", desc: "Điều phối & Quyết định" },
+  plan: { color: "#EA4335", label: "Plan", desc: "Lập kế hoạch" },
+  do: { color: "#FBBC04", label: "Do", desc: "Thực thi" },
+  check: { color: "#34A853", label: "Check", desc: "Kiểm tra" },
+  act: { color: "#4285F4", label: "Act", desc: "Cải tiến" }
+};
+
+// Map agents to PDCA categories
+const agentPdcaMap: Record<string, keyof typeof pdcaConfig> = {
+  "orchestrator": "command",
+  "quality-inspector": "check",
+  "project-planner": "plan",
+  "product-manager": "plan",
+  "product-owner": "plan",
+  "documentation-writer": "plan",
+  "seo-specialist": "plan",
+  "explorer-agent": "plan",
+  "frontend-specialist": "do",
+  "backend-specialist": "do",
+  "database-architect": "do",
+  "cloud-architect": "do",
+  "mobile-developer": "do",
+  "game-developer": "do",
+  "codebase-expert": "do",
+  "code-archaeologist": "do",
+  "security-auditor": "check",
+  "penetration-tester": "check",
+  "test-engineer": "check",
+  "qa-automation-engineer": "check",
+  "devops-engineer": "act",
+  "performance-optimizer": "act",
+  "debugger": "act"
+};
 
 export default function AgentsPage() {
   const { t, locale } = useLanguage();
-  const iconMap: Record<string, any> = {
-    "🎯": BrainCircuit,
-    "🔍": Search,
-    "📋": FileCode,
-    "📊": Layers,
-    "👔": User,
-    "🎨": Laptop,
-    "⚙️": Settings,
-    "🗄️": Database,
-    "☁️": Cloud,
-    "📱": Smartphone,
-    "🎮": Gamepad,
-    "🛡️": Lock,
-    "🔓": Shield,
-    "🧪": Bug,
-    "🤖": Bot,
-    "🚀": Bot, // Use Bot if Rocket not imported elsewhere or just map it
-    "⚡": Zap,
-    "🔧": Terminal,
-    "📝": MessageSquare,
-    "🔎": SearchCode,
-    "💻": Code,
-    "🏛️": Search,
-    "🧭": Compass
-  };
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState("all");
 
-  const colorMap: Record<string, any> = {
-    plan: { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20" },
-    do: { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20" },
-    check: { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
-    act: { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20" },
-    command: { color: "text-cyan-400", bg: "bg-cyan-500/10", border: "border-cyan-500/20" },
-  };
+  // Build category tabs
+  const categoryTabs = useMemo(() => {
+    const tabs = [{ id: "all", label: "Tất cả", count: agentsList.length }];
+    Object.entries(pdcaConfig).forEach(([id, config]) => {
+      const count = agentsList.filter(agent => agentPdcaMap[agent.id] === id).length;
+      if (count > 0) {
+        tabs.push({ id, label: config.label, count });
+      }
+    });
+    return tabs;
+  }, []);
+
+  // Filter agents
+  const filteredAgents = useMemo(() => {
+    let agents = agentsList;
+
+    // Filter by category
+    if (activeCategory !== "all") {
+      agents = agents.filter(agent => agentPdcaMap[agent.id] === activeCategory);
+    }
+
+    // Filter by search
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      agents = agents.filter(agent =>
+        agent.name.toLowerCase().includes(query) ||
+        agent.role.toLowerCase().includes(query) ||
+        agent.roleEn?.toLowerCase().includes(query)
+      );
+    }
+
+    return agents;
+  }, [searchQuery, activeCategory]);
 
   return (
     <div className="page-container mt-24 pb-24 space-y-12">
@@ -53,53 +94,152 @@ export default function AgentsPage() {
         color="blue"
       />
 
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
-        {agentsList.map((agent, idx) => {
-          const Icon = iconMap[agent.icon] || Bot;
-          const googleColors = [
-            { color: "text-red-400", bg: "bg-red-500/10", border: "border-red-500/20" },
-            { color: "text-yellow-400", bg: "bg-yellow-500/10", border: "border-yellow-500/20" },
-            { color: "text-emerald-400", bg: "bg-emerald-500/10", border: "border-emerald-500/20" },
-            { color: "text-blue-400", bg: "bg-blue-500/10", border: "border-blue-500/20" },
-          ];
-          const styles = googleColors[idx % googleColors.length];
+      {/* Search & Filter */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="space-y-4 max-w-4xl mx-auto"
+      >
+        <SearchBar 
+          placeholder="Tìm kiếm agent..." 
+          value={searchQuery}
+          onChange={setSearchQuery}
+        />
+        <div className="overflow-x-auto pb-2">
+          <CategoryTabs 
+            tabs={categoryTabs}
+            activeTab={activeCategory}
+            onTabChange={setActiveCategory}
+          />
+        </div>
+        <div className="text-sm text-white/40">
+          Hiển thị {filteredAgents.length} / {agentsList.length} agents
+        </div>
+      </motion.div>
+
+      {/* PDCA Legend */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.15 }}
+        className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto"
+      >
+        {Object.entries(pdcaConfig).map(([id, config]) => (
+          <div 
+            key={id}
+            className="flex items-center gap-2 text-sm"
+          >
+            <div 
+              className="w-3 h-3 rounded-full"
+              style={{ backgroundColor: config.color }}
+            />
+            <span className="text-white/60">{config.label}</span>
+            <span className="text-white/30 text-xs">({config.desc})</span>
+          </div>
+        ))}
+      </motion.div>
+
+      {/* Agents Grid with 3D Tilt Effect */}
+      <div className="grid md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6 max-w-7xl mx-auto">
+        {filteredAgents.map((agent, idx) => {
+          const pdcaCategory = agentPdcaMap[agent.id] || "do";
+          const config = pdcaConfig[pdcaCategory];
           
           return (
             <Link key={agent.id} href={`/guide/agents/${agent.id}`}>
               <motion.div
-                initial={{ opacity: 0, scale: 0.95 }}
+                initial={{ opacity: 0, scale: 0.9 }}
                 animate={{ opacity: 1, scale: 1 }}
-                transition={{ delay: Math.min(idx * 0.05, 1) }}
-                className={`card-glass p-8 flex flex-col gap-6 relative overflow-hidden group border ${styles.border} h-full hover:bg-white/[0.05] transition-all rounded-3xl`}
+                transition={{ delay: Math.min(idx * 0.03, 0.5) }}
+                whileHover={{ 
+                  scale: 1.05, 
+                  rotateY: 5,
+                  rotateX: -5,
+                }}
+                whileTap={{ scale: 0.95 }}
+                className="card-glass h-full group cursor-pointer text-center relative overflow-hidden"
+                style={{ 
+                  perspective: "1000px",
+                  borderColor: `${config.color}30` 
+                }}
               >
-                <div className={`absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity ${styles.bg}`} />
-                
-                <div className="flex items-start gap-4">
-                  <div className={`w-14 h-14 rounded-2xl ${styles.bg} flex items-center justify-center flex-shrink-0 border ${styles.border} shadow-lg group-hover:scale-110 transition-transform`}>
-                    <Icon className={`h-7 w-7 ${styles.color}`} />
-                  </div>
-                  
-                  <div className="space-y-1 relative z-10 flex-1">
-                    <div className="flex flex-col">
-                      <h3 className="text-xl font-black text-white italic tracking-tight">{agent.name}</h3>
-                      <span className={`text-[10px] font-bold px-3 py-1 rounded-full border ${styles.border} ${styles.color} bg-black/20 uppercase tracking-widest w-fit mt-2`}>
-                        {locale === 'en' ? agent.roleEn || agent.role : agent.role}
-                      </span>
-                    </div>
-                  </div>
+                {/* PDCA Badge */}
+                <div 
+                  className="absolute top-3 right-3 px-2 py-0.5 rounded-full text-[10px] font-bold uppercase"
+                  style={{
+                    backgroundColor: `${config.color}20`,
+                    color: config.color,
+                    border: `1px solid ${config.color}40`
+                  }}
+                >
+                  {config.label}
                 </div>
 
-                <div className="mt-auto pt-6 border-t border-white/5 flex items-center justify-between">
-                   <div className="text-[10px] text-white/30 font-black uppercase tracking-[0.2em]">
-                      {locale === 'en' ? 'View Specialization Guide' : 'Xem Hướng Dẫn Chuyên Sâu'}
-                   </div>
-                   <ArrowRight className={`h-4 w-4 ${styles.color} opacity-0 group-hover:opacity-100 group-hover:translate-x-1 transition-all`} />
-                </div>
+                {/* Hover Glow */}
+                <motion.div
+                  className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                  style={{
+                    background: `radial-gradient(circle at 50% 30%, ${config.color}20 0%, transparent 70%)`
+                  }}
+                />
+
+                {/* Avatar */}
+                <motion.div
+                  className="w-16 h-16 mx-auto mb-4 rounded-2xl flex items-center justify-center text-3xl relative z-10"
+                  style={{
+                    background: `linear-gradient(135deg, ${config.color}30 0%, ${config.color}10 100%)`,
+                    border: `2px solid ${config.color}40`,
+                    boxShadow: `0 0 30px ${config.color}20`
+                  }}
+                  whileHover={{
+                    boxShadow: `0 0 40px ${config.color}40`,
+                    scale: 1.1
+                  }}
+                >
+                  {agent.icon}
+                </motion.div>
+
+                <h3 className="font-bold text-white mb-1 group-hover:text-[#4285F4] transition-colors relative z-10">
+                  {agent.name}
+                </h3>
+
+                <p className="text-sm text-white/50 relative z-10">
+                  {locale === 'en' ? agent.roleEn || agent.role : agent.role}
+                </p>
+
+                {/* Arrow indicator */}
+                <motion.div
+                  initial={{ opacity: 0, y: 10 }}
+                  whileHover={{ opacity: 1, y: 0 }}
+                  className="absolute bottom-3 right-3"
+                >
+                  <ArrowRight className="w-4 h-4 text-white/40 group-hover:text-white transition-colors" />
+                </motion.div>
               </motion.div>
             </Link>
           );
         })}
       </div>
+
+      {/* Empty State */}
+      {filteredAgents.length === 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-center py-16"
+        >
+          <p className="text-white/50 text-lg">
+            Không tìm thấy agent phù hợp với &quot;{searchQuery}&quot;
+          </p>
+          <button
+            onClick={() => { setSearchQuery(""); setActiveCategory("all"); }}
+            className="mt-4 text-[#4285F4] hover:underline"
+          >
+            Xóa bộ lọc
+          </button>
+        </motion.div>
+      )}
 
       {/* Interaction Model */}
       <div className="max-w-4xl mx-auto space-y-8 pt-12">
@@ -109,30 +249,32 @@ export default function AgentsPage() {
         </div>
 
         <div className="relative">
-             {/* Simple Diagram */}
-             <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
-                <div className="p-6 bg-white/5 rounded-2xl border border-white/10 w-48">
-                    <User className="h-8 w-8 mx-auto mb-2 text-white" />
-                    <div className="font-bold text-white">User</div>
-                </div>
-                <div className="h-8 w-0.5 md:h-0.5 md:w-16 bg-white/20 relative">
-                    <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0a0a0a] px-2 text-[10px] text-white/40">CHAT</div>
-                </div>
-                <div className="p-6 bg-blue-500/10 rounded-2xl border border-blue-500/20 w-48">
-                    <BrainCircuit className="h-8 w-8 mx-auto mb-2 text-blue-400" />
-                    <div className="font-bold text-blue-400">Orchestrator</div>
-                </div>
-                <div className="h-8 w-0.5 md:h-0.5 md:w-16 bg-white/20 relative">
-                     <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0a0a0a] px-2 text-[10px] text-white/40">DELEGATE</div>
-                </div>
-                <div className="p-6 bg-yellow-500/10 rounded-2xl border border-yellow-500/20 w-48">
-                    <div className="flex justify-center -space-x-2 mb-2">
-                        <div className="w-8 h-8 rounded-full bg-blue-500/20 border border-blue-500/40 flex items-center justify-center text-[10px] text-blue-400">FE</div>
-                        <div className="w-8 h-8 rounded-full bg-orange-500/20 border border-orange-500/40 flex items-center justify-center text-[10px] text-orange-400">BE</div>
-                    </div>
-                    <div className="font-bold text-yellow-400">Specialists</div>
-                </div>
-             </div>
+          {/* PDCA Cycle Diagram */}
+          <div className="flex flex-col md:flex-row items-center justify-center gap-4 text-center">
+            <div className="p-6 bg-white/5 rounded-2xl border border-white/10 w-48">
+              <User className="h-8 w-8 mx-auto mb-2 text-white" />
+              <div className="font-bold text-white">User</div>
+            </div>
+            <div className="h-8 w-0.5 md:h-0.5 md:w-16 bg-white/20 relative">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0a0a0a] px-2 text-[10px] text-white/40">CHAT</div>
+            </div>
+            <div className="p-6 bg-blue-500/10 rounded-2xl border border-blue-500/20 w-48">
+              <BrainCircuit className="h-8 w-8 mx-auto mb-2 text-blue-400" />
+              <div className="font-bold text-blue-400">Orchestrator</div>
+            </div>
+            <div className="h-8 w-0.5 md:h-0.5 md:w-16 bg-white/20 relative">
+              <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#0a0a0a] px-2 text-[10px] text-white/40">PDCA</div>
+            </div>
+            <div className="p-6 bg-gradient-to-br from-[#EA4335]/10 via-[#FBBC04]/10 to-[#34A853]/10 rounded-2xl border border-white/20 w-48">
+              <div className="flex justify-center gap-1 mb-2">
+                <div className="w-3 h-3 rounded-full bg-[#EA4335]" />
+                <div className="w-3 h-3 rounded-full bg-[#FBBC04]" />
+                <div className="w-3 h-3 rounded-full bg-[#34A853]" />
+                <div className="w-3 h-3 rounded-full bg-[#4285F4]" />
+              </div>
+              <div className="font-bold text-white">Specialists</div>
+            </div>
+          </div>
         </div>
       </div>
     </div>

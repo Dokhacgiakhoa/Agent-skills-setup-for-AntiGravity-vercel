@@ -1,7 +1,7 @@
 {
-  "name": "antigravity-lab",
+  "name": "agent-skills-setup-for-antigravity",
   "version": "1.0.0",
-  "description": "AI Agent project powered by Google Antigravity",
+  "description": "AI Agent project powered by AntiGravity IDE",
   "private": true,
   "scripts": {
     "dev": "next dev",
@@ -13,7 +13,7 @@
     "@radix-ui/react-slot": "^1.2.4",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
-    "framer-motion": "^11.3.19",
+    "framer-motion": "^11.18.2",
     "lucide-react": "^0.414.0",
     "next": "^14.2.5",
     "react": "^18.3.1",
@@ -34,8 +34,13 @@
   "keywords": [
     "ai",
     "agent",
-    "google-antigravity"
+    "agent-skills-setup-for-antigravity"
   ],
   "author": "",
-  "license": "MIT"
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dokhacgiakhoa/Agent-skills-setup-for-AntiGravity-npm.git"
+  },
+  "homepage": "https://agent-skills-setup-for-antigravity.vercel.app"
 }

@@ -1,8 +1,9 @@
 ---
 name: modern-web-architect
-description: >
-  Master Frontend & Web Architecture. Combines React 19, Next.js 15, App Router, 
-  State Management, and High-Craft UI Design. Includes FFCI and DFII evaluation frameworks.
+description: Master Frontend & Web Architecture.
+category: architecture
+version: 4.0.5
+layer: master-skill
 ---
 
 # 🌐 Modern Web Architect (Master Skill)

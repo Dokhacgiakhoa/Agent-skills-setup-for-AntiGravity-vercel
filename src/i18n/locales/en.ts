@@ -2,7 +2,7 @@ export const en = {
   common: {
     heroTitle: "Intelligent OS for AI Engineers",
     getStarted: "Activate Now",
-    copyCommand: "npx antigravity-ide@latest",
+    copyCommand: "npx agent-skills-setup-for-antigravity@latest",
     version: "v4.0.0 Gemini",
     contact: "Contact",
     community: "Community"
@@ -73,25 +73,25 @@ export const en = {
       sub: "PROJECT",
       desc: "First time in the world, an AI system capable of self-adjusting operating protocols to match problem complexity.",
       options: {
-        solo: { title: "SOLO (Flexible)", desc: "Optimized for speed. Multi-tasking 'Hybrid' Agent capable of handling multi-domain." },
-        team: { title: "TEAM (Standard)", desc: "Coordinated process with plan verification. Specialized Agents." },
-        enterprise: { title: "ENTERPRISE (Secure)", desc: "Enterprise-grade standardization. Mandatory Security Audit and Quality Control." }
+        solo: { title: "INSTANT (MVP)", desc: "Optimized for speed. One Agent handles multi-tasking (Fullstack).", features: ["Fast Results", "Skip Checkpoints", "Full Access"] },
+        team: { title: "CREATIVE (Full AI)", desc: "Clear roles, prioritizing creativity and breakthrough.", features: ["Mandatory /plan", "Cross Review", "Specialized Agents"] },
+        enterprise: { title: "SME (Enterprise)", desc: "Enterprise-grade standardization. Mandatory Audit and Quality Control.", features: ["Strict PDCA", "Mandatory Audit", "Domain Limits"] }
       },
       visualizer: {
         header: "LIVE SIMULATION",
         solo: {
-          hybrid: "Hybrid",
+          hybrid: "MVP",
           skills: ["CODING", "DATA", "OPS", "SECURITY", "PERFORMANCE"]
         },
         squad: {
-          planner: { role: "PLANNER", task: "Define MVP" },
-          specialist: { role: "SPECIALIST", task: "Execute" },
-          inspector: { role: "INSPECTOR", task: "Verify" },
-          tasks: ["ASSIGN", "REVIEW", "DELIVER"]
+          planner: { role: "CREATIVE", task: "Breakthrough Ideas" },
+          specialist: { role: "SPECIALIST", task: "AI Execution" },
+          inspector: { role: "REVIEWER", task: "Quality Check" },
+          tasks: ["BRAINSTORM", "IMPLEMENT", "REVIEW"]
         },
         factory: {
-          orchestrator: "ORCHESTRATOR",
-          strategy: "Strategy & Alloc"
+          orchestrator: "SME ORCHESTRATOR",
+          strategy: "Audit & Compliance"
         }
       }
     },
@@ -131,7 +131,7 @@ export const en = {
     finalCta: {
       title: "READY TO",
       highlight: "ACTIVATE?",
-      subTitle: "Join thousands of AI engineers building the future with Google Antigravity.",
+      subTitle: "Join thousands of AI engineers building the future with Agent skills setup for AntiGravity.",
       button: "Initialize Project"
     },
     smartAlloc: {
@@ -150,7 +150,7 @@ export const en = {
   },
   dictionaries: {
     title: "System Glossary",
-    subTitle: "Lookup all terms, roles, and core technologies of the AntiGravity ecosystem.",
+    subTitle: "Lookup all terms, roles, and core technologies of the Agent skills setup for AntiGravity ecosystem.",
     searchPlaceholder: "Search terms...",
     noResult: "No results found.",
     systemId: "System ID",
@@ -186,11 +186,13 @@ export const en = {
     badge: "Installation Process",
     headerTitle: "Installation",
     headerHighlight: "& Configuration",
-    headerDesc: "Step-by-step installation and configuration of the Google AntiGravity development environment.",
-    phase1: {
-      badge: "Phase 1",
-      title: "INSTALL GOOGLE ANTIGRAVITY IDE",
-      desc: "Choose the version suitable for your operating system to start."
+    headerDesc: "Step-by-step installation and configuration of the Agent skills setup for AntiGravity development environment.",
+    steps: {
+      step1: {
+        badge: "Phase 1",
+        title: "INSTALL AGENT SKILLS SETUP FOR ANTIGRAVITY",
+        desc: "Choose the version suitable for your operating system to start."
+      }
     },
     phase2: {
       badge: "Phase 2",
@@ -344,9 +346,9 @@ export const en = {
          workflow: { title: "Workflow", desc: "Step-by-step execution scripts for complex tasks.", exp: "/debug workflow requires finding root cause and creating tests before fixing code.", enTerm: "Playbook / Script" }
       },
       modes: {
-         solo: { title: "Individual (Solo-Ninja)", desc: "Optimized for speed. One Agent handles multi-tasking (Fullstack).", features: ["Skip Checkpoints", "Fast Results", "Full Access"] },
-         squad: { title: "Team (Agile-Squad)", desc: "Clear roles, prioritizing consistency and collaboration.", features: ["Minimal /plan", "Cross Review", "Specialized Agents"] },
-         factory: { title: "Enterprise (Software-Factory)", desc: "Standardized, secure, and scalable.", features: ["Strict PDCA", "Mandatory Audit", "Domain Limits"] }
+         solo: { title: "Instant (MVP)", desc: "Optimized for speed. One Agent handles multi-tasking (Fullstack).", features: ["Fast Results", "Skip Checkpoints", "Full Access"] },
+         squad: { title: "Creative (Full AI)", desc: "Clear roles, prioritizing creativity and breakthrough.", features: ["Mandatory /plan", "Cross Review", "Specialized Agents"] },
+         factory: { title: "SME (Enterprise)", desc: "Enterprise-grade standardization. Mandatory Audit and Quality Control.", features: ["Strict PDCA", "Mandatory Audit", "Domain Limits"] }
       },
       gettingTimestamp: {
         step1: { title: "Verify AI Connection", desc: "If you are reading this in AI chat, everything is ready!" },
@@ -373,7 +375,7 @@ export const en = {
           monitor: "Setup server monitoring",
           onboard: "Auto onboarding for new members",
           "log-error": "Save errors to log for learning",
-          update: "Check and update Antigravity IDE",
+          title: "Why Choose Agent skills setup for AntiGravity?",
           "update-docs": "Sync docs when new features adding",
           "plan-auto-update-chat": "Plan auto-update feature"
       }

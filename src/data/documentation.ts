@@ -8,10 +8,10 @@
 // THỐNG KÊ HỆ THỐNG (Đếm thực tế từ file system)
 // =============================================================================
 export const systemStats = {
-  skills: 51,      // Số thư mục trong .agent/skills
-  agents: 23,      // Số file .md trong .agent/agents  
-  workflows: 21,   // Số file .md trong .agent/workflows
-  rules: 12,       // Số file trong .agent/rules
+  skills: 72,      // Số thư mục trong .agent/skills
+  agents: 22,      // Số file .md trong .agent/agents  
+  workflows: 30,   // Số file .md trong .agent/workflows
+  rules: 15,       // Số file trong .agent/rules
 };
 
 // =============================================================================
@@ -38,7 +38,6 @@ export const agentsList = [
   { id: "debugger", name: "Debugger", role: "Chuyên gia gỡ lỗi", roleEn: "Debugging Expert", category: "act", icon: "🔧" },
   { id: "documentation-writer", name: "Doc Writer", role: "Viết tài liệu", roleEn: "Documentation Writer", category: "plan", icon: "📝" },
   { id: "seo-specialist", name: "SEO Specialist", role: "Chuyên gia SEO", roleEn: "SEO Specialist", category: "plan", icon: "🔎" },
-  { id: "codebase-expert", name: "Codebase Expert", role: "Chuyên gia mã nguồn", roleEn: "Codebase Expert", category: "do", icon: "💻" },
   { id: "code-archaeologist", name: "Code Archaeologist", role: "Khảo cổ mã nguồn", roleEn: "Code Archaeologist", category: "do", icon: "🏛️" },
   { id: "explorer-agent", name: "Explorer Agent", role: "Khám phá dự án", roleEn: "Explorer Agent", category: "plan", icon: "🧭" },
 ];
@@ -214,8 +213,8 @@ export const workflowsList = [
     command: "/update", 
     name: "Cập nhật hệ thống", 
     nameEn: "System Update",
-    desc: "Kiểm tra và cập nhật Antigravity IDE",
-    descEn: "Check and update Antigravity IDE",
+    desc: "Kiểm tra và cập nhật Agent skills setup for AntiGravity",
+    descEn: "Check and update Agent skills setup for AntiGravity",
     category: "system"
   },
   { 
@@ -228,12 +227,93 @@ export const workflowsList = [
     category: "documentation"
   },
   { 
-    id: "plan-auto-update-chat", 
-    command: "/plan-auto-update-chat", 
-    name: "Auto Update Chat", 
-    nameEn: "Auto Update Chat",
-    desc: "Lên kế hoạch tính năng tự động cập nhật",
-    descEn: "Plan auto-update feature",
+    id: "api", 
+    command: "/api", 
+    name: "Thiết kế & Tài liệu API", 
+    nameEn: "API Design & Doc",
+    desc: "Xây dựng hệ thống API chuyên nghiệp theo chuẩn OpenAPI 3.1",
+    descEn: "Build professional API systems following OpenAPI 3.1 standards",
+    category: "development"
+  },
+  { 
+    id: "blog", 
+    command: "/blog", 
+    name: "Hệ thống Blog", 
+    nameEn: "Blog System",
+    desc: "Khởi tạo hệ thống tin tức/blog hỗ trợ Markdown và SEO",
+    descEn: "Initialize news/blog system with Markdown and SEO support",
+    category: "content"
+  },
+  { 
+    id: "compliance", 
+    command: "/compliance", 
+    name: "Tuân thủ pháp lý", 
+    nameEn: "Compliance",
+    desc: "Đảm bảo dự án tuân thủ các quy định quốc tế (GDPR, HIPAA, SOC2)",
+    descEn: "Ensure project compliance with international regulations (GDPR, HIPAA, SOC2)",
+    category: "quality"
+  },
+  { 
+    id: "explain", 
+    command: "/explain", 
+    name: "Giải thích Code", 
+    nameEn: "Explain Code",
+    desc: "Giải thích sâu về logic, kiến trúc và chuyển giao tri thức",
+    descEn: "In-depth explanation of logic, architecture, and knowledge transfer",
+    category: "documentation"
+  },
+  { 
+    id: "mobile", 
+    command: "/mobile", 
+    name: "Phát triển Mobile", 
+    nameEn: "Mobile Development",
+    desc: "Xây dựng ứng dụng di động Native hoặc Cross-platform chuyên nghiệp",
+    descEn: "Build professional Native or Cross-platform mobile applications",
+    category: "development"
+  },
+  { 
+    id: "performance", 
+    command: "/performance", 
+    name: "Kiểm tra hiệu năng", 
+    nameEn: "Performance",
+    desc: "Tăng tốc độ tải trang và tối ưu Core Web Vitals",
+    descEn: "Boost page load speed and optimize Core Web Vitals",
+    category: "advanced"
+  },
+  { 
+    id: "portfolio", 
+    command: "/portfolio", 
+    name: "Trang Portfolio", 
+    nameEn: "Portfolio Page",
+    desc: "Tạo trang web cá nhân và xây dựng thương hiệu chuyên nghiệp",
+    descEn: "Create personal website and build professional branding",
+    category: "design"
+  },
+  { 
+    id: "realtime", 
+    command: "/realtime", 
+    name: "Giao tiếp Realtime", 
+    nameEn: "Realtime Sync",
+    desc: "Tích hợp Socket.io, WebRTC hoặc SSE cho ứng dụng thời gian thực",
+    descEn: "Integrate Socket.io, WebRTC or SSE for real-time applications",
+    category: "advanced"
+  },
+  { 
+    id: "release-version", 
+    command: "/release-version", 
+    name: "Phát hành phiên bản", 
+    nameEn: "Release Version",
+    desc: "Tự động cập nhật phiên bản và đồng bộ toàn bộ tài liệu hệ thống",
+    descEn: "Auto versioning and synchronize entire system documentation",
+    category: "system"
+  },
+  { 
+    id: "visually", 
+    command: "/visually", 
+    name: "Trực quan hóa logic", 
+    nameEn: "Visual Logic",
+    desc: "Vẽ sơ đồ kiến trúc, Mindmap và luồng logic dự án",
+    descEn: "Visualize architecture diagrams, mindmaps, and project logic flows",
     category: "planning"
   },
 ];
@@ -311,7 +391,7 @@ export const pdcaCycle = [
 ];
 
 // =============================================================================
-// DANH MỤC SKILLS (51 Master Skills - Phân nhóm chuyên sâu)
+// DANH MỤC SKILLS (72 Master Skills - Phân nhóm chuyên sâu)
 // =============================================================================
 export const skillCategories = [
   {
@@ -327,6 +407,11 @@ export const skillCategories = [
       { name: "web-design-guidelines", desc: "Quy chuẩn thiết kế Web chuyên nghiệp", descEn: "Professional Web Design Guidelines", features: ["WCAG 2.1 Compliance", "Aesthetic ratio", "Typography scales"] },
       { name: "webapp-testing", desc: "E2E testing với Playwright & Cypress", descEn: "E2E testing with Playwright & Cypress", features: ["Visual regression", "CI/CD integration", "Mocking APIs"] },
       { name: "i18n-localization", desc: "Đa ngôn ngữ và bản địa hóa toàn cầu", descEn: "I18n & Global Localization", features: ["RTL Support", "Dynamic translations", "ISO standards"] },
+      { name: "react-best-practices", desc: "React patterns và anti-patterns", descEn: "React Patterns & Anti-patterns", features: ["Hooks patterns", "Performance optimization", "State management"] },
+      { name: "react-native-best-practices", desc: "React Native & Expo engineering", descEn: "React Native & Expo Engineering", features: ["Expo SDK", "Native modules", "Performance tuning"] },
+      { name: "modern-web-performance", desc: "High-Performance Web Engineering", descEn: "High-Performance Web Engineering", features: ["Core Web Vitals", "Bundle optimization", "Runtime performance"] },
+      { name: "ui-ux-pro-max-skill", desc: "Premium design và micro-interactions", descEn: "Premium Design & Micro-interactions", features: ["Glassmorphism 2.0", "Bento grid", "Framer Motion"] },
+      { name: "antfu-coding-style", desc: "Opinionated coding style by Anthony Fu", descEn: "Opinionated Coding Style by Anthony Fu", features: ["ESLint flat config", "TypeScript patterns", "Clean code"] },
     ]
   },
   {
@@ -341,6 +426,9 @@ export const skillCategories = [
       { name: "python-patterns", desc: "Mẫu thiết kế Python hiện đại", descEn: "Modern Python Design Patterns", features: ["FastAPI standards", "Asynchronous patterns", "Type hinting"] },
       { name: "database-design", desc: "Thiết kế Schema 3NF và tối ưu hóa", descEn: "3NF Schema Design & Optimization", features: ["Indexing strategy", "Normalization", "Query profiling"] },
       { name: "database-migration", desc: "Quản lý di cư dữ liệu không gián đoạn", descEn: "Zero-downtime Data Migration", features: ["Zero-downtime migrations", "Rollback strategies", "Seeding patterns"] },
+      { name: "postgres-best-practices", desc: "PostgreSQL best practices và optimization", descEn: "PostgreSQL Best Practices & Optimization", features: ["Query optimization", "Connection pooling", "Partitioning"] },
+      { name: "rust-pro", desc: "Rust programming patterns", descEn: "Rust Programming Patterns", features: ["Ownership model", "Concurrency", "Error handling"] },
+      { name: "legacy-modernizer", desc: "Hiện đại hóa codebase legacy", descEn: "Legacy Codebase Modernization", features: ["Incremental migration", "Strangler pattern", "Tech debt reduction"] },
     ]
   },
   {
@@ -355,6 +443,7 @@ export const skillCategories = [
       { name: "red-team-tactics", desc: "Chiến thuật Red Team (MITRE ATT&CK)", descEn: "Red Team Tactics (MITRE)", features: ["Lateral movement", "Persistence mechanisms", "Evasion techniques"] },
       { name: "production-code-audit", desc: "Audit code lên tiêu chuẩn production", descEn: "Production-grade Code Audit", features: ["Scalability review", "Resource utilization", "Technical debt audit"] },
       { name: "code-review-checklist", desc: "Checklist review code chuẩn Enterprise", descEn: "Enterprise Code Review Checklist", features: ["Safety audit", "Pattern consistency", "Maintainability metrics"] },
+      { name: "malware-analyst", desc: "Phân tích mã độc và threat intelligence", descEn: "Malware Analysis & Threat Intel", features: ["Binary analysis", "Threat hunting", "IOC extraction"] },
     ]
   },
   {
@@ -369,6 +458,8 @@ export const skillCategories = [
       { name: "server-management", desc: "Quản trị máy chủ và Linux tối ưu", descEn: "Server Mgmt & Linux Optimization", features: ["Kernel tuning", "Monitoring setup", "Hardening servers"] },
       { name: "incident-responder", desc: "Phản ứng và xử lý sự cố SRE", descEn: "SRE Incident Response", features: ["Root cause analysis", "Post-mortem reports", "On-call standard"] },
       { name: "performance-engineer", desc: "Kỹ sư tối ưu hóa hiệu năng hệ thống", descEn: "System Performance Engineer", features: ["Bottleneck identification", "Throughput scaling", "Latency reduction"] },
+      { name: "vercel-deploy", desc: "Automated Vercel deployment", descEn: "Automated Vercel Deployment", features: ["Edge Config", "Preview deployments", "Analytics integration"] },
+      { name: "git-collaboration-master", desc: "Git collaboration và branching strategies", descEn: "Git Collaboration & Branching", features: ["GitFlow", "Trunk-based dev", "PR workflows"] },
     ]
   },
   {
@@ -383,6 +474,10 @@ export const skillCategories = [
       { name: "mcp-builder", desc: "Xây dựng Server Model Context Protocol", descEn: "MCP Server Builder", features: ["Tool definitions", "Resource mapping", "Context window tuning"] },
       { name: "brainstorming", desc: "Quy trình Socratic và Brainstorming", descEn: "Socratic Brainstorming Process", features: ["Clarifying questions", "First principles thinking", "Strategic planning"] },
       { name: "behavioral-modes", desc: "Định nghĩa chế độ hành vi AI", descEn: "AI Behavioral Modes", features: ["Implement mode", "Review mode", "Teaching mode"] },
+      { name: "langgraph-engineering", desc: "Building AI agents với LangGraph", descEn: "Building AI Agents with LangGraph", features: ["State machines", "Checkpointing", "Human-in-the-loop"] },
+      { name: "agent-orchestration", desc: "Điều phối đa Agent và state management", descEn: "Multi-agent Orchestration & State", features: ["Task distribution", "State persistence", "Agent lifecycle"] },
+      { name: "voice-ai-engine-development", desc: "Phát triển Voice AI Engine", descEn: "Voice AI Engine Development", features: ["Speech-to-text", "Text-to-speech", "Voice cloning"] },
+      { name: "strategic-research", desc: "Nghiên cứu chiến lược và phân tích", descEn: "Strategic Research & Analysis", features: ["Market analysis", "Competitive research", "Trend forecasting"] },
     ]
   },
   {
@@ -425,6 +520,7 @@ export const skillCategories = [
       { name: "cro-expert-kit", desc: "Tối ưu hóa tỷ lệ chuyển đổi (CRO)", descEn: "CRO Expert Kit", features: ["Landing page psychology", "Friction reduction", "Form optimization"] },
       { name: "game-development", desc: "Phát triển Game và logic tương tác mạnh", descEn: "Game Development", features: ["Game loops", "Asset management", "Level design"] },
       { name: "mobile-design", desc: "Tư duy thiết kế ứng dụng di động ưu tiên", descEn: "Mobile-First Design Thinking", features: ["Touch ergonomics", "Offline capability", "Mobile UI patterns"] },
+      { name: "daily-news-report", desc: "Báo cáo tin tức hàng ngày tự động", descEn: "Automated Daily News Report", features: ["News aggregation", "Summary generation", "Trend analysis"] },
     ]
   },
   {
@@ -435,6 +531,19 @@ export const skillCategories = [
     skills: [
       { name: "bash-linux", desc: "Bash/Linux Shell Scripting chuyên nghiệp", descEn: "Pro Bash/Linux Scripting", features: ["Grepping patterns", "Stream editing", "Automated scripts"] },
       { name: "powershell-windows", desc: "Windows PowerShell và Automation", descEn: "Windows PowerShell Automation", features: ["CMDlets", "Registry management", "Windows workflows"] },
+    ]
+  },
+  {
+    id: "mcp",
+    name: "MCP Servers",
+    nameEn: "MCP Servers",
+    icon: "🔌",
+    skills: [
+      { name: "filesystem-mcp", desc: "Filesystem MCP Server", descEn: "Filesystem MCP Server", features: ["File operations", "Directory listing", "Content reading"] },
+      { name: "github-mcp", desc: "GitHub MCP Server", descEn: "GitHub MCP Server", features: ["Repo management", "PR operations", "Issue tracking"] },
+      { name: "notion-mcp", desc: "Notion MCP Server", descEn: "Notion MCP Server", features: ["Page management", "Database queries", "Block operations"] },
+      { name: "postgres-mcp", desc: "PostgreSQL MCP Server", descEn: "PostgreSQL MCP Server", features: ["Query execution", "Schema inspection", "Data manipulation"] },
+      { name: "puppeteer-mcp", desc: "Puppeteer MCP Server", descEn: "Puppeteer MCP Server", features: ["Browser automation", "Screenshot capture", "Form filling"] },
     ]
   }
 ];
@@ -754,8 +863,8 @@ export const rulesList = [
     name: "System Update",
     type: "on-demand",
     icon: "🔄",
-    description: "Kích hoạt khi người dùng hỏi về cập nhật Antigravity IDE.",
-    descriptionEn: "Activate when user asks about Antigravity IDE updates.",
+    description: "Kích hoạt khi người dùng hỏi về cập nhật Agent skills setup for AntiGravity.",
+    descriptionEn: "Activate when user asks about Agent skills setup for AntiGravity updates.",
   },
 ];
 

@@ -1,0 +1,42 @@
+<svg width="512" height="512" viewBox="0 0 512 512" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="google_grad" x1="100" y1="100" x2="412" y2="412" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#EA4335" /> <!-- Red -->
+      <stop offset="35%" stop-color="#FBBC04" /> <!-- Yellow -->
+      <stop offset="65%" stop-color="#34A853" /> <!-- Green -->
+      <stop offset="100%" stop-color="#4285F4" /> <!-- Blue -->
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="5" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Black Background (Optional container) -->
+  <rect width="512" height="512" rx="80" fill="#000000" />
+
+  <!-- Rounded Triangle "A" Frame -->
+  <!-- Calculated path for soft rounded triangle -->
+  <path d="M256 90 
+           L420 390 A 40 40 0 0 1 385 450 
+           L127 450 A 40 40 0 0 1 92 390 
+           L256 90" 
+        stroke="url(#google_grad)" 
+        stroke-width="50" 
+        stroke-linecap="round" 
+        stroke-linejoin="round"
+        fill="none" 
+        />
+        
+  <!-- Gemini Sparkle Star -->
+  <path d="M256 190 
+           C 256 250, 230 270, 200 270 
+           C 230 270, 256 290, 256 350 
+           C 256 290, 282 270, 312 270 
+           C 282 270, 256 250, 256 190 Z" 
+        fill="#FFFFFF"
+        style="filter: drop-shadow(0 0 8px rgba(255,255,255,0.8));" />
+</svg>

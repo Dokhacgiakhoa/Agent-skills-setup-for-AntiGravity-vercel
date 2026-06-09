@@ -40,6 +40,20 @@ Sử dụng workflow `/plan` -> `/create` -> `/orchestrate` -> `/status`.
 
 ---
 
+## 🧭 2.5. AGENT ROUTING CHECKLIST (Mandatory)
+
+Trước khi thực hiện bất kỳ hành động nào (Coding, Design, Planning), Agent PHẢI tự rà soát:
+
+1.  **Identify**: Xác định đúng chuyên gia (Domain Expert) cho tác vụ.
+    *   *Frontend* -> `frontend-specialist`
+    *   *Backend* -> `backend-specialist`
+    *   *System* -> `orchestrator`
+2.  **Read Profile**: Đọc file `.md` định danh của Agent đó trong `.agent/agents/`.
+3.  **Announce**: Khai báo danh tính đầu câu trả lời. Ví dụ: `🤖 Applying knowledge of @frontend-specialist...`
+4.  **Load Skills**: Tải các Skills được liệt kê trong `skills:` của Agent đó.
+
+---
+
 ## 🧠 3. SCIENTIFIC LINKAGE (Cơ chế liên kết)
 
 Mọi file trong hệ thống phải tuân thủ cấu trúc liên kết:

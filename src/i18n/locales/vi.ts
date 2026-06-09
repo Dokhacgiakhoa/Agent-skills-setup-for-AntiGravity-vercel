@@ -2,7 +2,7 @@ export const vi = {
   common: {
     heroTitle: "Hệ điều hành Trí tuệ cho AI Engineers",
     getStarted: "Kích hoạt ngay",
-    copyCommand: "npx antigravity-ide@latest",
+    copyCommand: "npx agent-skills-setup-for-antigravity@latest",
     version: "v4.0.0 Gemini",
     contact: "Liên hệ",
     community: "Cộng đồng"
@@ -73,25 +73,25 @@ export const vi = {
       sub: "DỰ ÁN",
       desc: "Lần đầu tiên trên thế giới, hệ thống AI có khả năng tự thay đổi giao thức vận hành để phù hợp với độ phức tạp của bài toán.",
       options: {
-        solo: { title: "CÁ NHÂN (Linh hoạt)", desc: "Tối ưu tốc độ. Agent đa nhiệm 'Hybrid' với khả năng xử lý đa domain." },
-        team: { title: "TEAM (Tiêu chuẩn)", desc: "Quy trình phối hợp có xác thực kế hoạch. Các Agent chuyên biệt hóa." },
-        enterprise: { title: "DOANH NGHIỆP (Bảo mật)", desc: "Chuẩn hóa cấp độ Enterprise. Bắt buộc Audit bảo mật và kiểm soát chất lượng." }
+        solo: { title: "INSTANT (MVP)", desc: "Tối ưu tốc độ. Một Agent xử lý đa nhiệm (Fullstack).", features: ["Ra kết quả nhanh", "Bỏ qua Checkpoint", "Full quyền truy cập"] },
+        team: { title: "CREATIVE (AI Toàn diện)", desc: "Phân vai rõ ràng, ưu tiên tính sáng tạo và đột phá.", features: ["Bắt buộc /plan", "Review chéo", "Agent chuyên biệt"] },
+        enterprise: { title: "SME (Doanh nghiệp)", desc: "Chuẩn hóa cấp độ Enterprise. Bắt buộc Audit và kiểm soát chất lượng.", features: ["Tuân thủ PDCA", "Audit bắt buộc", "Giới hạn Domain"] }
       },
       visualizer: {
         header: "MÔ PHỎNG LIVE",
         solo: {
-          hybrid: "Đa năng",
+          hybrid: "MVP",
           skills: ["LẬP TRÌNH", "DỮ LIỆU", "VẬN HÀNH", "BẢO MẬT", "HIỆU NĂNG"]
         },
         squad: {
-          planner: { role: "KẾ HOẠCH", task: "Định nghĩa MVP" },
-          specialist: { role: "CHUYÊN GIA", task: "Thực thi" },
-          inspector: { role: "KIỂM SOÁT", task: "Xác thực" },
-          tasks: ["GIAO VIỆC", "KIỂM TRA", "BÀN GIAO"]
+          planner: { role: "SÁNG TẠO", task: "Ý tưởng đột phá" },
+          specialist: { role: "CHUYÊN GIA", task: "Thực thi AI" },
+          inspector: { role: "KIỂM SOÁT", task: "Review chất lượng" },
+          tasks: ["BRAINSTORM", "IMPLEMENT", "REVIEW"]
         },
         factory: {
-          orchestrator: "ĐIỀU PHỐI TỔNG",
-          strategy: "Chiến lược & Phân bổ"
+          orchestrator: "ĐIỀU PHỐI SME",
+          strategy: "Audit & Compliance"
         }
       }
     },
@@ -131,7 +131,7 @@ export const vi = {
     finalCta: {
       title: "SẴN SÀNG",
       highlight: "KÍCH HOẠT?",
-      subTitle: "Tham gia cùng hàng nghìn kỹ sư AI đang xây dựng tương lai với Google Antigravity.",
+      subTitle: "Tham gia cùng hàng nghìn kỹ sư AI đang xây dựng tương lai với Agent skills setup for AntiGravity.",
       button: "Khởi tạo Dự án"
     },
     smartAlloc: {
@@ -150,7 +150,7 @@ export const vi = {
   },
   dictionaries: {
     title: "Từ điển thuật ngữ",
-    subTitle: "Tra cứu toàn bộ thuật ngữ, vai trò và công nghệ cốt lõi của hệ sinh thái AntiGravity.",
+    subTitle: "Tra cứu toàn bộ thuật ngữ, vai trò và công nghệ cốt lõi của hệ sinh thái Agent skills setup for AntiGravity.",
     searchPlaceholder: "Tìm kiếm thuật ngữ...",
     noResult: "Không tìm thấy kết quả.",
     systemId: "System ID",
@@ -186,10 +186,10 @@ export const vi = {
     badge: "Quy trình cài đặt",
     headerTitle: "Cài đặt",
     headerHighlight: "& Cấu hình",
-    headerDesc: "Từng bước cài đặt và cấu hình môi trường phát triển Google AntiGravity.",
+    headerDesc: "Từng bước cài đặt và cấu hình môi trường phát triển Agent skills setup for AntiGravity.",
     phase1: {
       badge: "Phase 1",
-      title: "CÀI ĐẶT GOOGLE ANTIGRAVITY IDE",
+      title: "CÀI ĐẶT AGENT SKILLS SETUP FOR ANTIGRAVITY",
       desc: "Lựa chọn phiên bản phù hợp với hệ điều hành của bạn để bắt đầu."
     },
     phase2: {
@@ -335,7 +335,7 @@ export const vi = {
         badge: "Automated Workflows"
     },
     advanced: { title: "Advanced Usage", subtitle: "Quản lý và tối ưu hóa hệ thống", update: "Cập nhật System", updateDesc: "Giữ cho Antigravity Brain luôn mới nhất", identity: "Identity Anchor", identityDesc: "Đặt tên Agent để kiểm tra nhận thức" },
-    gettingStarted: { title: "Bắt đầu với Antigravity", subtitle: "Chào mừng bạn đến với không gian phát triển được hỗ trợ bởi AI!", verifyTitle: "Xác minh hệ thống" },
+    gettingStarted: { title: "Tại sao chọn Agent skills setup for AntiGravity?", subtitle: "Chào mừng bạn đến với không gian phát triển được hỗ trợ bởi AI!", verifyTitle: "Xác minh hệ thống" },
     cta: { title: "Sẵn sàng bắt đầu?", subtitle: "Khám phá từ điển thuật ngữ hoặc bắt tay vào cài đặt ngay", dictionaryBtn: "Từ điển thuật ngữ", repoBtn: "GitHub Repository" },
     data: {
       concepts: {
@@ -344,9 +344,9 @@ export const vi = {
         workflow: { title: "Workflow", desc: "Step-by-step execution scripts for complex tasks.", exp: "Luồng /debug bắt buộc phải tìm nguyên nhân và tạo test trước khi sửa code.", enTerm: "Playbook / Script" }
       },
       modes: {
-        solo: { title: "Cá nhân (Solo-Ninja)", desc: "Tối ưu hóa tốc độ. Một Agent xử lý đa nhiệm (Fullstack).", features: ["Bỏ qua Checkpoint", "Kết quả nhanh", "Full quyền truy cập"] },
-        squad: { title: "Team (Agile-Squad)", desc: "Phân vai rõ ràng, ưu tiên tính nhất quán và cộng tác.", features: ["Bắt buộc /plan", "Review chéo", "Agent chuyên biệt"] },
-        factory: { title: "Doanh nghiệp (Software-Factory)", desc: "Chuẩn hóa, an toàn và có thể mở rộng.", features: ["Tuân thủ PDCA", "Audit bắt buộc", "Giới hạn Domain"] }
+        solo: { title: "Instant (MVP)", desc: "Tối ưu tốc độ. Một Agent xử lý đa nhiệm (Fullstack).", features: ["Ra kết quả nhanh", "Bỏ qua Checkpoint", "Full quyền truy cập"] },
+        squad: { title: "Creative (AI Toàn diện)", desc: "Phân vai rõ ràng, ưu tiên tính sáng tạo và đột phá.", features: ["Bắt buộc /plan", "Review chéo", "Agent chuyên biệt"] },
+        factory: { title: "SME (Doanh nghiệp)", desc: "Chuẩn hóa cấp độ Enterprise. Bắt buộc Audit và kiểm soát chất lượng.", features: ["Tuân thủ PDCA", "Audit bắt buộc", "Giới hạn Domain"] }
       },
       gettingTimestamp: {
         step1: { title: "Xác minh AI đã kết nối", desc: "Nếu bạn đang đọc nội dung này trong khung chat AI, mọi thứ đã sẵn sàng!" },
@@ -373,7 +373,7 @@ export const vi = {
           monitor: "Cài đặt hệ thống monitoring cho server",
           onboard: "Onboarding tự động cho thành viên mới",
           "log-error": "Lưu lỗi vào Error Log để học tập",
-          update: "Kiểm tra và cập nhật Antigravity IDE",
+          update: "Kiểm tra và cập nhật Agent skills setup for AntiGravity",
           "update-docs": "Đồng bộ docs khi có tính năng mới",
           "plan-auto-update-chat": "Lên kế hoạch tính năng tự động cập nhật"
       }

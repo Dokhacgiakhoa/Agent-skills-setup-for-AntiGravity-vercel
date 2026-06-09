@@ -76,13 +76,17 @@ export function Navbar() {
         )}
       >
         <div className="flex w-full items-center justify-between relative px-2">
-          {/* Logo Section */}
-          <Link href="/" className="flex items-center gap-3 z-20 group flex-shrink-0">
-            <div className="w-10 h-10 bg-[#FCD34D] rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(252,211,77,0.4)] group-hover:rotate-12 transition-transform">
-              <Rocket className="h-5 w-5 text-black" />
+          <Link href="/" className="flex items-center gap-3 group">
+            <div className="w-11 h-11 relative group-hover:scale-110 transition-transform duration-300 aspect-square rounded-xl overflow-hidden shadow-lg shadow-[#EA4335]/20 border border-white/10 bg-black/40">
+              <img 
+                src="/antigravity-ide-logo.png" 
+                alt="AntiGravity IDE Logo" 
+                className="w-full h-full object-cover p-1.5 mix-blend-screen"
+              />
+              <div className="absolute inset-0 ring-1 ring-inset ring-white/10 rounded-xl" />
             </div>
             <span className="hidden lg:inline-block font-black text-[#FCD34D] text-sm">
-              Google Antigravity
+              Agent Skills Setup
             </span>
           </Link>
 
@@ -173,7 +177,7 @@ export function Navbar() {
                <span className="text-[10px] font-black uppercase text-white/60 group-hover:text-white transition-colors">{locale === 'vi' ? 'VN' : 'EN'}</span>
             </button>
 
-            <Link href="https://github.com/Dokhacgiakhoa/google-antigravity" target="_blank" className="hidden sm:block">
+            <Link href="https://github.com/Dokhacgiakhoa/Agent-skills-setup-for-AntiGravity" target="_blank" className="hidden sm:block">
               <div className="p-2.5 bg-white/5 hover:bg-white/10 rounded-full border border-white/10 transition-colors">
                 <Github className="h-4 w-4 text-white/80" />
               </div>

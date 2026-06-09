@@ -1,4 +1,4 @@
-# Google Antigravity
+# Agent skills setup for AntiGravity
 
 [English](./README.md) | [Tiếng Việt](./README.vi.md)
 
@@ -7,7 +7,7 @@
 
 [![Giấy Phép: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Google Antigravity** không chỉ là một bộ skill, mà là một **Khung vận hành (Orchestration Framework)** toàn diện. Nó cung cấp một môi trường "Phòng tác chiến AI" giúp các AI Agent phối hợp theo dây chuyền sản xuất chuyên nghiệp (PDCA), đảm bảo mọi dòng code ra đời đều qua thẩm định và tối ưu hóa.
+**Agent skills setup for AntiGravity** không chỉ là một bộ skill, mà là một **Khung vận hành (Orchestration Framework)** toàn diện. Nó cung cấp một môi trường "Phòng tác chiến AI" giúp các AI Agent phối hợp theo dây chuyền sản xuất chuyên nghiệp (PDCA), đảm bảo mọi dòng code ra đời đều qua thẩm định và tối ưu hóa.
 
 | **27** Bộ Kỹ năng (Skills) | **15** Agent Chuyên gia | **22** Quy trình (Workflows) | **17** Mô-đun DNA (Shared) |
 | :---: | :---: | :---: | :---: |
@@ -21,14 +21,14 @@ Sử dụng CLI để thiết lập môi trường tác chiến trong 30 giây:
 
 ```sh
 # 1. Tạo dự án mới (Khuyên dùng - Luôn tải bản mới nhất)
-npx antigravity-ide@latest ten_du_an
+npx agent-skills-setup-for-antigravity@latest ten_du_an
 
 # 2. Cài đặt trực tiếp vào thư mục hiện tại
-npx antigravity-ide@latest
+npx agent-skills-setup-for-antigravity@latest
 ```
 
 > [!WARNING]
-> **Lưu ý quan trọng:** Không nên cài đặt Global (`npm install -g antigravity-ide`) vì sẽ gây xung đột phiên bản cũ/mới. Luôn dùng `npx ...@latest` để đảm bảo project được khởi tạo với Engine mới nhất.
+> **Lưu ý quan trọng:** Không nên cài đặt Global (`npm install -g agent-skills-setup-for-antigravity`) vì sẽ gây xung đột phiên bản cũ/mới. Luôn dùng `npx ...@latest` để đảm bảo project được khởi tạo với Engine mới nhất.
 
 ### ✨ Tính năng Setup Wizard (v4.0.0 - Big Update)
 Trải nghiệm dòng lệnh (CLI) đẳng cấp Premium với **Cơ chế Thích ứng theo Quy mô**:
@@ -95,7 +95,7 @@ Kích hoạt các Workflow chuyên sâu ngay trong khung chat:
 ### Cập nhật hệ thống
 Để cập nhật bộ não Antigravity lên bản mới nhất mà không mất các cấu hình custom:
 ```sh
-npx antigravity-ide update
+npx agent-skills-setup-for-antigravity update
 ```
 
 ---
@@ -120,4 +120,4 @@ ten-du-an/
 
 ---
 
-**Antigravity IDE** - Phá bỏ mọi giới hạn, đưa dự án của bạn lên tầm cao mới. 🛰️🚀
+**Agent skills setup for AntiGravity** - Phá bỏ mọi giới hạn, đưa dự án của bạn lên tầm cao mới. 🛰️🚀

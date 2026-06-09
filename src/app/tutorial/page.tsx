@@ -96,7 +96,7 @@ export default function TutorialPage() {
           <div className="mt-6 relative rounded-2xl overflow-hidden border border-white/10 shadow-xl shadow-rose-500/5">
             <Image 
               src="/antigravity-ide.png"
-              alt="Google Antigravity IDE Interface"
+              alt="Agent skills setup for AntiGravity Interface"
               width={1920}
               height={1080}
               className="w-full h-auto"
@@ -168,7 +168,7 @@ export default function TutorialPage() {
                       <p className="text-white/60 text-sm font-medium leading-relaxed">{t('tutorial.methods.way1Desc')}</p>
                    </div>
                 </div>
-                <TerminalBlock command="npx antigravity-ide my_project" />
+                 <TerminalBlock command="npx agent-skills-setup-for-antigravity my_project" />
              </div>
 
              {/* Way 02 - Sky (Modern Integration) */}
@@ -180,7 +180,7 @@ export default function TutorialPage() {
                       <p className="text-white/60 text-sm font-medium leading-relaxed">{t('tutorial.methods.way2Desc')}</p>
                    </div>
                 </div>
-                <TerminalBlock command="npx antigravity-ide" />
+                 <TerminalBlock command="npx agent-skills-setup-for-antigravity" />
              </div>
 
              {/* Way 03 - Amber (Maintenance) */}
@@ -192,7 +192,7 @@ export default function TutorialPage() {
                       <p className="text-white/60 text-sm font-medium leading-relaxed">{t('tutorial.methods.way3Desc')}</p>
                    </div>
                 </div>
-                <TerminalBlock command="npx antigravity-ide update" />
+                 <TerminalBlock command="npx agent-skills-setup-for-antigravity update" />
              </div>
           </div>
         </section>

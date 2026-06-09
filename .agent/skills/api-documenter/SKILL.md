@@ -1,9 +1,9 @@
 ---
 name: api-documenter
-description: >
-  Master API documentation with OpenAPI 3.1, AI-powered tools, and modern developer 
-  experience practices. Create interactive docs, generate SDKs, and build 
-  comprehensive developer portals.
+description: Master API documentation with OpenAPI 3.1.
+category: architecture
+version: 4.0.5
+layer: master-skill
 ---
 
 # 📄 API Documenter Master Kit

@@ -1,41 +1,83 @@
 "use client";
 
+import React, { useState, useMemo } from "react";
 import { motion } from "framer-motion";
-import { Zap, Wrench, Database, Layout, Shield, Server, Search, Globe, Rocket, Code, Laptop, Smartphone, Gamepad, Activity, ShieldCheck, Cpu, Cloud, Bug, Palette, Brain, Terminal } from "lucide-react";
+import { Zap, Search, ArrowUpRight, Globe, Server, ShieldCheck, Cloud, Brain, Cpu, Activity, Rocket, Terminal } from "lucide-react";
+import Link from "next/link";
 import { skillCategories, systemStats } from "@/data/documentation";
 import { useLanguage } from "@/contexts/LanguageContext";
 import { PageHeader } from "@/components/guide/ui/PageHeader";
+import { SearchBar, CategoryTabs } from "@/components/ui/premium";
+
+// Category config with colors
+const categoryConfig: Record<string, { color: string; icon: any }> = {
+  web: { color: "#4285F4", icon: Globe },
+  backend: { color: "#34A853", icon: Server },
+  security: { color: "#EA4335", icon: ShieldCheck },
+  devops: { color: "#9AA0A6", icon: Cloud },
+  ai: { color: "#8B5CF6", icon: Brain },
+  architecture: { color: "#FBBC04", icon: Cpu },
+  quality: { color: "#EA4335", icon: Activity },
+  growth: { color: "#34A853", icon: Rocket },
+  shells: { color: "#9AA0A6", icon: Terminal },
+  mcp: { color: "#4285F4", icon: Zap }
+};
 
 export default function SkillsPage() {
   const { t, locale } = useLanguage();
   const isEnglish = locale === 'en';
-  const iconMap: Record<string, any> = {
-    web: Globe,
-    backend: Server,
-    security: ShieldCheck,
-    devops: Cloud,
-    ai: Brain,
-    architecture: "🏛️",
-    quality: "🧪",
-    growth: "📈",
-    shells: "🐚"
-  };
+  const [searchQuery, setSearchQuery] = useState("");
+  const [activeCategory, setActiveCategory] = useState("all");
 
-  // Improved map with actual Lucide icons where possible
-  const lucideIconMap: Record<string, any> = {
-    web: Globe,
-    backend: Server,
-    security: ShieldCheck,
-    devops: Cloud,
-    ai: Brain,
-    architecture: Cpu,
-    quality: Activity,
-    growth: Rocket,
-    shells: Terminal
-  };
+  // Build category tabs with icons and colors
+  const categoryTabs = useMemo(() => {
+    const tabs: Array<{ id: string; label: string; count: number; icon?: React.ReactNode; color?: string }> = [
+      { id: "all", label: "Tất cả", count: systemStats.skills, color: "#FBBC04" }
+    ];
+    skillCategories.forEach(cat => {
+      const config = categoryConfig[cat.id] || { color: "#4285F4", icon: Zap };
+      const Icon = config.icon;
+      tabs.push({
+        id: cat.id,
+        label: isEnglish ? (cat.nameEn || cat.name) : cat.name,
+        count: cat.skills.length,
+        icon: <Icon className="w-4 h-4" />,
+        color: config.color
+      });
+    });
+    return tabs;
+  }, [isEnglish]);
+
+  // Filter skills
+  const filteredCategories = useMemo(() => {
+    let categories = skillCategories;
+
+    // Filter by category
+    if (activeCategory !== "all") {
+      categories = categories.filter(cat => cat.id === activeCategory);
+    }
+
+    // Filter by search
+    if (searchQuery) {
+      const query = searchQuery.toLowerCase();
+      categories = categories.map(cat => ({
+        ...cat,
+        skills: cat.skills.filter((skill: any) =>
+          skill.name.toLowerCase().includes(query) ||
+          skill.desc?.toLowerCase().includes(query) ||
+          skill.descEn?.toLowerCase().includes(query)
+        )
+      })).filter(cat => cat.skills.length > 0);
+    }
+
+    return categories;
+  }, [searchQuery, activeCategory]);
+
+  // Count total filtered skills
+  const totalFilteredSkills = filteredCategories.reduce((acc, cat) => acc + cat.skills.length, 0);
 
   return (
-    <div className="page-container mt-24 pb-24 space-y-16">
+    <div className="page-container mt-24 pb-24 space-y-12">
       <PageHeader 
         badgeIcon={Zap}
         badgeLabel={t('guide.skills.masterLabel')}
@@ -44,83 +86,132 @@ export default function SkillsPage() {
         color="yellow"
       />
 
-      <div className="grid lg:grid-cols-2 gap-10 max-w-7xl mx-auto">
-        {skillCategories.map((cat, idx) => {
-          const Icon = lucideIconMap[cat.id] || Wrench;
-          const googleColors = [
-            { color: "text-red-400", border: "border-red-500/20", bg: "bg-red-500/10", accent: "from-red-500/20" },
-            { color: "text-yellow-400", border: "border-yellow-500/20", bg: "bg-yellow-500/10", accent: "from-yellow-500/20" },
-            { color: "text-emerald-400", border: "border-emerald-500/20", bg: "bg-emerald-500/10", accent: "from-emerald-500/20" },
-            { color: "text-blue-400", border: "border-blue-500/20", bg: "bg-blue-500/10", accent: "from-blue-500/20" },
-          ];
-          const styles = googleColors[idx % googleColors.length];
-          
+      {/* Search & Filter */}
+      <motion.div
+        initial={{ opacity: 0, y: 20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ delay: 0.1 }}
+        className="space-y-4 max-w-4xl mx-auto"
+      >
+        <SearchBar 
+          placeholder="Tìm kiếm skill..." 
+          value={searchQuery}
+          onChange={setSearchQuery}
+        />
+        <div className="overflow-x-auto pb-2">
+          <CategoryTabs 
+            tabs={categoryTabs}
+            activeTab={activeCategory}
+            onTabChange={setActiveCategory}
+          />
+        </div>
+        <div className="text-sm text-white/40">
+          Hiển thị {totalFilteredSkills} / {systemStats.skills} skills
+        </div>
+      </motion.div>
+
+      {/* Skills Grid - Bento Style */}
+      <div className="max-w-7xl mx-auto">
+        {filteredCategories.map((cat, catIdx) => {
+          const config = categoryConfig[cat.id] || { color: "#4285F4", icon: Zap };
+          const Icon = config.icon;
+
           return (
             <motion.div
-              key={idx}
+              key={cat.id}
               initial={{ opacity: 0, y: 30 }}
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
-              transition={{ delay: idx * 0.05 }}
-              className={`group card-glass p-0 overflow-hidden border ${styles.border} bg-white/[0.01] hover:bg-white/[0.03] transition-all duration-500 rounded-[2.5rem] relative`}
+              transition={{ delay: catIdx * 0.05 }}
+              className="mb-12"
             >
-              {/* Header - Floating Island Style */}
-              <div className={`m-3 p-8 bg-gradient-to-br ${styles.accent} to-transparent border border-white/10 rounded-[2rem] shadow-xl relative overflow-hidden group-hover:scale-[0.98] transition-transform duration-500`}>
-                <div className="absolute inset-0 bg-white/5 opacity-0 group-hover:opacity-100 transition-opacity" />
-                <div className="flex items-center gap-5 relative z-10">
-                  <div className={`w-16 h-16 rounded-2xl ${styles.bg} border border-white/10 flex items-center justify-center shadow-lg group-hover:rotate-6 transition-transform duration-500`}>
-                    <Icon className={`h-8 w-8 ${styles.color}`} />
-                  </div>
-                  <div>
-                    <h3 className="text-2xl font-black text-white uppercase tracking-tight italic leading-tight">
-                        {isEnglish ? (cat.nameEn || cat.name) : cat.name}
-                    </h3>
-                    <p className={`text-[10px] font-black uppercase tracking-widest ${styles.color} opacity-70 mt-1 bg-white/5 px-2 py-0.5 rounded-full border border-white/5 w-fit`}>
-                      {cat.skills.length} Master Skills
-                    </p>
-                  </div>
+              {/* Category Header */}
+              <div className="flex items-center gap-4 mb-6">
+                <div 
+                  className="p-3 rounded-2xl"
+                  style={{ 
+                    backgroundColor: `${config.color}20`,
+                    border: `1px solid ${config.color}40`
+                  }}
+                >
+                  <Icon className="w-6 h-6" style={{ color: config.color }} />
+                </div>
+                <div>
+                  <h2 className="text-2xl font-black text-white">
+                    {isEnglish ? (cat.nameEn || cat.name) : cat.name}
+                  </h2>
+                  <p className="text-sm text-white/40">{cat.skills.length} skills</p>
                 </div>
               </div>
-              
-              {/* Skills List */}
-              <div className="p-6 grid gap-4">
-                {cat.skills.map((skill: any, sIdx: number) => (
-                  <div 
-                    key={sIdx} 
-                    className="p-5 rounded-[2rem] bg-black/40 border border-white/[0.03] hover:border-white/10 hover:bg-black/60 transition-all duration-300 group/skill shadow-sm"
-                  >
-                    <div className="flex items-start gap-4">
-                      <div className="mt-1.5 shrink-0">
-                         <div className={`w-2 h-2 rounded-full ${styles.bg.replace('/10', '/40')} group-hover/skill:scale-125 transition-transform`} />
-                      </div>
-                      <div className="space-y-3 flex-grow">
-                        <div className="flex flex-wrap items-center justify-between gap-2">
-                          <code className="text-sm md:text-base text-white/90 font-black tracking-tight group-hover/skill:text-white transition-colors">
-                            {skill.name}
-                          </code>
-                          <span className="text-[10px] font-black uppercase tracking-tighter px-2.5 py-1 rounded-full bg-white/5 text-white/40 border border-white/5">v4.0.0</span>
-                        </div>
-                        
-                        <p className="text-xs text-white/40 leading-relaxed font-medium">
-                          {isEnglish ? (skill.descEn || skill.desc) : skill.desc}
-                        </p>
 
-                        {/* Detailed Features */}
-                        {skill.features && skill.features.length > 0 && (
-                          <div className="flex flex-wrap gap-2 pt-1 border-t border-white/5 mt-3 pt-3">
-                            {skill.features.map((feature: string, fIdx: number) => (
-                              <span 
-                                key={fIdx}
-                                className={`text-[9px] font-black uppercase tracking-tighter px-3 py-1.5 rounded-xl bg-white/[0.02] border border-white/5 text-white/30 group-hover/skill:text-white/60 group-hover/skill:border-white/10 transition-colors`}
-                              >
-                                {feature}
-                              </span>
-                            ))}
+              {/* Skills Bento Grid */}
+              <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
+                {cat.skills.map((skill: any, skillIdx: number) => (
+                  <motion.div
+                    key={skill.name}
+                    initial={{ opacity: 0, scale: 0.95 }}
+                    whileInView={{ opacity: 1, scale: 1 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: skillIdx * 0.02 }}
+                  >
+                    <Link href={`/guide/skills/${skill.name}`}>
+                      <motion.div
+                        whileHover={{ scale: 1.02, y: -4 }}
+                        whileTap={{ scale: 0.98 }}
+                        className="card-glass h-full group cursor-pointer relative overflow-hidden"
+                        style={{ borderColor: `${config.color}20` }}
+                      >
+                        {/* Hover Glow */}
+                        <motion.div
+                          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+                          style={{
+                            background: `radial-gradient(circle at 50% 50%, ${config.color}15 0%, transparent 70%)`
+                          }}
+                        />
+
+                        <div className="relative z-10">
+                          <div className="flex items-start justify-between mb-3">
+                            <code 
+                              className="text-sm font-bold group-hover:text-white transition-colors"
+                              style={{ color: config.color }}
+                            >
+                              {skill.name}
+                            </code>
+                            <motion.div
+                              initial={{ opacity: 0, rotate: -45 }}
+                              whileHover={{ opacity: 1, rotate: 0 }}
+                              className="text-white/40 group-hover:text-white transition-colors"
+                            >
+                              <ArrowUpRight className="w-4 h-4" />
+                            </motion.div>
                           </div>
-                        )}
-                      </div>
-                    </div>
-                  </div>
+
+                          <p className="text-sm text-white/50 line-clamp-2 mb-3">
+                            {isEnglish ? (skill.descEn || skill.desc) : skill.desc}
+                          </p>
+
+                          {/* Features Tags */}
+                          {skill.features && skill.features.length > 0 && (
+                            <div className="flex flex-wrap gap-1.5">
+                              {skill.features.slice(0, 3).map((feature: string, fIdx: number) => (
+                                <span 
+                                  key={fIdx}
+                                  className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/40 border border-white/10"
+                                >
+                                  {feature}
+                                </span>
+                              ))}
+                              {skill.features.length > 3 && (
+                                <span className="text-[10px] px-2 py-0.5 rounded-full bg-white/5 text-white/30">
+                                  +{skill.features.length - 3}
+                                </span>
+                              )}
+                            </div>
+                          )}
+                        </div>
+                      </motion.div>
+                    </Link>
+                  </motion.div>
                 ))}
               </div>
             </motion.div>
@@ -128,6 +219,26 @@ export default function SkillsPage() {
         })}
       </div>
 
+      {/* Empty State */}
+      {filteredCategories.length === 0 && (
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          className="text-center py-16"
+        >
+          <p className="text-white/50 text-lg">
+            Không tìm thấy skill phù hợp với &quot;{searchQuery}&quot;
+          </p>
+          <button
+            onClick={() => { setSearchQuery(""); setActiveCategory("all"); }}
+            className="mt-4 text-[#4285F4] hover:underline"
+          >
+            Xóa bộ lọc
+          </button>
+        </motion.div>
+      )}
+
+      {/* Footer Info */}
       <div className="max-w-4xl mx-auto text-center py-12 relative">
         <div className="absolute inset-0 bg-yellow-400/5 blur-[100px] rounded-full pointer-events-none" />
         <div className="relative z-10 space-y-4">
@@ -148,4 +259,3 @@ export default function SkillsPage() {
     </div>
   );
 }
-

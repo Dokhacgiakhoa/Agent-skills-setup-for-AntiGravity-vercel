@@ -13,7 +13,7 @@ export default function NotesPage() {
       icon: Github,
       title: t('notes.github'),
       description: t('notes.githubDesc'),
-      href: "https://github.com/Dokhacgiakhoa/google-antigravity/issues",
+      href: "https://github.com/Dokhacgiakhoa/Agent-skills-setup-for-AntiGravity/issues",
       color: "#FCD34D",
       action: t('notes.githubAction')
     },

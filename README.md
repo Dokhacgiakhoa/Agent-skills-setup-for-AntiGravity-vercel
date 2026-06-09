@@ -1,4 +1,4 @@
-# Google Antigravity
+# Agent skills setup for AntiGravity
 
 [English](./README.md) | [Tiếng Việt](./README.vi.md)
 
@@ -7,7 +7,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
-**Google Antigravity** is more than just a skill collection; it is a comprehensive **Orchestration Framework**. It provides an "AI Battlefield" environment where AI agents collaborate through a professional production line (PDCA), ensuring every line of code is audited and optimized.
+**Agent skills setup for AntiGravity** is more than just a skill collection; it is a comprehensive **Orchestration Framework**. It provides an "AI Battlefield" environment where AI agents collaborate through a professional production line (PDCA), ensuring every line of code is audited and optimized.
 
 | **26** Master Skills | **15** Specialist Agents | **17** Workflows | **17** Shared DNA Modules |
 | :---: | :---: | :---: | :---: |
@@ -21,14 +21,14 @@ Set up your mission-critical environment in 30 seconds using the CLI:
 
 ```sh
 # 1. Create a new project (Recommended - Always uses latest engine)
-npx antigravity-ide@latest ten_du_an
+npx agent-skills-setup-for-antigravity@latest ten_du_an
 
 # 2. Smart install in current directory
-npx antigravity-ide@latest
+npx agent-skills-setup-for-antigravity@latest
 ```
 
 > [!WARNING]
-> **Important Note:** Avoid installing globally (`npm install -g antigravity-ide`). Always use `npx ...@latest` to ensure your project is initialized with the most recent engine and skill-set.
+> **Important Note:** Avoid installing globally (`npm install -g agent-skills-setup-for-antigravity`). Always use `npx ...@latest` to ensure your project is initialized with the most recent engine and skill-set.
 
 ### ✨ Setup Wizard Features (v4.0.0 - Big Update)
 Experience a Premium CLI interaction with **Scale-Adaptive Architecture**:
@@ -88,7 +88,7 @@ Trigger deep workflows directly within your AI chat interface:
 ### System Updates
 Update the Antigravity Brain while preserving custom configurations:
 ```sh
-npx antigravity-ide update
+npx agent-skills-setup-for-antigravity update
 ```
 
 ---
@@ -106,5 +106,5 @@ my-project/
 
 ---
 
-**Antigravity IDE** - Breaking the laws of gravity to elevate your projects. 🛰️🚀
+**Agent skills setup for AntiGravity** - Breaking the laws of gravity to elevate your projects. 🛰️🚀
 
