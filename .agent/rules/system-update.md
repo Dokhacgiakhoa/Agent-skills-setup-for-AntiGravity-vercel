@@ -1,6 +1,6 @@
 ---
 trigger: model_decision
-description: "Khi người dùng hỏi về cập nhật, phiên bản, hoặc update của gói antigravity-ide."
+description: "Khi người dùng hỏi về cập nhật, phiên bản, hoặc update của gói agent-skills-setup-for-antigravity."
 ---
 
 # UPDATE.MD - Quy trình Cập nhật Hệ thống
@@ -21,7 +21,7 @@ Nếu người dùng sử dụng các từ khóa sau:
 1. **Bước 1: Kiểm tra phiên bản cục bộ**: Đọc file `package.json` trong thư mục gốc của workspace.
 2. **Bước 2: Kiểm tra phiên bản mới nhất trên npm**: 
    ```powershell
-   npm view antigravity-ide version
+   npm view agent-skills-setup-for-antigravity version
    ```
 3. **Bước 3: So sánh và Thông báo**:
    - Nếu `Local Version == NPM Version`: Thông báo người dùng đã ở bản mới nhất.
@@ -32,7 +32,7 @@ Nếu người dùng sử dụng các từ khóa sau:
 
 4. **Bước 4: Thực thi Cập nhật (Nếu người dùng đồng ý)**:
    ```powershell
-   npm install -g antigravity-ide@latest
+   npm install -g agent-skills-setup-for-antigravity@latest
    ```
    Sau đó thông báo người dùng khởi động lại CLI hoặc chat tiếp.
 

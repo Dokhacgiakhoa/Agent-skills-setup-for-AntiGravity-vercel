@@ -1,7 +1,7 @@
 ## 🧠 Brainstorm: Cập nhật Tính năng Mới Antigravity v4.0
 
 ### Context
-Repository `google-antigravity` vừa ra mắt **v4.0 Big Update** với các tính năng đột phá như **Self-Learning**, **Malware Protection**, **Smart Allocation Logic** và **Auto-Update Chat**. Trang chủ `antigravity-lab` hiện tại chưa phản ánh đủ độ "thông minh" của phiên bản mới này.
+Repository `agent-skills-setup-for-antigravity` vừa ra mắt **v4.0 Big Update** với các tính năng đột phá như **Self-Learning**, **Malware Protection**, **Smart Allocation Logic** và **Auto-Update Chat**. Trang chủ `antigravity-lab` hiện tại chưa phản ánh đủ độ "thông minh" của phiên bản mới này.
 
 ---
 

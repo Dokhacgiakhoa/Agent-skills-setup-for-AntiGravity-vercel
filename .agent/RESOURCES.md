@@ -4,8 +4,8 @@
 Lưu trữ danh sách các repo nguồn để tiện cho việc cập nhật hệ thống sau này.
 
 ### Core System
-- **Google Antigravity Lab**: `https://github.com/Dokhacgiakhoa/Agent-skills-setup-for-AntiGravity-vercel` (Repo hiện tại)
-- **Google Antigravity Core**: `https://github.com/Dokhacgiakhoa/Agent-skills-setup-for-AntiGravity` (Core CLI & Skills)
+- **AntiGravity Lab**: `https://github.com/Dokhacgiakhoa/Agent-skills-setup-for-AntiGravity-vercel` (Repo hiện tại)
+- **AntiGravity Core**: `https://github.com/Dokhacgiakhoa/Agent-skills-setup-for-AntiGravity` (Core CLI & Skills)
 
 ### Official Documentation (The Source of Truth)
 - **Antigravity Docs**: `https://antigravity.google/docs`

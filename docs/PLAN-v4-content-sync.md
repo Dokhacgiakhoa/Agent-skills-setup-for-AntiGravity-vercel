@@ -1,7 +1,7 @@
 # PLAN - v4 Content Sync & Alignment
 
 ## 🎯 Goal
-Update `antigravity-lab` content (Home, Guide, Tutorial, README) to align 100% with the `google-antigravity` v4.0.0 specifications, architectural philosophy (Scale-Adaptive), and technical stats (26 Master Skills, 600+ Capabilities).
+Update `antigravity-lab` content (Home, Guide, Tutorial, README) to align 100% with the `agent-skills-setup-for-antigravity` v4.0.0 specifications, architectural philosophy (Scale-Adaptive), and technical stats (26 Master Skills, 600+ Capabilities).
 
 ---
 
@@ -63,7 +63,7 @@ Update `antigravity-lab` content (Home, Guide, Tutorial, README) to align 100% w
 - [ ] All mentions of "22 Skills" changed to "26 Master Skills".
 - [ ] "Enterprise" mode updated to "Software-Factory" where appropriate, or clarified in Scale-Adaptive context.
 - [ ] All links in READMEs point to the correct v4.0.0 resources.
-- [ ] Web UI matches the target vision shown in `google-antigravity`.
+- [ ] Web UI matches the target vision shown in `agent-skills-setup-for-antigravity`.
 
 ---
 

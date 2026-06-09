@@ -63,4 +63,4 @@ Vui lòng sử dụng các kỹ năng phù hợp nhất cho **Phát triển chun
 Thêm các hướng dẫn cụ thể cho dự án của bạn tại đây.
 
 ---
-*Được tạo bởi Google Antigravity*
+*Được tạo bởi AntiGravity*
